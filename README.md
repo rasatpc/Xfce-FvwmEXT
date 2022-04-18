@@ -1,2 +1,2 @@
 # Xfce-FvwmEXT
-Fvwm configs (extensions) with Xfce.
+Fvwm configs (extensions) with Xfce. This is a test.
