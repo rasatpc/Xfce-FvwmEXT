@@ -1,0 +1,45 @@
+## Modules: miniPg.sys
+## By rasat
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+KillModule FvwmButtons *RightPanel
+KillModule FvwmPager V1x5Pager
+KillModule FvwmPager V2x4Pager
+KillModule FvwmPager ControlPagerB
+
+# Load Control Panel Buttons
+Read $[CORE_DIR]/MODULES/ControlPanelB/controlPanel.sys
+
+# Change geometry
+*ControlPanelB: Geometry 278x38-180+3
+
+# Virtual Desktop
+DesktopSize "2x2"
+
+Module FvwmPager miniPager
+
+DestroyModuleConfig miniPager: *
+*miniPager: Geometry 132x114-0+3
+*miniPager: Fore #ffffff
+*miniPager: Back #2b4e5e
+*miniPager: HilightColorset * 6
+*miniPager: BalloonColorset * 10
+*miniPager: WindowColorsets 10 11
+*miniPager: Font none
+#*miniPager: SolidSeparators
+*miniPager: WindowBorderWidth 2
+*miniPager: BalloonStringFormat %c
+*miniPager: BallonYOffset +2
+*miniPager: Window3dBorders
+*miniPager: UseSkipList # hides modules
+*miniPager: MiniIcons
+
+Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 151, WindowListSkip, FixedSize, !Iconifiable, Sticky, StaysOnTop
+
+## Change pre-settings of controlPanelB
+KillModule FvwmButtons ControlPanelB
+Read $[CORE_DIR]/MODULES/ControlPanelB/controlPanel.sys
+*ControlPanelB: Geometry 360x39-135+3

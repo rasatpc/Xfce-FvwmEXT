@@ -1,0 +1,34 @@
+## Functions: autoHideL.sys
+#
+# AutoHidingWindows
+￼
+# https://www.fvwm.org/Wiki/Tips/AutoHidingWindows/
+#
+DestroyFunc autohide
+AddToFunc autohide
++ I ThisWindow ($0) Deschedule $[w.id]
++ I ThisWindow ($0) ThisWindow (Shaded) WindowShade off
++ I TestRc (!Match) All ($0, !Shaded) autohide\_hide $1 $2
+
+DestroyFunc autohide_hide
+AddToFunc autohide_hide
++ I Schedule $0 $[w.id] WindowShade $1
++ I Schedule $0 $[w.id] Deschedule $[w.id]
+
+# Start FvwmAuto
+AddToFunc StartFunction I Module FvwmAuto FvwmAutohide -menter enter_handler
+
+# Add buttons and pagers to autohide.
+DestroyFunc enter_handler
+AddToFunc enter_handler
+#+ I autohide V1x5Pager		1500 E
+#+ I autohide miniPager		1200 N
+#+ I autohide ControlPanelB 1300 N
+#+ I autohide SimpleButton	1200 N
+#+ I autohide ExtensionSwitch 2000 E
+#+ I autohide DashToDock	1500 W
+
+#               ^        ^    ^
+#               |        |    |__  Shade direction (optional N, S, E, W, NW, NE, SW or SE)
+#               |        |_______  Hide delay (milliseconds)
+#               |________________  Unique window name/resource

@@ -1,0 +1,49 @@
+## Modules: vPager5.sys
+## By rasat
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+
+KillModule FvwmButtons *RightPanel
+KillModule FvwmPager V2x4Pager
+KillModule FvwmButtons ControlPagerB
+
+########
+# Vertical Pager (5 pages)
+########
+
+# Virtual Desktop
+DesktopSize "1x5"
+
+Module FvwmPager V1x5Pager
+
+DestroyModuleConfig V1x5Pager: *
+*V1x5Pager: Geometry 80x400-0+190
+*V1x5Pager: Back #d9d9d9
+*V1x5Pager: HilightColorset * 6 #selected page background (original 13)
+*V1x5Pager: BalloonColorset * 10 # font color
+*V1x5Pager: WindowColorsets 10 27 #original 10 (inactive) 11 (active apps)
+*V1x5Pager: Font none
+*V1x5Pager: SolidSeparators
+*V1x5Pager: WindowBorderWidth 1
+*V1x5Pager: BalloonStringFormat %c
+*V1x5Pager: BallonYOffset +2
+*V1x5Pager: Window3dBorders
+*V1x5Pager: UseSkipList # hides modules
+*V1x5Pager: MiniIcons
+
+Style "V1x5Pager" NoTitle, !Handles, Borders, StaysOnTop, BorderWidth 5, BorderColorset 6, Sticky, WindowListSkip, FixedSize, !Iconifiable ## BorderColorset 19 (border line)
+
+Module V1x5Pager
+
+## Change preloaded settings
+
+## Titlebar Right Click >> Send To
+DestroyMenu MenuSendTo
+AddToMenu MenuSendTo
++ " Page 0" MoveToPage 0 0
++ " Page 4" MoveToPage 0 4
++ " Page 1" MoveToPage 0 1
++ " Page 2" MoveToPage 0 2
++ " Page 3" MoveToPage 0 3
++ " Page 5" MoveToPage 0 5

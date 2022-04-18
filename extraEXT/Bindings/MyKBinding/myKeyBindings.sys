@@ -1,0 +1,39 @@
+x## Bindings: myKeyBindings.sys
+#
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## KEY-MOUSE BINDINGS (untag below lines)
+
+# Silent Key z A M Move # alt-z (letter)
+# Silent Key F8 A C Resize # ctrl-F8
+# Silent Key Space A M Thumbnail # alt-space
+# Silent Key m A M Maximize 97 90 # alt-m
+# Silent Key x A M Destroy # alt-x
+
+## VM Desk (alt-d)
+DestroyFunc Desk22
+AddToFunc Desk22
++ I Read $[EXTRA_DIR]/DeskSwitch/VDesk/VM-Desk.sys
+Silent Key d A M Desk22
+
+DestroyFunc DeskScroll (alt-mouse left click)
+AddToFunc DeskScroll
++ I Read $[EXTRA_DIR]/DeskSwitch/VDesk/mouseScroll.conf
+Mouse 1 A M DeskScroll
+
+DestroyFunc DeskLockScroll (ctrl-mouse right click)
+AddToFunc DeskLockScroll
++ I Read $[EXTRA_DIR]/DeskSwitch/VDesk/lock.conf
+Mouse 1 A C DeskLockScroll
+
+## Maximize (within Desk 2x2) alt-m
+Silent Key m A M Maximize 145 175 # width hight
+
+## Minimize (thumbnail) alt-t
+Silent Key t A M Thumbnail
+
+## Close alt-x
+Silent Key x A M Close

@@ -1,0 +1,7 @@
+## Styles: diaryThumbnails.sys
+#
+## IconfyMinimize to Thumbnail Placeholder
+Style * IconBox 400x600-10+200, IconGrid 1 4, \
+IconFill top right, !IconTitle, IconBackgroundRelief 0
+
+

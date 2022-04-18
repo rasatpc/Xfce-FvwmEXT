@@ -1,0 +1,79 @@
+## .fvwm/UserExt.sys
+
+## If not yet exist, copy and rename UserExtSAMPLE.sys to UserExt.sys, and
+## left-click select Restart.
+
+## UserExt.sys is for you to edit/remove Core and Extra configs, and add your own.
+
+## Here below make your changes (tag and untag) and add your own.
+
+## NOTE: There is one user-friendly graphical Extension Installer to add and remove extensions.
+## Left-click, selcet <System><Ext-Install>
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv USER_DIR $[HOME]/.fvwm/userEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+##################################
+## USER (user changes and addon).
+## Add/remove CORE and EXTRA modules.
+#################################
+
+## Permanent wallpaper
+# SetBG cloth-grey-1920x1080.png
+
+## or last selected
+Exec exec fvwm-root $[HOME_DIR]/.BGdefault
+# Read $[EXTRA_DIR]/Menus/MyMenu/BgPanel/bluePanel.conf
+
+-----
+
+## Keyboard TouchPad on/off
+# Test (x synclient) Exec synclient TouchpadOff=1
+
+## Load Yad script postions.
+Read $[CORE_DIR]/1Functions/YadPosition/yadPos.sys
+
+## Change default font.
+DefaultFont "xft:Noto Sans:size=11"
+
+## Change Time/Day panel color
+# *FvwmScript: DefaultColorset 10
+
+-----
+
+## Function: Auto Move Windows.
+## To install this extension copy folder extraEXT/Functions/AutoMoveWin/ to userEXT/.
+## Edit AutoMoveWin/autoMoveW.sys as per choise of windows to move.
+## Untag the below line in ExtraExt.sys or this line.
+
+# Read $[USER_DIR]/AutoMoveWin/autoMoveW.sys
+
+-----
+
+## DashToDock hide by moving.
+# Read $[EXTRA_DIR]/MODULES/DashToDock/dHide/dashHide.sys
+
+## Load general Auto Hide List function.
+## To install this extension copy folder extraEXT/Functions/AutoHideList/ to userEXT/.
+## Edit AutoHideList/autoHideL.sys as per the choise of windows to hide.
+## Untag the below line in ExtraExt.sys or this line.
+
+# Read $[USER_DIR]/AutoHideList/autoHideL.sys
+
+-----
+
+## Window Placement
+#Style * TileCascadePlacement
+
+-----
+
+## WM (configs and replacements)
+## XFCE
+## Run in terminal or autostart: "Fvwm3 --replace"
+
+## Change FvwmOverView location
+#KillModule FvwmButtons FvwmOverView
+
+*FvwmOverView: Geometry 78x36+42+3

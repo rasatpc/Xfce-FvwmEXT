@@ -1,0 +1,30 @@
+## Styles: Fvwm-Thumbnails.sys
+## https://www.fvwm.org/Archive/Faq/#using-application-screenshots-as-icon-or-mini-icon-thumbnails
+## Needs imagemagick for this function to work
+#
+
+## Set Thumbnail cache folder
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+SetEnv cacheth $[EXTRA_DIR]/Styles/FvwmThumbnails/cache
+
+DestroyFunc Thumbnail
+AddToFunc Thumbnail
++ I Raise
++ I ThisWindow (!Shaded, Iconifiable, !Iconic) PipeRead \
+       "xwd -silent -id $[w.id] | convert -scale 136 -frame 1x1 \
+       -mattecolor black -quality 0 xwd:- \
+       png:$[cacheth]/icon.tmp.$[w.id].png \
+       && echo WindowStyle IconOverride, \
+       Icon $[cacheth]/icon.tmp.$[w.id].png \
+       || echo Nop"
++ I Iconify
+
+DestroyFunc DeThumbnail
+AddToFunc DeThumbnail
++ I Exec rm -f $[cacheth]/icon.tmp.$[w.id].png
++ I DestroyWindowStyle
+*FvwmEvent: deiconify DeThumbnail
+AddToFunc StartFunction I Module FvwmEvent

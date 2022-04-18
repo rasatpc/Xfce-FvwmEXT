@@ -1,0 +1,26 @@
+## Modules: winLSwitch.sys
+## By rasat 16 Jan 2021
+
+## Reset WinListSwitch
+KillModule FvwmButtons WinListSwitch
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+Module FvwmButtons WinListSwitch
+
+DestroyModuleConfig WinListSwitch: *
+*WinListSwitch: Fore #ffffff
+*WinListSwitch: Geometry 92x30-0+120
+*WinListSwitch: PressColorset 4
+*WinListSwitch: Frame 0
+*WinListSwitch: Rows 1
+*WinListSwitch: BoxSize smart
+*WinListSwitch: Font "xft:Sans:size=10:antialias=True"
+*WinListSwitch: Padding 2 2
+  
+*WinListSwitch: (1x1, Title CurW, Back #2b4e5e, Fore #ffffff, Action(Mouse 1) WindowList (CurrentPage) Root c c )
+*WinListSwitch: (1x1, Title AllW, Back #faa46e, Fore #000000, Action(Mouse 1) WindowList Root c c)
+
+# Style Setting
+Style WinListSwitch !Borders, !Title, StaysOnTop, WindowListSkip, Sticky

@@ -1,0 +1,37 @@
+WELCOME to F(?) Virtual Window Manager (FVWM).
+
+If you are new to FVWM and wondering what it is all about. The first thing to bear in mind it is not a Desktop Environment (GNOME, KDE, XFCE, etc). A desktop environment comes with a collection of preconfigured settings and software (file managers, docks/panels, and so on) all integrated together. 
+
+FVWM is a Window Manager (WM). What sets it apart from other WMs, it is also a *Virtual* window manager. Among the powerful Fvwm features is the virtual desktop, which allows you to place windows on an area much larger than the actual size of the visible display.
+
+FVWM3 (ver. 1.0.4-123)
+
+It comes with a minimal startup configure. It gives the user the choice of expression. Details such as the appearance of windows, function of panels, pagers, programs that will be used, mouse/key control, etc., are created and defined by the user.
+
+FVWM myExtensions (ver. 3.2.0)
+
+Is a collection of ready-made configs. A model for you to use, modify or create your own extensions. The default FVWM config is the base, directly in ~/.fvwm. The config is split into folders and runs in the same sequence as the original. The additional extension configs are simply added in associated folders.
+
+Previous myExt configs are not compatible with 3.x. This new version is user-oriented, to add and make changes in the preset configs and to create own without getting overwritten by new updates. It includes three new folders and system files:
+
+coreEXT  + coreEXT.sys	- essential myExt configs.
+extraEXT + extraEXT.sys - additional configs.
+userEXT  + userEXT.sys  - reads user configs, does changes to core and extra config settings.
+
+HOW TO
+
+A picture is worth of thousand words. The attached illustrated screenshot shows the main features of version 2.2. /.fvwm/setup/fvwm3-myext-2.2-help.png
+
+KEY & MOUSE BINDINGS
+
+VM Desk (alt-d)
+Mouse scroll (alt-mouse left click)
+Mouse lock scroll (ctrl-mouse right click)
+Maximize (alt-m)
+Minimize (thumbnail) (alt-t)
+Close window (alt-x)
+
+MORE INFORMATION
+https://www.fvwm.org/
+
+https://forum.mxlinux.org/viewtopic.php?f=82&t=62182

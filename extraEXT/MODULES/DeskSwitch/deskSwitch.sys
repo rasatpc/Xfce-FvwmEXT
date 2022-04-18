@@ -1,0 +1,19 @@
+## Modules: deskSwitch.sys
+## By rasat 8 April 2021
+
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+KillModule FvwmButtons DeskSwitch
+
+Module FvwmButtons DeskSwitch
+
+DestroyModuleConfig DeskSwitch: *
+*DeskSwitch: Geometry 90x30-0+150
+*DeskSwitch: PressColorset 4
+*DeskSwitch: Frame 0
+*DeskSwitch: Rows 1
+*DeskSwitch: Font "xft:Sans:size=12:antialias=True"
+*DeskSwitch: Padding 0 0
+*DeskSwitch: (90x1, Title "VM Desk", Back #83abaa, Fore #ffffff, Action(Mouse 1) `Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/VM-Desk.sys`)
+
+# Style Setting
+Style DeskSwitch !Borders, !Title, StaysOnTop, WindowListSkip, Sticky

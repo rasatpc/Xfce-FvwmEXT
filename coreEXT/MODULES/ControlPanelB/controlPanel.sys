@@ -1,0 +1,53 @@
+## Modules: controlPanel.sys
+## By rasat
+# Manpage: http://manpages.ubuntu.com/manpages/xenial/man1/FvwmButtons.1.html
+#
+
+KillModule FvwmButtons ControlPanelB
+
+## Vertical/horizontal tiling
+DestroyFun WTile
+AddToFunc WTile
+# + I FvwmRearrange -tile $0 -r -mn 2 -maximize 0 0 $[wa.width]p $[wa.height]p #(2 columns)
+ + I FvwmRearrange -tile $0 -r -mn 3 -maximize 0 0 $[wa.width]p $[wa.height]p #(3 columns)
+
+## De-tiling
+DestroyFunc DeTile
+AddToFunc DeTile
++ I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
++ I WindowId $0 WarpToWindow 50 50
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Set small icons
+SetEnv smallIcons $[CORE_DIR]/MODULES/ControlPanelB/icons
+
+Module FvwmButtons ControlPanelB
+
+DestroyModuleConfig ControlPanelB: *
+*ControlPanelB: Fore #ffffff
+*ControlPanelB: Back #2b4e5e
+*ControlPanelB: Geometry 360x40-0+3 #Geometry -0+0
+*ControlPanelB: PressColorset 4
+*ControlPanelB: Frame 0
+*ControlPanelB: Rows 1
+*ControlPanelB: BoxSize smart
+*ControlPanelB: Font "xft:Sans:size=9:antialias=True"
+*ControlPanelB: Padding 2 2
+  
+# *ControlPanelB: (1x1, Icon $[smallIcons]/search-w.png, Action(Mouse 1) "Exec exec ulauncher" )
+*ControlPanelB: (1x1, Icon $[smallIcons]/search-w.png, Action(Mouse 1) "Exec exec rofi -show" )
+
+*ControlPanelB: (1x1, Icon $[smallIcons]/resize-w.png, Action Resize )
+*ControlPanelB: (1x1, Icon $[smallIcons]/move-w.png, Action Move  )
+*ControlPanelB: (1x1, Icon $[smallIcons]/detile-w.png, Action DeTile)
+*ControlPanelB: (1x1, Icon $[smallIcons]/tile-w.png, Action WTile)
+*ControlPanelB: (Title Min, Back #faa46e, Action Thumbnail )
+*ControlPanelB: (Title Max, Back #85a772, Action Maximize 97 90 ) #width and hight
+*ControlPanelB: (Title Close, Back #e55757, Action Destroy)
+*ControlPanelB: (1x1, Icon $[smallIcons]/quit-w.png, Action \
+    `Read $[CORE_DIR]/MODULES/RestartShutdown/restartSDown.sys` )
+
+# Style Setting
+Style ControlPanelB !Borders, !Title, WindowListSkip, StaysOnTop, Sticky

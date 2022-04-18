@@ -1,0 +1,54 @@
+## Modules/VDesk: VM-Desk.sys
+#
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Close Modules
+KillModule FvwmButtons *
+KillModule FvwmPager miniPager
+KillModule FvwmPager V1x5Pager
+KillModule FvwmPager V2x4Pager
+
+## Change wallpaper.
+# SetBG grey480x480.png
+
+Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Panel/startCmd.sys
+
+DesktopConfiguration global
+
+## Virtual Desktop
+# DesktopSize "2x3"
+DesktopSize "2x2"
+
+## MiniPager
+Module FvwmPager miniPager
+
+DestroyModuleConfig miniPager: *
+*miniPager: Geometry 135x135-20-20 # 2x2
+
+Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/virtualDesk.sys
+
+## Starting viewpoint
+#GoToPage 0 0 # page 0
+
+## Change taskbar
+Read $[EXTRA_DIR]/MODULES/TaskButtonsCurve/taskBCurve.sys
+DestroyMenu MenuStart
+AddToMenu MenuStart
+Test (x featherpad) + "HowTo" Exec exec featherpad $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/howToVD.txt
+Test (x mousepad) + "HowTo" Exec exec mousepad $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/howToVD.txt
++ "-" Nop
++ "Exit" Restart
+
+*TaskButtonsCurve: Geometry 595x30+10+10
+KillModule FvwmButtons TaskButtonsFlux
+
+## Change pre-settings of FvwmOverView and add one button
+Read $[EXTRA_DIR]/MODULES/FvwmOverView/fvwmWOview.sys
+*FvwmOverView: Geometry 63x43+10+45
+
+# EwmhBaseStruts [left] [right] [top] [bottom]
+# Reserves space along the edge(s) of the Screen.
+EwmhBaseStruts 30 30 60 40

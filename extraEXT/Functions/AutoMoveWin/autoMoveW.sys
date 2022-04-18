@@ -1,0 +1,11 @@
+## Functions: autoMoveW.sys
+
+##		APPS		COMMAND			PAGE	LOCATION		DESKTOPSIZE
+## --------------------------------------------------------------------
+
+Style	Firefox		StartsOnPage	0 0 0	#page Left 0		"2x4"
+Style	Chromium	StartsOnPage	0 0 0	#page Left 0		"2x4"
+# Style	Thunar		StartsOnPage	0 1 0	#page Right 1		"2x4"
+# Style	Gimp		StartsOnPage	0 0 1	#page Left 1		"2x4"
+# Style	Evolution	StartsOnPage	0 0 3	#page Left 3		"2x4"
+# Style	"Mozilla Thunderbird" StartsOnPage	0 1 3 #page Right 3 "2x4"

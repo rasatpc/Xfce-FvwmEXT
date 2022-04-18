@@ -1,0 +1,25 @@
+This config MODULES/DeskSwitch (VM Desk) allows you to place windows on an area much larger than the actual size of the visible display. The size of VM Desk is 2x3. It has six pages.
+
+-----------
+|0 0 |1 0 |
+-----------
+|0 1 |1 1 |
+-----------
+|0 2 |1 2 |
+-----------
+
+The icon buttons at the right-upper corner allow you to move and resize the window into any size within the pages. It allows working on large-size images and documents and to zoom 100% or 200%.
+
+HOWTO:
+
+1. Load the selected application on page 0 1 (left-middle).
+2. Size of resizing window diagonal to 1 0 (top-right).
+
+3. To move between the pages, use the pager or move the mouse courser to the edge of the screen.
+4. To move a window. Click the title bar and hold. Or, click the top-corner move button and clock-hold on the selected window.
+
+5. To view the applications and files that are open, click the button CurW (current page windows) or AllW (all windows). Or click the mouse scroll-wheel (shows the open windows in thumbnails).
+
+6. Before exiting (Quit), close or move applications on pages 1 0, 1 1, and 1 2 to left-side pages. They may not be visible on the general work desk (1x5).
+
+rasat (12 Feb 2021)

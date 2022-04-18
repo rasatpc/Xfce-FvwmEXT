@@ -1,0 +1,13 @@
+FVWM is a command driven window manager. In short once FVWM starts it listens for commands, and then process the actions of the commands issued. Commands do all things from setting/changing configuration options, to preforming actions such as moving/resizing/changing windows or moving between virtual pages and desks.
+https://www.fvwm.org/Wiki/Config/
+
+Core contains the essential configs, the base and examples for the additional (extra and user) configs. Shows the structure and system flow. The configs are split into folders and runs in same sequence as the original Fvwm config.
+
+1. 1Functions
+2. 2-3Styles
+3. 4Menus
+4. 5Bindings
+5. 6Decors
+6. MODULES
+
+NOTE: Don't add or edit any configs in /coreEXT.

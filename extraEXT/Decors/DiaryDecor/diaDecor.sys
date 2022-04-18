@@ -1,0 +1,19 @@
+## Decors: diaDecor.sys
+#
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+
+## Style
+Read $[EXTRA_DIR]/Styles/DiaryThumbnails/diaryThumbPlace.sys
+Read $[EXTRA_DIR]/Styles/FvwmThumbnails/fvwmThumbnail.sys
+
+## Bindings
+Read $[EXTRA_DIR]/Bindings/DiaryMouseBinding/diaryMBindings.sys
+
+## Decor
+Read $[EXTRA_DIR]/Decors/DiaryDecor/BorderStyle/dBorderStyle.sys
+Read $[EXTRA_DIR]/Decors/DiaryDecor/dDecor.conf
+
+## Mouse click behaviour
+Style * ClickToFocus

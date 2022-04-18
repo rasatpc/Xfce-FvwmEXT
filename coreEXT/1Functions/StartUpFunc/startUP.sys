@@ -1,0 +1,55 @@
+## Functions: startUP.sys
+
+# Edited from myExt coreEXT/1Functions/FVWM-StartFunction.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+# The start function is run right after fvwm is done reading
+# the config file.
+
+DestroyFunc StartFunction
+AddToFunc   StartFunction
++ I Test (Init, f $[HOME_DIR]/.BGdefault) \
+    Exec exec fvwm-root $[HOME_DIR]/.BGdefault 
+
+# Mouse Bindings Functions
+DestroyFunc RaiseMoveX
+AddToFunc RaiseMoveX
++ I Raise
++ M $0
++ D $1
+
+DestroyFunc RaiseMove
+AddToFunc RaiseMove
++ I Raise
++ M $0
+
+DestroyFunc MoveToCurrent
+AddToFunc MoveToCurrent
++ I ThisWindow MoveToPage
++ I ThisWindow MoveToDesk
+
+# Function: SetBG $0
+#
+# SetBG is used with the background menu to set the background
+# image and configure it to be loaded the next time fvwm is run.
+
+DestroyFunc SetBG
+AddToFunc   SetBG
++ I Test (f $[HOME_DIR]/images/background/$0) \
+    Exec exec fvwm-root $[HOME_DIR]/images/background/$0
++ I TestRc (Match) Exec exec ln -fs images/background/$0 \
+    $[HOME_DIR]/.BGdefault
++ I TestRc (Match) Break
++ I Test (!f $[FVWM_DATADIR]/default-config/images/background/$0) Break
++ I Exec exec fvwm-root $[FVWM_DATADIR]/default-config/images/background/$0
++ I Exec exec ln -fs $[FVWM_DATADIR]/default-config/images/background/$0 \
+    $[HOME_DIR]/.BGdefault
+
+## Center MODULES/RestartShutdown postion as per screen resolution.
+## Needs xdpyinfo installed.
+Test (x xdpyinfo) Exec $[CORE_DIR]/1Functions/StartUpFunc/scripts/ButtonScreenPosition.sh
+
+## Clears all bindings.
+# Clear-Default-Bindings

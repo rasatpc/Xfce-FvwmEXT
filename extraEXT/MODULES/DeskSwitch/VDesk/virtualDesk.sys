@@ -1,0 +1,142 @@
+## Modules/VDesk: virtualDesk.sys
+## By rasat 4 Mar 2021
+## Mouse scroll movement inspired by fvwmforums
+## https://fvwmforums.org/t/getting-things-done-oriented-fvwm-config/1135
+## https://jslf.app/projects/fvwm/FVWM-demo.gif
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+----
+
+## Vertical/horizontal tiling
+DestroyFun cTile
+AddToFunc cTile
+# + I FvwmRearrange -tile $0 -r -mn 2 -maximize 0 0 $[wa.width]p $[wa.height]p #(2 columns)
+ + I FvwmRearrange -tile $0 -r -mn 4 -maximize 0 0 $[wa.width]p $[wa.height]p #(4 columns)
+
+## De-tiling
+DestroyFunc DeTile
+AddToFunc DeTile
++ I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
++ I WindowId $0 WarpToWindow 50 50
+
+-------
+
+## Virtual Desktop size and geometry
+## in MODULES/VDesk/2x2, 1x3 and 3x3Desk.sys
+
+*miniPager: Back #d9d9d9
+*miniPager: HilightColorset * 6
+*miniPager: BalloonColorset * 10
+*miniPager: WindowColorsets 10 11
+*miniPager: Font none
+*miniPager: SolidSeparators
+*miniPager: WindowBorderWidth 1
+*miniPager: BalloonStringFormat %c
+*miniPager: BallonYOffset +2
+*miniPager: Window3dBorders
+*miniPager: UseSkipList # hides modules
+*miniPager: MiniIcons
+
+Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 151, WindowListSkip, FixedSize, !Iconifiable, Sticky, StaysOnTop
+
+## MiniControlButtons
+# Set The Apps Icon Folder (32x32)
+SetEnv smallIcons $[EXTRA_DIR]/MODULES/DeskSwitch/icons
+
+Module FvwmButtons MiniControlB
+
+DestroyModuleConfig MiniControlB: *
+*MiniControlB: Fore #ffffff
+*MiniControlB: Back #2b4e5e
+*MiniControlB: Geometry 480x32-10+10
+*MiniControlB: PressColorset 4
+*MiniControlB: Frame 0
+*MiniControlB: Rows 1
+*MiniControlB: BoxSize smart
+*MiniControlB: Font "xft:Sans:size=10:antialias=True"
+*MiniControlB: Padding 2 2
+
+*MiniControlB: (1x1, Icon $[smallIcons]/win/search-w.png, Action(Mouse 1) "Exec exec rofi -show" )
+*MiniControlB: (1x1, Icon $[smallIcons]/win/resize-w.png, Action Resize )
+*MiniControlB: (1x1, Icon $[smallIcons]/win/move-w.png, Action Move  )
+*MiniControlB: (1x1, Icon $[smallIcons]/win/detile-w.png, Action DeTile)
+*MiniControlB: (1x1, Icon $[smallIcons]/win/tile-w.png, Action cTile)
+*MiniControlB: (Title MaxH, Back #85a772, Fore #ffffff, Action Maximize 140 120 )
+*MiniControlB: (Title MaxV, Back #85a772, Fore #ffffff, Action Maximize 70 180 )
+*MiniControlB: (Title Exit, Back #e55757, Action Restart)
+
+Style MiniControlB !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
+
+## Lock button
+Module FvwmButtons LockButtons
+
+DestroyModuleConfig LockButtons: *
+*LockButtons: Back #2b4e5e
+*LockButtons: Geometry 90x30-100+55
+*LockButtons: PressColorset 1
+*LockButtons: Frame 0
+*LockButtons: Rows 1
+*LockButtons: BoxSize smart
+*LockButtons: Padding 2 2
+
+*LockButtons: (1x1, Back #85a772, Frame 0, Icon $[smallIcons]/win/unlock-w.png, Action(Mouse 1) `Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/mouseScroll.conf` )
+*LockButtons: (1x1, Back #e55757, Frame 0, Icon $[smallIcons]/win/lock-w.png, Action(Mouse 1) `Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/lock.conf` )
+
+Style LockButtons !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
+
+## Add Grid button
+# Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/virtualGrid.sys
+## Add grid in each page
+Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Panel/gridCmd.sys
+
+## Change preloaded settings
+
+## Change WinList postion
+KillModule FvwmButtons WinListSwitch
+Read $[CORE_DIR]/MODULES/WinListSwitch/winLSwitch.sys
+*WinListSwitch: Geometry 90x30-10+55
+
+## Load Mouse scroll
+Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/mouseScroll.conf
+
+# EwmhBaseStruts [left] [right] [top] [bottom]
+EwmhBaseStruts 100 20 50 0
+
+### Thumbnail
+
+## Minimize to Thumbnail Placeholder
+Style * IconBox 400x600+20+20, IconGrid 1 1, \
+IconFill top left, !IconTitle, IconBackgroundRelief 0
+
+AddToFunc Thumbnail
++ I Stick
+
+## Titlebar right-click
+DestroyMenu MenuWindowOps
+AddToMenu   MenuWindowOps
++ "Min" Thumbnail
++ "Move" Move
++ "Shade" WindowShade
++ "Close" Close
++ "-" Nop
++ "Sticky" Stick
++ "Kill" Destroy
+
+## Desktop right-click
+DestroyMenu MenuWindowOpsLong
+AddToMenu   MenuWindowOpsLong
++ " " Nop
++ "Min%$[mimg]/icons/win/iconify.png%" Thumbnail
++ "Move%$[mimg]/icons/win/move.png%" Move
++ "Resize%$[mimg]/icons/win/resize.png%" Resize
++ "Low%$[mimg]/icons/win/bottom.png%" Lower
++ "Max%$[mimg]/icons/win/max.png%" Maximize
++ "---" Nop
++ "Close%$[mimg]/icons/win/done.png%" Close
++ "Done%$[mimg]/icons/win/done.png%" Next (Focused) Close
++ "---" Nop
++ "Kill%$[mimg]/icons/win/destroy.png%" Destroy
++ "Quit-D%$[mimg]/icons/quit.png%" Restart

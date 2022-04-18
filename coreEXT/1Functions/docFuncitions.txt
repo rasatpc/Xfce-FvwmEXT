@@ -1,0 +1,17 @@
+Functions can be used to achieve lots of different tasks.
+
+ComplexFunctions
+This page gives the basics about complex functions.
+
+FunctionContext
+In the context of the window in which they were run, but not always.
+
+FunctionSynchronisation
+To ensure functions finish a command before running the next.
+
+FunctionTips
+Ensuring commands are run in the correct context.
+
+StartFunction
+As soon as Fvwm is done reading the config file. Similarly the ExitFunction is run when fvwm ends.
+https://www.fvwm.org/Wiki/Config/Functions/

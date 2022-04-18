@@ -1,0 +1,21 @@
+## /.fvwm/config
+# This runs on Fvwm3 and Fvwm2
+
+## Don't add or edit this file but .fvwm/userExt.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv USER_DIR $[HOME]/.fvwm/userEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Remove move and resize grid.
+OpaqueMoveSize unlimited
+Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid
+
+#######################
+## CORE, EXTRA and USER
+#######################
+
+Read $[HOME_DIR]/CoreExt.sys
+Read $[HOME_DIR]/ExtraExt.sys
+Read $[HOME_DIR]/UserExt.sys

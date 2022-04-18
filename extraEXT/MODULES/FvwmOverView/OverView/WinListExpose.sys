@@ -1,0 +1,31 @@
+## Modules: OverView/WinListExpose.sys
+## Inspired by Taviso’s WindowList function – FvwmExpose
+## https://zensites.net/fvwm/guide/advanced_functions.html
+#
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+SetEnv cacheov $[EXTRA_DIR]/MODULES/FvwmOverView/cache
+
+Win
+MenuStyle * MenuColorset 18, ActiveColorset 15, TitleColorset 15
+MenuStyle * ItemFormat "%|%4.2i%5.3l%5.70>%|"
+MenuStyle * BorderWidth 2
+
+Current InfoStoreAdd CURRENTWINDOW $[w.id]
+AddToMenu FvwmExposeMenu " W I N D O W  L I S T  $[page.nx] - $[page.ny]"  Title
+DynamicPopDownAction DestroyMenu FvwmExposeMenu
+
+All (!Fvwm*, !Bru*, !Tool*, !Xfce4-panel*, CurrentPage, !Shaded, AcceptsFocus)\
+    PipeRead "echo Raise; echo Focus; \
+        xwd -silent -id $[w.id] | convert -scale 340 -frame 2x2 -mattecolor black -quality 1 xwd:- \
+        png:$[cacheov]/icon.exp.$[w.id].png \
+    && echo AddToMenu FvwmExposeMenu \
+    %$[cacheov]/icon.exp.$[w.id].png%\\\'\"   $[w.class]  \"\\\' WindowID $[w.id] WarpToWindow 5 42 \
+        && echo AddToMenu FvwmExposeMenu \\\"\\\" Nop \
+    || Nop"
+WindowId $[infostore.CURRENTWINDOW] WarpToWindow 5 42
+
+## Load background FvwmButton and click where to list overview windows. 
+Read $[EXTRA_DIR]/MODULES/FvwmOverView/OverView/bgWOview.sys

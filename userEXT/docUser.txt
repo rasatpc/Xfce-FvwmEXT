@@ -1,0 +1,5 @@
+This userEXT is for you to add new configs or modify existing ones. This folder will not be overwritten by new myExt updates.
+
+Add the new configs in the root. Modules copied from Core and Extra or made by you in /MODULES folder to keep the same variables amongst modules. Makes it easier to modify and test.
+
+New and good configs, ask rasat to add them to extra or core. Contact in Arch Linux or MX Linux forums.

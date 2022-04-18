@@ -1,0 +1,29 @@
+## Modules: timeDayB.sys
+## Date, Time, and Calendar
+## By rasat
+
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Time/Day panel color
+*FvwmScript: DefaultColorset 10
+
+Module FvwmButtons TimeDayButton
+
+DestroyModuleConfig TimeDayButton:*
+*TimeDayButton: Geometry 90x70-0-60
+*TimeDayButton: Colorset 10
+*TimeDayButton: Columns 120
+*TimeDayButton: Font "xft:Sans:Bold:size=10:antialias=True"
+*TimeDayButton: (25x10, Frame 0)
+*TimeDayButton: (120x30, Title Calendar, Action(Mouse 1) "Exec exec $[EXTRA_DIR]/MODULES/TimeDayButton/script/Calendar.sh", Font "xft:Sans:size=11:antialias=True", Frame 0)
+*TimeDayButton: (120x45, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 0)
+*TimeDayButton: (120x25, Frame 0)
+
+Style TimeDayButton !Borders, !Title, WindowListSkip, Sticky, StaysOnTop
+Style Calendar* NoTitle # no titel bar
+Style MyRightPanel StaysOnBottom
+
+
+## Check Functions: yadPos.sys
+Read $[CORE_DIR]/1Functions/YadPosition/yadPos.sys

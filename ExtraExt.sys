@@ -1,0 +1,54 @@
+## .fvwm/ExtraExt.sys
+
+## NOTE:
+## Don't add or edit this file but .fvwm/userExt.sys
+
+#######################
+## EXTRA
+#######################
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv USER_DIR $[HOME]/.fvwm/userEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Functions
+Read $[USER_DIR]/AutoHideList/autoHideL.sys #101
+Read $[USER_DIR]/AutoMoveWin/autoMoveW.sys #102
+
+## Styles
+Read $[EXTRA_DIR]/Styles/FvwmThumbnails/fvwmThumbnail.sys #201
+Read $[EXTRA_DIR]/Styles/DiaryThumbnails/diaryThumbPlace.sys #202
+Read $[EXTRA_DIR]/Styles/MyBorderStyle/myBorderStyle.sys #203
+
+## Menus
+Read $[EXTRA_DIR]/Menus/XfMenu/xfMenu.conf #302
+
+## Bindings
+Read $[EXTRA_DIR]/Bindings/MyKBinding/myKeyBindings.sys #402
+
+## Decorations
+Read $[EXTRA_DIR]/Decors/MyDecor/myDec.sys #501
+# Read $[EXTRA_DIR]/Decors/DiaryDecor/diaDecor.sys #502
+
+## Modules
+Read $[EXTRA_DIR]/MODULES/DeskSwitch/deskSwitch.sys #603
+Read $[EXTRA_DIR]/MODULES/FvwmOverView/fvwmWOview.sys #605
+Read $[EXTRA_DIR]/MODULES/TimeDayButton/timeDayB.sys #609
+Read $[EXTRA_DIR]/MODULES/V1x5Pager/vPager5.sys #610
+# Read $[EXTRA_DIR]/MODULES/V2x4Pager/vPager4.sys #611
+# Read $[EXTRA_DIR]/MODULES/Mini2x2Pager/miniPg.sys #612
+
+######
+## Change preloaded EXTRA settings
+######
+
+Style SimpleButton NoTitle
+Style WinListSwitch NoTitle
+Style ControlPanelB NoTitle
+
+## No title Xfce
+Style *Whisker* NoTitle
+Style *xfce4-panel* NoTitle
+
+Exec exec fvwm-root $[HOME_DIR]/.BGdefault

@@ -1,0 +1,26 @@
+## Modules: fvwmWOview.sys
+## Inspired by Gnome Activity overview with Taviso’s WindowList function
+## on a FvwmButton background.
+## Transparent Faq: https://www.fvwm.org/Archive/Faq/#how-to-define-transparent-modules
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Colorsets check MyColorsets/myColorsets.sys
+
+SetEnv wo-icon $[EXTRA_DIR]/MODULES/FvwmOverView/icons
+Module FvwmButtons FvwmOverView
+
+DestroyModuleConfig FvwmOverView: *
+*FvwmOverView: Geometry 77x36+0+3
+*FvwmOverView: PressColorset 4
+*FvwmOverView: Frame 0
+*FvwmOverView: Rows 1
+*FvwmOverView: Columns 1
+*FvwmOverView: Padding 0 0
+
+*FvwmOverView: (46x1, Colorset 272, Icon $[wo-icon]/appsView-38x38.png, Action(Mouse 1) `Read $[EXTRA_DIR]/MODULES/FvwmOverView/OverView/WinListExpose.sys` )
+
+## Style setting
+Style FvwmOverView !Borders, !Title, WindowListSkip, StaysOnTop, Sticky

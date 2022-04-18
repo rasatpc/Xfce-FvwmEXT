@@ -1,0 +1,7 @@
+## Functions: initC.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Checking if systemd to adjust MODULES/RestartShutdown poweroff and reboot setting.
+Exec $[CORE_DIR]/1Functions/InitCheck/scripts/check.sh

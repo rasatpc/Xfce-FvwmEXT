@@ -1,0 +1,59 @@
+## .fvwm/CoreExt.sys
+
+## NOTE:
+## Don't add or edit this file but .fvwm/userExt.sys
+
+#######################
+## CORE
+#######################
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Load 1.Functions
+Read $[CORE_DIR]/1Functions/StartUpFunc/startUP.sys
+Read $[CORE_DIR]/1Functions/InitCheck/initC.sys
+
+## Load 2-3.Styles
+Read $[CORE_DIR]/2-3Styles/FVWM-Colorsets/fvwmColorsets.sys
+Read $[CORE_DIR]/2-3Styles/MyColorsets/myColorsets.sys
+
+## Load 4.Menus
+
+## Load 5.Bindings
+Read $[CORE_DIR]/5Bindings/MyMBinding/myMouseBindings.sys
+Read $[CORE_DIR]/5Bindings/MoveResizeBdg/MoRzBinding.sys
+
+## Load 6.Decorations
+
+## Load 7.Modules
+Read $[CORE_DIR]/MODULES/ControlPanelB/controlPanel.sys
+Read $[CORE_DIR]/MODULES/ExposeList/fvwmExposeList.sys
+Read $[CORE_DIR]/MODULES/WinListSwitch/winLSwitch.sys
+
+######
+## Change preloaded CORE settings
+######
+
+### (Styles: fvwmPage.sys)
+
+## EdgeScroll will move the view port between the Pages when the mouse
+## moves to the edge of the screen.
+
+EdgeScroll 0 0
+EdgeResistance 450
+EdgeThickness 1
+Style * EdgeMoveDelay 500, EdgeMoveResistance 100
+
+# EwmhBaseStruts [left] [right] [top] [bottom]
+# Reserves space along the edge(s) of the Screen that will not
+# be covered when maximizing or placing windows.
+
+EwmhBaseStruts 70 150 60 100
+
+## Mouse click behaviour and window focus.
+Style * ClickToFocus, FPGrabFocus
+
+## Default Font
+DefaultFont "xft:Noto Sans:size=10"

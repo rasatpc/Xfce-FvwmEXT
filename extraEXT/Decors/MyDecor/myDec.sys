@@ -1,0 +1,31 @@
+## Decor: myDec.sys
+#
+## DECORATIONS
+
+## Reset all buttons.
+ButtonStyle Reset
+
+# Window Buttons: [1 3 5 7 9  TTTTT  0 8 6 4 2]
+#(see 5Bindings/docBindings.txt)
+#   1 - Open the WindowOps menu.
+#   2 - Close on single click, Destory on double click.
+#   4 - Maximize (right/middle button will only maximize vertical/horizontal)
+#   6 - Iconify (minimize)
+
+##(see 6Decors/docDecorations.txt)
+
+Mouse 1 2 A Close
+Mouse 1 6 A Thumbnail # Iconify
+
+# Titel bar (active "- x" and inactive "...")
+
+TitleStyle Centered Height 24 -- Flat
+ButtonStyle All Inactive Vector 5 47x47@3 57x53@3 53x53@3 53x47@3 47x47@3 -- Flat
+AddButtonStyle 1 Active Vector 5 45x45@3 55x45@3 55x55@3 45x55@3 45x45@3 # Menu
+AddButtonStyle 2 Active Vector 4 35x35@3 65x65@3 65x35@4 35x65@3 # Close
+AddButtonStyle 4 Active Vector 8 30x70@3 30x30@3 70x30@3 70x70@3 30x70@3 \
+                 30x50@4 50x50@3 50x70@3
+AddButtonStyle 6 Active Vector 5 35x60@3 65x60@3 65x50@3 35x50@3 35x60@3 # Iconify
+
+## Decoration Styles
+Style * BorderColorset 1, HilightBorderColorset 0 # inactive and active border color

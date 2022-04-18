@@ -1,0 +1,14 @@
+## Decors: dBorderStyle.sys
+# Window header panel at right side.
+
+## STYLING
+
+## Decoration Styles
+Style * TitleAtRight
+Style * ResizeHintOverride
+# Style * BorderWidth 0, HandleWidth 1
+Style * Colorset 1, HilightColorset 2
+Style * BorderColorset 1, HilightBorderColorset 4
+
+## Special Rules
+Style bar* !Title, BorderWidth 0, HandleWidth 0

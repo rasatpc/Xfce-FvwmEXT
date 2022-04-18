@@ -1,0 +1,39 @@
+## Modules/VDesk/Panel: gridCmd.sys
+#
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+DestroyFunc Grid00
+AddToFunc Grid00
++ I Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Panel/page00Panel.conf
+
+DestroyFunc Grid10
+AddToFunc Grid10
++ I Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Panel/page10Panel.conf
+
+DestroyFunc Grid01
+AddToFunc Grid10
++ I Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Panel/page01Panel.conf
+
+DestroyFunc Grid11
+AddToFunc Grid10
++ I Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Panel/page11Panel.conf
+
+DestroyFunc Grid
+AddToFunc Grid
++ I GoToPage 0 0
+
+Style Grid00* SkipMapping, StartsOnPage 0 0
+Style Grid10* SkipMapping, StartsOnPage 1 0
+Style Grid01* SkipMapping, StartsOnPage 0 1
+Style Grid11* SkipMapping, StartsOnPage 1 1
+
+Grid00
+Grid10
+Grid01
+Grid11
+Grid
+
+## Close Grid button
+#KillModule FvwmButtons VGridButtons

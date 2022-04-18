@@ -1,0 +1,27 @@
+## Bindings: myMousBindings.sys
+#
+
+## MOUSEBINDS
+
+## Double Click Delay
+ClickTime 250
+MoveThreshold 3
+
+## SloppyFocus Instead of ClickToFocus
+Style * SloppyFocus, MouseFocusClickRaises
+
+## Titlebar Itself
+# Mouse 1 T A RaiseMoveX Move Maximize #(close for NsCDE)
+Mouse 1 FS A RaiseMove Resize
+Mouse 4 T A WindowShade True
+Mouse 5 T A WindowShade False
+Mouse 3 T A Menu MenuWindowOps
+
+## Rootmenu on The Desktop
+Mouse 1 R A Menu MenuFvwmRoot
+Mouse 2 R A WindowList
+Mouse 3 R A Menu MenuWindowOpsLong
+
+## On minimized windows
+Mouse 1 I A Iconify off
+Mouse 3 I A Menu MenuIconOps

@@ -1,0 +1,23 @@
+## Menus: bgButton.sys
+# Dependency Menus/XfMenu/BgPanel/*
+#
+
+## Horizonatal bar
+
+Module FvwmButtons BgHButton
+DestroyModuleConfig BgHButton:*
+*BgHButton: Geometry $[vp.width]x47-0+0
+*BgHButton: Columns $[vp.width]
+*BgHButton: Frame 0
+
+Style BgHButton !Borders, !Title, WindowListSkip, StaysOnBottom, Sticky
+
+## Vertical bar
+
+Module FvwmButtons BgVButton
+DestroyModuleConfig BgVButton:*
+*BgVButton: Geometry 92x$[vp.height]-0+0
+*BgVButton: Rows $[vp.height]
+*BgVButton: Frame 0
+
+Style BgVButton !Borders, !Title, WindowListSkip, StaysOnBottom, Sticky

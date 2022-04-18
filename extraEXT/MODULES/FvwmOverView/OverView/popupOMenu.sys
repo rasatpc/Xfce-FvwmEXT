@@ -1,0 +1,16 @@
+## Modules: OverView/popupOMenu.sys
+## Loaded by MODULES/FvwmOverView/OverView/bgWOview.sys
+#
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+SetEnv cacheov $[EXTRA_DIR]/MODULES/FvwmOverView/cache
+
+## Load windowlist thumbnails, cleanup and rebuild menu.
+
+Popup FvwmExposeMenu
+Exec exec rm -f $[cacheov]/icon.exp.*
+PipeRead 'cat $[EXTRA_DIR]/MODULES/FvwmOverView/OverView/ColorMenu.conf'
+DestroyMenu FvwmExposeMenu
+KillModule FvwmButtons bgWOButton

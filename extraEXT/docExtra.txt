@@ -1,0 +1,15 @@
+Extra contains configs that are not required by core but improve the workflow and efficiency, such as AutoHide and DeskSwitch.
+The packages are not structured into folders, besides MODULES, as in core but each config .sys file is labled with a sturcure name,
+such as Functions: autoHideList.sys.
+
+Extra contains the additional configs. Shows the structure and system flow.
+The configs are split into folders and runs in same sequence as the original Fvwm config.
+
+1. Functions
+2. Styles
+3. Menus
+4. Bindings
+5. Decors
+6. MODULES
+
+NOTE: Don't add or edit any configs in /extraEXT.
