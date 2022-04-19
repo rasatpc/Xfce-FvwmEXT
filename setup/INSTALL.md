@@ -1,15 +1,7 @@
-17 April 2022
-# HOW TO INSTALL myEXT and FVWM3 (or Fvwm2)
+19 April 2022
+# HOW TO INSTALL AND RUN FVWM ON XFCE
 
-myEXT:
-One time install and then updgrade with the Extension Installer.
-
-Download:
-* https://github.com/rasatpc/FVWM3-myEXT/archive/refs/heads/main.zip
-
-Extract and copy subfolders to ~/.fvwm
-
-# FVWM3 INSTALL & DEPENDENCIES 
+Install Xfce (if not already installed).
 
 Install Fvwm3 package `(if available)` or Fvwm2
 
@@ -24,87 +16,35 @@ Fedora:
 
 # Installing from Git FVWM3:
 
-Important dependencies for installation and usage.
+Read instructions:
+* https://github.com/rasatpc/FVWM3-myEXT/blob/main/setup/INSTALL.md
 
-CORE
+FVWM
 ====
 
-Debian:
-* sudo apt-get install libevent-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
+Download:
+* https://github.com/rasatpc/Xfce-FvwmEXT/archive/refs/heads/main.zip
 
-Arch Linux:
-* sudo pacman -Syu libevent-dev libx11-dev libxrandr-dev libxrender-dev libxt-dev libxft-dev
+Extract and copy subfolders to ~/.fvwm
 
-Fedora:
-* sudo dnf install libevent-devel libX11-devel libXrandr-devel libXt-devel libXft-devel
+XFCE
+====
 
+Load Fvwm at login:
+* COPY ~/.fvwm/setup/autostart/XfceFvwm.desktop to config/autostart/
 
-To generate/view fvwm3's documentation, XDG menu, and Network:
-===============================================================
-* sudo apt-get install asciidoctor xterm python3-xdg stalonetray
-* sudo pacman -Syu asciidoctor xterm python3-xdg stalonetray
-* sudo dnf install rubygem-asciidoctor xterm xdg-utils stalonetray
-
-OPTIONAL
-========
-
-Debian:
-* sudo apt-get install libfribidi-dev libncurses5-dev libpng-dev libreadline-dev libxcursor-dev libxpm-dev sharutils
-
-Arch Linux:
-* sudo pacman -Syu libfribidi-dev libncurses5-dev libpng-dev libreadline-dev libxcursor-dev libxpm-dev sharutils
-
-Fedora:
-* sudo dnf install fribidi-devel ncurses-devel libpng-devel readline-devel libXcursor-devel libXpm-devel sharutils
-
-Make & install command dependencies:
-====================================
-* sudo apt-get install automake dh-autoreconf autogen
-* sudo pacman -Syu automake autoreconf autogen
-* sudo dnf install automake dh-autoreconf autogen
-
-Install FVWM3
-=============
-
-* git clone https://github.com/fvwmorg/fvwm3.git
-* cd fvwm3
-* ./autogen.sh
-* ./configure --enable-mandoc
-* make
-* sudo make install
-
-Read dev-docs/INSTALL.md
-
-# For login manager
-* COPY ~/.fvwm/setup/fvwm.desktop to /usr/share/xsessions/
-
-OR create fvwm.desktop with below content.
+OR create XfceFvwm.desktop with below content.
 
 ---------
 
 [Desktop Entry]
 
-Name=Fvwm3
-
-Keywords=Fvwm Window Manager
-
-Comment=F? Virtual Window Manager
-
-Exec=fvwm3
-
-Terminal=False
-
-TryExec=fvwm3
-
-Type=Application
-
-[Window Manager]
-
-SessionManaged=true
+Exec=fvwm3 --replace
 
 -------
 
-# myEXT DEPENDENCIES
+
+# FVWM EXTENSION DEPENDENCIES
 
 Required by Extention Installer:
 * sudo apt install yad gawk sed wget
@@ -121,12 +61,7 @@ FvwmButton configs to adjust as per screen resolution:
 * sudo pacman -Syu xorg-xdpyinfo
 * sudo dnf install xdpyinfo
 
-# myEXT OPTIONAL
-
-Volume Icon (add icon in system tray):
-* sudo apt install volumeicon-alsa
-* sudo pacman -Syu volumeicon
-* sudo dnf install volumeicon
+# OPTIONAL
 
 Search app:
 * sudo apt install rofi
@@ -134,15 +69,6 @@ Search app:
 * sudo dnf install rofi
 
 Copy .fvwm/setup/rofi to .config/
-
-* sudo apt install xfce4-appfinder
-* sudo pacman -Syu xfce4-appfinder
-* sudo dnf install xfce4-appfinder
-
-Look & Feel:
-* sudo apt install lxappearance
-* sudo pacman -Syu lxappearance
-* sudo dnf install lxappearance
 
 Touchpad:
 * sudo apt install xserver-xorg-input-synaptics

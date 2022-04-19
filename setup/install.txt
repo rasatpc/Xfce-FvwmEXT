@@ -1,4 +1,4 @@
-## HOW TO INSTALL live CD and FVWM myExtensions on MX Linux and Arch Linux.
+## HOW TO INSTALL live CD and XFCE-FVWM Extensions on MX Linux and Arch Linux.
 
 MX FVWM3 live CD (terminal)
 minstall-pkexec
@@ -12,20 +12,6 @@ Manually
 #########################
 
 Read .fvwm/setup/INSTALL.md
-
-LOOK & FEEL
-Make changes with lxappearance.
-
-Logout/login
-
-----
-# Screen brightness (add icon in system tray)
-
-1. Edit .config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml
-Check that this line is there:
-<property name="show-tray-icon" type="bool" value="true"/>
-
-2. Menu <Quit> (logout and login)
 
 ----
 
@@ -43,7 +29,7 @@ Test (x synclient) Exec synclient TouchpadOff=1
 # BACKGROUND
 -------------
 
-FVWM myExtension is designed for Fvwm3 but also works on Fvwm2 with minor differences. The configs are split into folders and runs in the same sequence as the default.
+Xfce-Fvwm Extensions are designed for Fvwm3 but also works on Fvwm2 with minor differences. The configs are split into folders and runs in the same sequence as the default.
 
 .fvwm/coreEXT (essential configs)
 1. 1Functions/
@@ -65,5 +51,4 @@ AND
 
 This structure helps to maintain, debug, create new functions, decors, and modules.
 
-By rasat (8 Dec 2020)
-Last update: 17 Apr 2022
+Last update: 19 Apr 2022
