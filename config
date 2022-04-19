@@ -8,6 +8,8 @@ SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
 SetEnv USER_DIR $[HOME]/.fvwm/userEXT
 SetEnv HOME_DIR $[HOME]/.fvwm
 
+Read $[HOME_DIR]/setup/startup/start.sys
+
 ## Remove move and resize grid.
 OpaqueMoveSize unlimited
 Style * ResizeOpaque, SnapAttraction 15 SameType ScreenAll, SnapGrid

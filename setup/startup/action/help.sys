@@ -1,0 +1,5 @@
+## Modules: action/help.sys
+
+Test (x display-im6.q16) Exec exec display-im6.q16 $[HOME]/.fvwm/setup/images/fvwm3-myext-2.2-help.png
+# Test (x nomacs) Exec exec nomacs $[HOME]/.fvwm/setup/images/fvwm3-myext-2.2-help.png
+# Test (x feh) Exec exec feh $[HOME]/.fvwm/setup/images/fvwm3-myext-2.2-help.png

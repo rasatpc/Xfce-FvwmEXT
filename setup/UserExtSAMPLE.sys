@@ -1,30 +1,34 @@
 ## .fvwm/UserExt.sys
 
-## If not yet exist, copy and rename UserExtSAMPLE.sys to UserExt.sys, and
-## left-click select Restart.
+## If not yet exist, copy/rename UserExtSAMPLE.sys to .fvwm/UserExt.sys.
+## Left-click and select Restart.
 
-## UserExt.sys is for you to edit/remove Core and Extra configs, and add your own.
-
-## Here below make your changes (tag and untag) and add your own.
+## UserExt.sys is for you to edit/remove Core and Extra configs.
+## Make your changes (tag and untag) and add your own.
 
 ## NOTE: There is one user-friendly graphical Extension Installer to add and remove extensions.
-## Left-click, selcet <System><Ext-Install>
-
-SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
-SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
-SetEnv USER_DIR $[HOME]/.fvwm/userEXT
-SetEnv HOME_DIR $[HOME]/.fvwm
+## Left-click, selcet <System><EXT Install>
 
 ##################################
 ## USER (user changes and addon).
 ## Add/remove CORE and EXTRA modules.
 #################################
 
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT
+SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT
+SetEnv USER_DIR $[HOME]/.fvwm/userEXT
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Close Startup panel
+KillModule FvwmButtons StartPanel
+
 ## Permanent wallpaper
 # SetBG cloth-grey-1920x1080.png
 
 ## or last selected
 Exec exec fvwm-root $[HOME_DIR]/.BGdefault
+
+## Add permanent panel (or temporary left-click, select <Wallpapers><BgPanels>
 # Read $[EXTRA_DIR]/Menus/MyMenu/BgPanel/bluePanel.conf
 
 -----
@@ -44,7 +48,7 @@ DefaultFont "xft:Noto Sans:size=11"
 -----
 
 ## Function: Auto Move Windows.
-## To install this extension copy folder extraEXT/Functions/AutoMoveWin/ to userEXT/.
+## To install, copy folder extraEXT/Functions/AutoMoveWin/ to userEXT/.
 ## Edit AutoMoveWin/autoMoveW.sys as per choise of windows to move.
 ## Untag the below line in ExtraExt.sys or this line.
 
@@ -52,11 +56,8 @@ DefaultFont "xft:Noto Sans:size=11"
 
 -----
 
-## DashToDock hide by moving.
-# Read $[EXTRA_DIR]/MODULES/DashToDock/dHide/dashHide.sys
-
-## Load general Auto Hide List function.
-## To install this extension copy folder extraEXT/Functions/AutoHideList/ to userEXT/.
+## Function: Auto Hide List.
+## To install, copy folder extraEXT/Functions/AutoHideList/ to userEXT/.
 ## Edit AutoHideList/autoHideL.sys as per the choise of windows to hide.
 ## Untag the below line in ExtraExt.sys or this line.
 
@@ -68,10 +69,6 @@ DefaultFont "xft:Noto Sans:size=11"
 #Style * TileCascadePlacement
 
 -----
-
-## WM (configs and replacements)
-## XFCE
-## Run in terminal or autostart: "Fvwm3 --replace"
 
 ## Change FvwmOverView location
 #KillModule FvwmButtons FvwmOverView

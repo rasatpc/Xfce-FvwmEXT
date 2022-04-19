@@ -47,7 +47,7 @@ KillModule FvwmButtons TaskButtonsFlux
 
 ## Change pre-settings of FvwmOverView and add one button
 Read $[EXTRA_DIR]/MODULES/FvwmOverView/fvwmWOview.sys
-*FvwmOverView: Geometry 63x43+10+45
+*FvwmOverView: Geometry 63x43+42+3
 
 # EwmhBaseStruts [left] [right] [top] [bottom]
 # Reserves space along the edge(s) of the Screen.

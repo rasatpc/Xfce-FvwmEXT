@@ -1,0 +1,13 @@
+## Modules: action/quit.sys
+
+## If UserExt.sys doesn't exist, copy UserExtSAMPLE.sys.
+Exec $[HOME_DIR]/setup/startup/script/copySampleToUser.sh
+
+KillModule FvwmButtons StartPanel
+KillModule FvwmButtons ExitButtons
+
+Test (x featherpad) Exec exec featherpad $[HOME_DIR]/UserExt.sys
+Test (x mousepad) Exec exec mousepad $[HOME_DIR]/UserExt.sys
+
+## Restart with UserExt.sys
+Exec $[HOME_DIR]/setup/startup/script/quit-restart.sh

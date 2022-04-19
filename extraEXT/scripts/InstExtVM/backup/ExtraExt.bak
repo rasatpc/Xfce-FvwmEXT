@@ -46,13 +46,9 @@ Read $[EXTRA_DIR]/MODULES/V1x5Pager/vPager5.sys #610
 Style SimpleButton NoTitle
 Style WinListSwitch NoTitle
 Style CtrlPanelXf NoTitle
-Style StartPanel NoTitle
 
 ## No title Xfce
 Style *Whisker* NoTitle
 Style *xfce4-panel* NoTitle
-
-## Change Fvwm OverView button.
-*FvwmOverView: Geometry 78x36+42+3
 
 Exec exec fvwm-root $[HOME_DIR]/.BGdefault

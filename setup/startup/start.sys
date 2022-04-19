@@ -1,0 +1,34 @@
+## Modules: startup.sys
+#
+## Copy setup/UserExtSAMPLE.sys to .fvwm/UserExt.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+SetEnv logo-image $[HOME_DIR]/setup/startup
+
+Module FvwmButtons StartPanel
+
+DestroyModuleConfig StartPanel: *
+*StartPanel: Geometry 380x200+150-350
+*StartPanel: PressColorset 5
+*StartPanel: Fore #2b4e5e
+*StartPanel: Back #88b2b1
+*StartPanel: Frame 0
+*StartPanel: Rows 2
+*StartPanel: BoxSize smart
+*StartPanel: Font "xft:Sans:size=14:antialias=True"
+*StartPanel: Padding 2 2
+
+*StartPanel: (Icon "$[logo-image]/fvwm-logo-small.png", Colorset 0)
+*StartPanel: (3x1, Title "Xfce FvwmEXT", Colorset 0, Font "xft:Sans:size=24:antialias=True")
+
+*StartPanel: (4x1,Container(Rows 3,Frame 1))
+*StartPanel: (Title "EXT Installer", Action(Mouse 1) "Exec ~/.fvwm/extraEXT/scripts/InstExtVM/ExtInstaller.sh")
+*StartPanel: (Title Help, Action(Mouse 1) `Read $[HOME_DIR]/setup/startup/action/help.sys`)
+
+*StartPanel: (2x1,Container(Rows 0,Frame 0))
+*StartPanel: (Title Exit, Action(Mouse 1) `Read $[HOME_DIR]/setup/startup/action/exit.sys`)
+
+# Style Setting
+Style StartPanel !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
