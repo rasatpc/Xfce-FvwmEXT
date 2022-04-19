@@ -1,0 +1,50 @@
+## Modules: ctrlPanel.sys
+## By rasat
+
+KillModule FvwmButtons CtrlPanelXf
+
+## Vertical/horizontal tiling
+DestroyFun WTile
+AddToFunc WTile
+# + I FvwmRearrange -tile $0 -r -mn 2 -maximize 0 0 $[wa.width]p $[wa.height]p #(2 columns)
+ + I FvwmRearrange -tile $0 -r -mn 3 -maximize 0 0 $[wa.width]p $[wa.height]p #(3 columns)
+
+## De-tiling
+DestroyFunc DeTile
+AddToFunc DeTile
++ I All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
++ I WindowId $0 WarpToWindow 50 50
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Set small icons
+SetEnv smallIcons $[CORE_DIR]/MODULES/CtrlPanelXf/icons
+
+Module FvwmButtons CtrlPanelXf
+
+DestroyModuleConfig CtrlPanelXf: *
+*CtrlPanelXf: Fore #ffffff
+*CtrlPanelXf: Back #000000
+*CtrlPanelXf: Geometry 360x40-0+3 #Geometry -0+0
+*CtrlPanelXf: PressColorset 4
+*CtrlPanelXf: Frame 0
+*CtrlPanelXf: Rows 1
+*CtrlPanelXf: BoxSize smart
+*CtrlPanelXf: Font "xft:Sans:size=9:antialias=True"
+*CtrlPanelXf: Padding 2 2
+  
+# *CtrlPanelXf: (1x1, Icon $[smallIcons]/search-w.png, Action(Mouse 1) "Exec exec ulauncher" )
+*CtrlPanelXf: (1x1, Icon $[smallIcons]/search-w.png, Action(Mouse 1) "Exec exec rofi -show" )
+
+*CtrlPanelXf: (1x1, Icon $[smallIcons]/resize-w.png, Action Resize )
+*CtrlPanelXf: (1x1, Icon $[smallIcons]/move-w.png, Action Move  )
+*CtrlPanelXf: (1x1, Icon $[smallIcons]/tile-w.png, Action WTile)
+*CtrlPanelXf: (1x1, Icon $[smallIcons]/detile-w.png, Action DeTile)
+*CtrlPanelXf: (Title Min, Back #faa46e, Action Thumbnail )
+*CtrlPanelXf: (Title Max, Back #85a772, Action Maximize 97 90 ) #width and hight
+*CtrlPanelXf: (Title Close, Back #e55757, Action Destroy)
+*CtrlPanelXf: (1x1, Icon $[smallIcons]/quit-w.png, Action(Mouse 1) "Exec exec xfce4-session-logout")
+
+# Style Setting
+Style CtrlPanelXf !Borders, !Title, WindowListSkip, StaysOnTop, Sticky

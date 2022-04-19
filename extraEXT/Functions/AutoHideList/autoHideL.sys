@@ -23,7 +23,7 @@ DestroyFunc enter_handler
 AddToFunc enter_handler
 #+ I autohide V1x5Pager		1500 E
 #+ I autohide miniPager		1200 N
-#+ I autohide ControlPanelB 1300 N
+#+ I autohide CtrlPanelXf   1300 N
 #+ I autohide SimpleButton	1200 N
 #+ I autohide ExtensionSwitch 2000 E
 #+ I autohide DashToDock	1500 W

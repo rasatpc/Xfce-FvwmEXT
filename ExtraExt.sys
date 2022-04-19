@@ -45,7 +45,7 @@ Read $[EXTRA_DIR]/MODULES/V1x5Pager/vPager5.sys #610
 
 Style SimpleButton NoTitle
 Style WinListSwitch NoTitle
-Style ControlPanelB NoTitle
+Style CtrlPanelXf NoTitle
 
 ## No title Xfce
 Style *Whisker* NoTitle

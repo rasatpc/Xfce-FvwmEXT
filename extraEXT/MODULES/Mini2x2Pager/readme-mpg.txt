@@ -1,6 +1,6 @@
 # readme-cpgd.txt
 
-This config READ ControlPanelB package (including RestartShutdown).
+This config READ CtrlPanelXf package
 
 To install or edit .fvwm/ExtraEXT.sys
 

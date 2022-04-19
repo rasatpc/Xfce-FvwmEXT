@@ -11,10 +11,10 @@ KillModule FvwmPager V2x4Pager
 KillModule FvwmPager ControlPagerB
 
 # Load Control Panel Buttons
-Read $[CORE_DIR]/MODULES/ControlPanelB/controlPanel.sys
+Read $[CORE_DIR]/MODULES/CtrlPanelXf/ctrlPanel.sys
 
 # Change geometry
-*ControlPanelB: Geometry 278x38-180+3
+*CtrlPanelXf: Geometry 278x38-180+3
 
 # Virtual Desktop
 DesktopSize "2x2"
@@ -39,7 +39,7 @@ DestroyModuleConfig miniPager: *
 
 Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 151, WindowListSkip, FixedSize, !Iconifiable, Sticky, StaysOnTop
 
-## Change pre-settings of controlPanelB
-KillModule FvwmButtons ControlPanelB
-Read $[CORE_DIR]/MODULES/ControlPanelB/controlPanel.sys
-*ControlPanelB: Geometry 360x39-135+3
+## Change pre-settings of CtrlPanelXf
+KillModule FvwmButtons CtrlPanelXf
+Read $[CORE_DIR]/MODULES/CtrlPanelXf/ctrlPanel.sys
+*CtrlPanelXf: Geometry 360x39-135+3
