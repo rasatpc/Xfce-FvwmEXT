@@ -13,7 +13,6 @@ SetEnv HOME_DIR $[HOME]/.fvwm
 
 ## Load 1.Functions
 Read $[CORE_DIR]/1Functions/StartUpFunc/startUP.sys
-Read $[CORE_DIR]/1Functions/InitCheck/initC.sys
 
 ## Load 2-3.Styles
 Read $[CORE_DIR]/2-3Styles/FVWM-Colorsets/fvwmColorsets.sys
