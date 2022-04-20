@@ -41,6 +41,8 @@ OR create XfceFvwm.desktop with below content.
 
 Exec=fvwm3 --replace
 
+Exec=fvwm --replace
+
 -------
 
 
