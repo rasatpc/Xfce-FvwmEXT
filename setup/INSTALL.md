@@ -31,7 +31,7 @@ XFCE
 ====
 
 Load Fvwm at login:
-* COPY ~/.fvwm/setup/autostart/XfceFvwm.desktop to config/autostart/
+* COPY ~/.fvwm/setup/autostart/XfceFvwm.desktop to /.config/autostart/
 
 OR create XfceFvwm.desktop with below content.
 
