@@ -1,15 +1,15 @@
-19 April 2022
+21 April 2022
 # HOW TO INSTALL AND RUN FVWM ON XFCE
 
 Install Xfce (if not already installed).
 
-Install Fvwm3 package `(if available)` or Fvwm2
+Install Fvwm3 or Fvwm2 package.
 
 Debian based Linux:
-* sudo apt install fvwm3
+* sudo apt install fvwm3 (or fvwm)
 
 Arch Linux:
-* sudo yay -S fvwm3
+* sudo yay -S fvwm3 (or fvwm)
 
 Fedora:
 * sudo dfn install fvwm3

@@ -49,7 +49,7 @@ AddToFunc   SetBG
 
 ## Center MODULES/RestartShutdown postion as per screen resolution.
 ## Needs xdpyinfo installed.
-Test (x xdpyinfo) Exec $[CORE_DIR]/1Functions/StartUpFunc/scripts/ButtonScreenPosition.sh
+Test (x xdpyinfo) Exec $[CORE_DIR]/1Functions/StartUpFunc/scripts/ScreenPosition.sh
 
 ## Clears all bindings.
 # Clear-Default-Bindings
