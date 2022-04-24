@@ -31,17 +31,17 @@ XFCE
 ====
 
 Load Fvwm at login:
-* COPY ~/.fvwm/setup/autostart/XfceFvwm.desktop to /.config/autostart/
+* COPY ~/.fvwm/setup/autostart/XfceFvwm2-3.desktop to /.config/autostart/
 
-OR create XfceFvwm.desktop with below content.
+OR create XfceFvwm2-3.desktop with below content. (At startup a script checks if Fvwm2 or 3 and replaces with correct desktop file).
 
 ---------
 
 [Desktop Entry]
 
-Exec=fvwm3 --replace
-
 Exec=fvwm --replace
+
+Exec=fvwm3 --replace
 
 -------
 

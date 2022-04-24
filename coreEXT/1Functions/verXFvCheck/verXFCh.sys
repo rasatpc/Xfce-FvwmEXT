@@ -1,0 +1,10 @@
+## Functions: verCh.sys
+
+SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
+## Checking for Fvwm2 or Fvwm3.
+Exec $[CORE_DIR]/1Functions/verXFvCheck/script/versionCh.sh
+
+## Restart manually (if no other solution).
+# Resart
