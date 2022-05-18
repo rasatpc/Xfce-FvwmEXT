@@ -51,4 +51,4 @@ AND
 
 This structure helps to maintain, debug, create new functions, decors, and modules.
 
-Last update: 25 Apr 2022
+Last update: 18 May 2022
