@@ -28,13 +28,13 @@ FVWM
 Download:
 * https://github.com/rasatpc/Xfce-FvwmEXT/archive/refs/heads/main.zip
 
-Extract and copy subfolders to ~/.fvwm
+Extract the subfolders to ~/.fvwm
 
 XFCE
 ====
 
 Load Fvwm at login:
-* COPY ~/.fvwm/setup/autostart/XfceFvwm2-3.desktop to /.config/autostart/
+* `cp .fvwm/Xfce-FvwmEXT-main/setup/autostart/XfceFvwm2-3.desktop ~/.config/autostart`
 
 OR create XfceFvwm2-3.desktop with below content. (At startup a script checks if Fvwm2 or 3 and replaces with correct desktop file).
 
