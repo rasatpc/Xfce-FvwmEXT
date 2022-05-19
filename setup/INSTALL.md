@@ -14,7 +14,7 @@ Arch based GNU/Linux:
 Fedora/OpenSUSE/other RPM-based distros:
 * `sudo dnf install fvwm3`
 
-Alpine GNU/Linux:
+Alpine Linux:
 * `apk add fvwm`
 
 # Installing from Git FVWM3:
