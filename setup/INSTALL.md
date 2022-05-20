@@ -5,14 +5,17 @@ Install Xfce (if not already installed).
 
 Install Fvwm3 or Fvwm2 package.
 
-Debian based Linux:
-* sudo apt install fvwm3 (or fvwm)
+Debian based GNU/Linux:
+* `sudo apt install fvwm3` (or fvwm)
 
 Arch Linux:
-* sudo yay -S fvwm3 (or fvwm)
+* `yay -S fvwm3` (or fvwm)
 
-Fedora:
-* sudo dfn install fvwm3
+Fedora/OpenSUSE/other RPM-based distros:
+* `sudo dfn install fvwm3`
+
+Alpine Linux:
+* `apk add fvwm`
 
 # Installing from Git FVWM3:
 
@@ -25,13 +28,13 @@ FVWM
 Download:
 * https://github.com/rasatpc/Xfce-FvwmEXT/archive/refs/heads/main.zip
 
-Extract and copy subfolders to ~/.fvwm
+Extract the copy subfolders to ~/.fvwm
 
 XFCE
 ====
 
 Load Fvwm at login:
-* COPY ~/.fvwm/setup/autostart/XfceFvwm2-3.desktop to /.config/autostart/
+* `cp .fvwm/Xfce-FvwmEXT-main/setup/autostart/XfceFvwm2-3.desktop ~/.config/autostart`
 
 OR create XfceFvwm2-3.desktop with below content. (At startup a script checks if Fvwm2 or 3 and replaces with correct desktop file).
 
