@@ -8,7 +8,7 @@ FVWM3 (ver. 1.0.4-123)
 
 It comes with a minimal startup configure. It gives the user the choice of expression. Details such as the appearance of windows, function of panels, pagers, programs that will be used, mouse/key control, etc., are created and defined by the user.
 
-Xfce-Fvwm Extensions (ver. 1.0.6)
+Xfce-Fvwm Extensions (ver. 1.0.7)
 
 Is a collection of ready-made configs. A model for you to use, modify or create your own extensions. The default FVWM config is the base, directly in ~/.fvwm. The config is split into folders and runs in the same sequence as the original. The additional extension configs are simply added in associated folders.
 

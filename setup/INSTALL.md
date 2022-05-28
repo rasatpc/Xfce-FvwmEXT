@@ -1,4 +1,4 @@
-18 May 2022
+28 May 2022
 # HOW TO INSTALL AND RUN FVWM ON XFCE
 
 Install Xfce (if not already installed).

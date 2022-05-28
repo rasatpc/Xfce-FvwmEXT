@@ -1,3 +1,3 @@
-18 may 2022
-Xfce-Fvwm Extensions ver. 1.0.6
+28 may 2022
+Xfce-Fvwm Extensions ver. 1.0.7
 
