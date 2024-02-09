@@ -37,7 +37,7 @@ Exec exec fvwm-root $[HOME_DIR]/.BGdefault
 # Test (x synclient) Exec synclient TouchpadOff=1
 
 ## Load Yad script postions.
-Read $[CORE_DIR]/1Functions/YadPosition/yadPos.sys
+Read $[CORE_DIR]/1Functions/WinPosition/winPos.sys
 
 ## Change default font.
 DefaultFont "xft:Noto Sans:size=11"

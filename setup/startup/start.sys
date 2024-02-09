@@ -5,6 +5,9 @@
 SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
 SetEnv HOME_DIR $[HOME]/.fvwm
 
+## Load Colorsets
+Read $[CORE_DIR]/2-3Styles/MyColorsets/myColorsets.sys
+
 SetEnv logo-image $[HOME_DIR]/setup/startup
 
 Module FvwmButtons StartPanel
@@ -20,8 +23,8 @@ DestroyModuleConfig StartPanel: *
 *StartPanel: Font "xft:Sans:size=14:antialias=True"
 *StartPanel: Padding 2 2
 
-*StartPanel: (Icon "$[logo-image]/fvwm-logo-small.png", Colorset 0)
-*StartPanel: (3x1, Title "Xfce FvwmEXT", Colorset 0, Font "xft:Sans:size=24:antialias=True")
+*StartPanel: (Icon "$[logo-image]/fvwm-logo-small.png", Colorset 26)
+*StartPanel: (3x1, Title "Xfce FvwmEXT", Colorset 26, Font "xft:Sans:size=24:antialias=True")
 
 *StartPanel: (4x1,Container(Rows 3,Frame 1))
 *StartPanel: (Title "EXT Installer", Action(Mouse 1) "Exec ~/.fvwm/extraEXT/scripts/InstExtVM/ExtInstaller.sh")

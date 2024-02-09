@@ -4,6 +4,12 @@
 SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
 SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
 
+## Fvwm Kise
+# SetEnv CORE_DIR $[HOME]/.fvwm/core
+# SetEnv USER_DIR $[HOME]/.fvwm/user
+## Example
+# Read $[USER_DIR]/DiaryThumbnails/diaryThumbPlace.sys
+
 ## Style
 Read $[EXTRA_DIR]/Styles/DiaryThumbnails/diaryThumbPlace.sys
 Read $[EXTRA_DIR]/Styles/FvwmThumbnails/fvwmThumbnail.sys

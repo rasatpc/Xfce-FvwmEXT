@@ -37,7 +37,7 @@ DestroyModuleConfig miniPager: *
 *miniPager: UseSkipList # hides modules
 *miniPager: MiniIcons
 
-Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 151, WindowListSkip, FixedSize, !Iconifiable, Sticky, StaysOnTop
+Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 33, WindowListSkip, FixedSize, !Iconifiable, Sticky, StaysOnTop
 
 ## Change pre-settings of CtrlPanelXf
 KillModule FvwmButtons CtrlPanelXf

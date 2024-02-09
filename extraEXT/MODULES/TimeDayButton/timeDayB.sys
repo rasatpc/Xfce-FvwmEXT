@@ -25,5 +25,5 @@ Style Calendar* NoTitle # no titel bar
 Style MyRightPanel StaysOnBottom
 
 
-## Check Functions: yadPos.sys
-Read $[CORE_DIR]/1Functions/YadPosition/yadPos.sys
+## Check Functions: winPos.sys
+Read $[CORE_DIR]/1Functions/WinPosition/winPos.sys

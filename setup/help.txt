@@ -4,11 +4,11 @@ Xfce is a lightweight desktop environment for UNIX-like operating systems. It ai
 
 FVWM is a Window Manager (WM). What sets it apart from other WMs, it is also a *Virtual* window manager. Among the powerful Fvwm features is the virtual desktop, which allows you to place windows on an area much larger than the actual size of the visible display.
 
-FVWM3 (ver. 1.0.4-123)
+FVWM3 (ver. 1.0.9)
 
 It comes with a minimal startup configure. It gives the user the choice of expression. Details such as the appearance of windows, function of panels, pagers, programs that will be used, mouse/key control, etc., are created and defined by the user.
 
-Xfce-Fvwm Extensions (ver. 1.0.7)
+Xfce-Fvwm Extensions (ver. 1.1.0)
 
 Is a collection of ready-made configs. A model for you to use, modify or create your own extensions. The default FVWM config is the base, directly in ~/.fvwm. The config is split into folders and runs in the same sequence as the original. The additional extension configs are simply added in associated folders.
 

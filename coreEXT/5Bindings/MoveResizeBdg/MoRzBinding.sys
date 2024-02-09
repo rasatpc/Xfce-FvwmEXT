@@ -1,21 +1,18 @@
 ## Bindings: MoRzBinding.sys
 
-## Fvwm Forum:
-## https://fvwmforums.org/t/solved-change-fvwm-title-bar-buttons-order-disable-iconify-to-desktop-widget/2392
-
-## Move windows with Super+left mouse click.
+## Move window (Super+left mouse click).
 DestroyFunc FocusWhenMove
 AddToFunc FocusWhenMove
  + I Raise
  + I Focus
- + M ThisWindow (Maximized) Maximize False
- + M TestRc (Match) Move 50-50w 50-50w
- + M TestRc (Match) WarpToWindow 50 10
+# + M ThisWindow (Maximized) Maximize False
+# + M TestRc (Match) Move 50-50w 50-50w
+# + M TestRc (Match) WarpToWindow 50 10
  + M Move
 
 Mouse 1 WS 4 FocusWhenMove
 
-## Resize windows with Super+left mouse click
+## Resize window (Super+right mouse click).
 DestroyFunc FocusWhenResize
 AddToFunc FocusWhenResize
  + I Raise

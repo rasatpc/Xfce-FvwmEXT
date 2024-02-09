@@ -4,31 +4,34 @@
 # parts of fvwm such as window decor, menus, modules, etc.
 # Check 2-3Styles/FVWM-Colorsets
 
-## Colorset for myMenu.conf
-Colorset 0 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e, Plain, NoShape
-
-## Inactive windows (bg) and text (fg) (org. fvwmColorsets.sys)
-Colorset 1 fg #000000, bg #c5c5c5, hi, sh, Plain, NoShape
-
-## Active windows borders (org. fvwmColorsets.sys)
-Colorset 4  fg black, bg #9c9c9c, hi #24424f, sh #111f26, Plain, NoShape
-
-## Pager
-Colorset 15 fg #ffffff, bg #3a697e, hi, sh, Plain, NoShape
-Colorset 151 bg #d9d9d9, NoShape
-
-## Active Window (BorderStyle)
-Colorset 16 fg #ffffff, bg #2b4e5e, hi #bed9e6, sh #2b4e5e, Plain, NoShape
-
-## Inactive Window (BorderStyle)
-Colorset 17 fg #ffffff, bg #9aadb6, Plain, NoShape
-
 ## Transparent
-Colorset 18 Transparent
+ColorSet 15 RootTransparent Buffer, Tint #4a516a 60, fg white, bg black
+Colorset 24 Transparent
+
+### GREEN
+Colorset 16 VGradient 50 #638079 #b6b6b6, fg #ffffff
+
+## FvwmPager
+Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
+Colorset 34 fg #ffffff, bg #3a697e, hi, sh, Plain, NoShape
+Colorset 33 bg #d9d9d9, NoShape
 
 ## No borderline
 Colorset 19 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e
-Colorset 191 fg #ffffff, bg #4e3715, hi #2b4e5e, sh #2b4e5e
+Colorset 20 fg #ffffff, bg #4e3715, hi #2b4e5e, sh #2b4e5e
+
+## FvwmPager and Stallone traybar
+Colorset 21  fg #ffffff, bg #028383, hi, sh, Plain, NoShape
+
+## Title active color
+Colorset 26 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e, Plain, NoShape
+Colorset 32 fg black, bg #9c9c9c, hi #24424f, sh #111f26, Plain, NoShape
+
+## Title inactive color (bg) and text (fg)
+Colorset 27 fg #000000, bg #028383, hi, sh, Plain, NoShape
+Colorset 31 fg #000000, bg #c5c5c5, hi, sh, Plain, NoShape
+Colorset 37 fg #ffffff, bg #7194a6, hi, sh, Plain, NoShape
 
 #########
 ## Colorset numbers used by 4Menus/BgPanel/*.conf
@@ -41,58 +44,42 @@ Colorset 191 fg #ffffff, bg #4e3715, hi #2b4e5e, sh #2b4e5e
 # Vertical = V
 
 ### GREY
-Colorset 20 VGradient 50 #646464 #b6b6b6
-Colorset 201 HGradient 50 #646464 #b6b6b6
-
-### GREEN
-# Colorset 21 bg #21d040 #(close for NsCDE)
-# Colorset 22 VGradient 30 #21d040 #cfcfcf  #(close for NsCDE)
+Colorset 35 VGradient 50 #646464 #b6b6b6
+Colorset 36 HGradient 50 #646464 #b6b6b6
 
 ### BROWN
-# Colorset 23 bg #5c564e
-Colorset 24 VGradient 100 #5c564e #f5f5dc
+Colorset 39 bg #5c564e
+Colorset 40 VGradient 100 #5c564e #f5f5dc
 
 ### BLUE
-Colorset 25 HGradient 200 #d1d4d7 #17576a
-Colorset 251 VGradient 200 #17576a #d1d4d7
-Colorset 252 VGradient 200 #d1d4d7 #17576a
-Colorset 27 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 41 HGradient 200 #d1d4d7 #17576a
+Colorset 42 HGradient 200 #17576a #d1d4d7
+Colorset 44 VGradient 200 #17576a #d1d4d7
+Colorset 45 VGradient 200 #d1d4d7 #17576a
+Colorset 46 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain, NoShape
 
 ### WOOD
-Colorset 26 bg #deb274
-Colorset 261 HGradient 10 #cd935d #e1bc8b
-Colorset 262 VGradient 50 #e4c293 #bc7f47
-Colorset 263 VGradient 50 #bc7f47 #e4c293
-Colorset 264 VGradient 100 #deb274 #ebce9b
+Colorset 58 bg #deb274
+Colorset 48 HGradient 10 #cd935d #e1bc8b
+Colorset 49 VGradient 50 #e4c293 #bc7f47
+Colorset 50 VGradient 50 #bc7f47 #e4c293
+Colorset 55 VGradient 100 #deb274 #ebce9b
+Colorset 56 HGradient 100 #ebce9b #deb274
 
 ## BLUE and BROWN
-Colorset 110 fg #ffffff, bg #eaeaea, hi #ffffff, sh #ffffff, Plain, NoShape
-Colorset 111 fg #ffffff, bg #3a697e, hi #ffffff, sh #ffffff, Plain, NoShape
-Colorset 112 fg #ffffff, bg #bc7f47, hi #ffffff, sh #ffffff, Plain, NoShape
-Colorset 361 HGradient 50 #bc7f47 #deb274
-Colorset 362 VGradient 50 #deb274 #bc7f47
-Colorset 363 VGradient 50 #c0ccd1 #42616f
-
-Colorset 364 VGradient 50 #7d99a5 #42616f
-Colorset 365 VGradient 50  #c0ccd1 #7d99a5
-
-
-##########
-## End
-##########
+Colorset 52 fg #ffffff, bg #eaeaea, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 53 fg #ffffff, bg #3a697e, hi #ffffff, sh #ffffff, Plain, NoShape
+Colorset 54 fg #ffffff, bg #bc7f47, hi #ffffff, sh #ffffff, Plain, NoShape
 
 ### Other Colorsets
-Colorset 202 VGradient 50 #f5f6f7 #b6b6b6
-Colorset 201 HGradient 50 #646464 #b6b6b6
+Colorset 57 VGradient 50 #c0ccd1 #42616f
+Colorset 59 VGradient 50  #c0ccd1 #7d99a5
+Colorset 60 VGradient 50 #f5f6f7 #b6b6b6
+Colorset 61 HGradient 20 #ababab #666c63
+Colorset 62 HGradient 20 #666c63 #ababab
+Colorset 63 VGradient 20 #ababab #666c63
+Colorset 64 fg #666c63, bg #666c63
+Colorset 65 fg #ababab, bg #ababab hi #ffffff, sh #ababab, Plain, NoShape
 
-Colorset 266 HGradient 20 #ababab #666c63
-Colorset 272 HGradient 20 #666c63 #ababab
-Colorset 273 VGradient 20 #ababab #666c63
-Colorset 274 VGradient 20 #666c63 #ababab
-
-Colorset 270 VGradient 50 #c0ccd1 #42616f
-Colorset 271 VGradient 50 #42616f #c0ccd1
-Colorset 265 VGradient 40 #785405 #ffe2a3
-Colorset 267 VGradient 20 #42616f #ffffff
-Colorset 268 fg #666c63, bg #666c63
-Colorset 269 fg #ababab, bg #ababab hi #ffffff, sh #ababab, Plain, NoShape
+## Colorset 67 to 84 reserved for FancyDecor.
+## .fvwm/extraEXT/Decors/FancyDecor/

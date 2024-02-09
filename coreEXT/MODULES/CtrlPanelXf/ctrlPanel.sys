@@ -27,7 +27,7 @@ DestroyModuleConfig CtrlPanelXf: *
 *CtrlPanelXf: Fore #ffffff
 *CtrlPanelXf: Back #000000
 *CtrlPanelXf: Geometry 360x40-0+3 #Geometry -0+0
-*CtrlPanelXf: PressColorset 4
+*CtrlPanelXf: PressColorset 32
 *CtrlPanelXf: Frame 0
 *CtrlPanelXf: Rows 1
 *CtrlPanelXf: BoxSize smart

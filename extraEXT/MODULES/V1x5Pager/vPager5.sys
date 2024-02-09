@@ -22,7 +22,7 @@ DestroyModuleConfig V1x5Pager: *
 *V1x5Pager: Back #d9d9d9
 *V1x5Pager: HilightColorset * 6 #selected page background (original 13)
 *V1x5Pager: BalloonColorset * 10 # font color
-*V1x5Pager: WindowColorsets 10 27 #original 10 (inactive) 11 (active apps)
+*V1x5Pager: WindowColorsets 10 46 #original 10 (inactive) 11 (active apps)
 *V1x5Pager: Font none
 *V1x5Pager: SolidSeparators
 *V1x5Pager: WindowBorderWidth 1

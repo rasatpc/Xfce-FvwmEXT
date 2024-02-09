@@ -14,13 +14,13 @@ Module FvwmButtons FvwmOverView
 
 DestroyModuleConfig FvwmOverView: *
 *FvwmOverView: Geometry 77x36+0+3
-*FvwmOverView: PressColorset 4
+*FvwmOverView: PressColorset 32
 *FvwmOverView: Frame 0
 *FvwmOverView: Rows 1
 *FvwmOverView: Columns 1
 *FvwmOverView: Padding 0 0
 
-*FvwmOverView: (46x1, Colorset 272, Icon $[wo-icon]/appsView-38x38.png, Action(Mouse 1) `Read $[EXTRA_DIR]/MODULES/FvwmOverView/OverView/WinListExpose.sys` )
+*FvwmOverView: (46x1, Colorset 62, Icon $[wo-icon]/appsView-38x38.png, Action(Mouse 1) `Read $[EXTRA_DIR]/MODULES/FvwmOverView/OverView/WinListExpose.sys` )
 
 ## Style setting
 Style FvwmOverView !Borders, !Title, WindowListSkip, StaysOnTop, Sticky

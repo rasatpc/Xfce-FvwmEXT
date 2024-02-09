@@ -12,7 +12,7 @@ Module FvwmButtons WinListSwitch
 DestroyModuleConfig WinListSwitch: *
 *WinListSwitch: Fore #ffffff
 *WinListSwitch: Geometry 92x30-0+120
-*WinListSwitch: PressColorset 4
+*WinListSwitch: PressColorset 32
 *WinListSwitch: Frame 0
 *WinListSwitch: Rows 1
 *WinListSwitch: BoxSize smart

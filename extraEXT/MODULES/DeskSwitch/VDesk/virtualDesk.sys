@@ -40,7 +40,7 @@ AddToFunc DeTile
 *miniPager: UseSkipList # hides modules
 *miniPager: MiniIcons
 
-Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 151, WindowListSkip, FixedSize, !Iconifiable, Sticky, StaysOnTop
+Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 33, WindowListSkip, FixedSize, !Iconifiable, Sticky, StaysOnTop
 
 ## MiniControlButtons
 # Set The Apps Icon Folder (32x32)
@@ -52,7 +52,7 @@ DestroyModuleConfig MiniControlB: *
 *MiniControlB: Fore #ffffff
 *MiniControlB: Back #2b4e5e
 *MiniControlB: Geometry 480x32-10+10
-*MiniControlB: PressColorset 4
+*MiniControlB: PressColorset 32
 *MiniControlB: Frame 0
 *MiniControlB: Rows 1
 *MiniControlB: BoxSize smart
@@ -76,7 +76,7 @@ Module FvwmButtons LockButtons
 DestroyModuleConfig LockButtons: *
 *LockButtons: Back #2b4e5e
 *LockButtons: Geometry 90x30-100+55
-*LockButtons: PressColorset 1
+*LockButtons: PressColorset 31
 *LockButtons: Frame 0
 *LockButtons: Rows 1
 *LockButtons: BoxSize smart

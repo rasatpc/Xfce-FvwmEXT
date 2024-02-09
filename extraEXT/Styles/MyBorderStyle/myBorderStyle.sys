@@ -7,13 +7,11 @@
 Style * TitleAtTop
 Style * ResizeHintOverride
 
-Style * Colorset 1, HilightColorset 0 # inactive and active title bar
-Style * BorderColorset 1, HilightBorderColorset 4
+Style * Colorset 31, HilightColorset 26 # inactive and active title bar
+Style * BorderColorset 31, HilightBorderColorset 32
 
 ## Special Rules
 Style * Title, !Handles, BorderWidth 1, HandleWidth 0
 
 Style RightPanel NoTitle
 Style FvwmPager NoTitle
-
-

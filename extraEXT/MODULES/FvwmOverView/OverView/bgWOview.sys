@@ -11,11 +11,11 @@ Module FvwmButtons bgWOButton
 DestroyModuleConfig bgWOButton: *
 *bgWOButton: Geometry 1400x940+80+70
 *bgWOButton: Font "xft:Sans:size=18:antialias=True"
-*bgWOButton: Colorset 18
+*bgWOButton: Colorset 40
 *bgWOButton: Frame 3
 *bgWOButton: BoxSize smart
 
 *bgWOButton: (Title "Click where to list overview windows", Action(Mouse 1) "Read $[EXTRA_DIR]/MODULES/FvwmOverView/OverView/popupOMenu.sys")
 
-Style bgWOButton !Borders, !Title, ParentalRelativity, FocusColorset 18, StaysOnTop, WindowListSkip, Sticky
+Style bgWOButton !Borders, !Title, ParentalRelativity, FocusColorset 40, StaysOnTop, WindowListSkip, Sticky
 

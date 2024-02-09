@@ -7,8 +7,8 @@
 Style * TitleAtRight
 Style * ResizeHintOverride
 # Style * BorderWidth 0, HandleWidth 1
-Style * Colorset 1, HilightColorset 2
-Style * BorderColorset 1, HilightBorderColorset 4
+Style * Colorset 31, HilightColorset 2
+Style * BorderColorset 31, HilightBorderColorset 32
 
 ## Special Rules
 Style bar* !Title, BorderWidth 0, HandleWidth 0
