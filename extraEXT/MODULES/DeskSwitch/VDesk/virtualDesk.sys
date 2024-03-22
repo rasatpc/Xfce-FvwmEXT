@@ -4,11 +4,8 @@
 ## https://fvwmforums.org/t/getting-things-done-oriented-fvwm-config/1135
 ## https://jslf.app/projects/fvwm/FVWM-demo.gif
 
-SetEnv CORE_DIR $[HOME]/.fvwm/coreEXT/
 SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
 SetEnv HOME_DIR $[HOME]/.fvwm
-
-----
 
 ## Vertical/horizontal tiling
 DestroyFun cTile
@@ -44,15 +41,19 @@ Style "miniPager" NoTitle, !Handles, Borders, BorderWidth 2, BorderColorset 33, 
 
 ## MiniControlButtons
 # Set The Apps Icon Folder (32x32)
+
 SetEnv smallIcons $[EXTRA_DIR]/MODULES/DeskSwitch/icons
+
+## Fvwm Kise
+# SetEnv smallIcons $[EXTRA_DIR]/DeskSwitch/icons
 
 Module FvwmButtons MiniControlB
 
 DestroyModuleConfig MiniControlB: *
 *MiniControlB: Fore #ffffff
 *MiniControlB: Back #2b4e5e
-*MiniControlB: Geometry 480x32-10+10
-*MiniControlB: PressColorset 32
+*MiniControlB: Geometry 480x32-5+20
+*MiniControlB: PressColorset 4
 *MiniControlB: Frame 0
 *MiniControlB: Rows 1
 *MiniControlB: BoxSize smart
@@ -62,8 +63,8 @@ DestroyModuleConfig MiniControlB: *
 *MiniControlB: (1x1, Icon $[smallIcons]/win/search-w.png, Action(Mouse 1) "Exec exec rofi -show" )
 *MiniControlB: (1x1, Icon $[smallIcons]/win/resize-w.png, Action Resize )
 *MiniControlB: (1x1, Icon $[smallIcons]/win/move-w.png, Action Move  )
-*MiniControlB: (1x1, Icon $[smallIcons]/win/tile-w.png, Action cTile)
 *MiniControlB: (1x1, Icon $[smallIcons]/win/detile-w.png, Action DeTile)
+*MiniControlB: (1x1, Icon $[smallIcons]/win/tile-w.png, Action cTile)
 *MiniControlB: (Title MaxH, Back #85a772, Fore #ffffff, Action Maximize 140 120 )
 *MiniControlB: (Title MaxV, Back #85a772, Fore #ffffff, Action Maximize 70 180 )
 *MiniControlB: (Title Exit, Back #e55757, Action Restart)
@@ -75,8 +76,8 @@ Module FvwmButtons LockButtons
 
 DestroyModuleConfig LockButtons: *
 *LockButtons: Back #2b4e5e
-*LockButtons: Geometry 90x30-100+55
-*LockButtons: PressColorset 31
+*LockButtons: Geometry 90x30-95+65
+*LockButtons: PressColorset 1
 *LockButtons: Frame 0
 *LockButtons: Rows 1
 *LockButtons: BoxSize smart
@@ -87,16 +88,14 @@ DestroyModuleConfig LockButtons: *
 
 Style LockButtons !Borders, !Title, WindowListSkip, StaysOnTop, Sticky
 
-## Add Grid button
-# Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/virtualGrid.sys
 ## Add grid in each page
-Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Panel/gridCmd.sys
+Read $[EXTRA_DIR]/MODULES/DeskSwitch/VDesk/Grid/gridPageFunc.sys
 
 ## Change preloaded settings
 
 ## Change WinList postion
 KillModule FvwmButtons WinListSwitch
-Read $[CORE_DIR]/MODULES/WinListSwitch/winLSwitch.sys
+Read $[EXTRA_DIR]/MODULES/WinListSwitch/winLSwitch.sys
 *WinListSwitch: Geometry 90x30-10+55
 
 ## Load Mouse scroll

@@ -2,13 +2,15 @@
 ## By rasat 8 April 2021
 
 SetEnv EXTRA_DIR $[HOME]/.fvwm/extraEXT/
+SetEnv HOME_DIR $[HOME]/.fvwm
+
 KillModule FvwmButtons DeskSwitch
 
 Module FvwmButtons DeskSwitch
 
 DestroyModuleConfig DeskSwitch: *
 *DeskSwitch: Geometry 90x30-0+150
-*DeskSwitch: PressColorset 32
+*DeskSwitch: PressColorset 4
 *DeskSwitch: Frame 0
 *DeskSwitch: Rows 1
 *DeskSwitch: Font "xft:Sans:size=12:antialias=True"

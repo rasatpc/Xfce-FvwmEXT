@@ -1,12 +1,10 @@
 Welcome to FVWM Virtual Window. Extension config MODULES/DeskSwitch (VM Desk) allows you to place windows on an area much larger than the actual size of the visible display.
 
-The size of VM Desk is 2x3. It has six pages.
+The size of VM Desk is 2x2. It has four pages.
 -----------
 |0 0 |1 0 |
 -----------
 |0 1 |1 1 |
------------
-|0 2 |1 2 |
 -----------
 
 The icon buttons at the right-upper corner allow you to move and resize the window into any size within the pages. It allows working on large-size images and documents and to zoom 100% or 200%.
@@ -25,4 +23,4 @@ HOWTO:
 
 I hope you like this virtual feature of FVWM.
 
-rasat (12 Feb 2021)
+rasat (26 Jan 2023)

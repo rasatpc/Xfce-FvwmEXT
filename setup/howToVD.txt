@@ -20,4 +20,4 @@ HOWTO:
 
 6. Before exiting (Quit), close or move applications on pages 1 0, 1 1, and 1 2 to left-side pages. They may not be visible on the general work desk (1x5).
 
-rasat (9 Jan 2024)
+rasat (23 Mar 2024)

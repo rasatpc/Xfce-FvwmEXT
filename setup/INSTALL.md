@@ -1,4 +1,4 @@
-9 Jan 2024
+23 Mar 2024
 # HOW TO INSTALL AND RUN FVWM ON XFCE
 
 Install Xfce (if not already installed).
