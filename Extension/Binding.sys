@@ -1,0 +1,38 @@
+## Extention: Binding.sys
+
+## KEY
+# Close window (alt-x)
+# Maximize (alt-m)
+# Full-screen Maximize (alt-f)
+# Minimize (thumbnail) (alt-t)
+
+## MOUSE
+# Move window (Super+left mouse click)
+# Resize window (Super+right mouse click)
+
+## Key commands
+# A = Alt
+# C = Control
+# S = Shift
+# M = Meta (Alt)
+# Super = WinIcon
+
+## KEY-MOUSE BINDINGS (untag below lines)
+
+# Silent Key z A M Move # alt-z (letter)
+# Silent Key F8 A C Resize # ctrl-F8
+# Silent Key Space A M Thumbnail # alt-space
+# Silent Key m A M Maximize 97 90 # alt-m
+# Silent Key x A M Destroy # alt-x
+
+## Maximize alt-m
+Silent Key m A M Maximize 100 100 # width hight
+
+## Full-screen Maximize
+Silent Key f A M ToggleMaximize
+
+## Minimize (thumbnail) alt-t
+Silent Key t A M Thumbnail
+
+## Close alt-x
+Silent Key x A M Close

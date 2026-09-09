@@ -1,0 +1,40 @@
+## Functions: tile-edit.sys
+## Tile and editor settings.
+
+#####
+## Vertical/horizontal tiling
+
+DestroyFunc TileW
+AddToFunc TileW
++ I Test (EnvMatch infostore.TileSwitch$[monitor.current] ON) TileOff
++ I TestRc (NoMatch) TileOn
+
+DestroyFunc TileOn
+AddToFunc TileOn
++ I All State 1 False
++ I Test (Version >= 1.1.3) FvwmRearrange -auto_tile -gap 6 -maximize -win_cmd "State 1"
++ I Test (Version = 1.1.2) FvwmRearrange -auto_tile -gap 6 -maximize
++ I Test (Version < 1.1.1) FvwmRearrange -tile -r -mn 3 -maximize 0 0 86 82
++ I TestRc (NoMatch) FvwmRearrange -auto_tile -gap 6 -maximize
++ I InfoStoreAdd TileSwitch$[monitor.current] ON
+
+DestroyFunc TileOff
+AddToFunc TileOff
++ I Current InfoStoreAdd WFocusId $[w.id]
++ I Test (Version >= 1.1.3) All (State 1) Maximize
++ I Test (Version < 1.1.3) All (CurrentPage, !Iconic, CirculateHit, !Sticky) Maximize Off
++ I InfoStoreAdd TileSwitch$[monitor.current] OFF
++ I WindowId $[infostore.WFocusId] Focus
++ I Current Raise
+
+#####
+## Testing which text editor is available.
+## The variable EDT loads the available editor for the ControlMiniPanel.
+
+Test (x geany) InfoStoreAdd EDT "Exec exec geany"
+Test (x kate) InfoStoreAdd EDT "Exec exec kate"
+Test (x pluma) InfoStoreAdd EDT "Exec exec pluma"
+Test (x leafpad) InfoStoreAdd EDT "Exec exec leafpad"
+Test (x gedit) InfoStoreAdd EDT "Exec exec gedit"
+Test (x mousepad) InfoStoreAdd EDT "Exec exec mousepad"
+Test (x featherpad) InfoStoreAdd EDT "Exec exec featherpad"

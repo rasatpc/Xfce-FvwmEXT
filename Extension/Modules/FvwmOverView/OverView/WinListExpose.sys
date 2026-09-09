@@ -1,0 +1,33 @@
+## Modules: OverView/WinListExpose.sys
+#
+
+SetEnv cacheov $[EXT_DIR]/Modules/FvwmOverView/cache
+
+Current InfoStoreAdd CURRENTWINDOW $[w.id]
+AddToMenu FvwmExposeMenu "Window OverView (Key: ctrl-w)"  Title
+DynamicPopDownAction DestroyMenu FvwmExposeMenu
+
+All (!Bru*, !Tool*, !Xfce4-panel*, CurrentPage, !Shaded, AcceptsFocus, !Iconic)\
+    PipeRead "echo Raise; echo Focus; \
+        sleep 0.1 && xwd -silent -id $[w.id] | convert -scale 270 -frame 2x2 -mattecolor black -quality 0 xwd:- \
+        png:$[cacheov]/icon.exp.$[w.id].png \
+    && echo AddToMenu FvwmExposeMenu \
+    %$[cacheov]/icon.exp.$[w.id].png%\\\'\"\"\\\' WindowID $[w.id] WarpToWindow 50 10 \
+        && echo AddToMenu FvwmExposeMenu \\\"\\\" Nop \
+    || Nop"
+	WindowId $[infostore.CURRENTWINDOW] WarpToWindow 50 10
+
+## Load overview windows and delete cache screenshots.
+
+Popup FvwmExposeMenu
+Exec exec rm -f $[cacheov]/icon.exp.*
+DestroyMenu FvwmExposeMenu
+
+## This function is for "Style * ClickToFocus" users.
+
+DestroyFunc TopWinFocus
+AddToFunc TopWinFocus
++ I Style * SloppyFocus
++ I Schedule 300 Style * ClickToFocus, FPGrabFocus
+
+TopWinFocus

@@ -1,0 +1,71 @@
+## Extention: button4Dec.sys
+
+## Vertical/horizontal tiling
+# Function TileW, check file .fvwm/local.config
+
+## Icon location
+
+SetEnv Icons $[EXT_DIR]/Decor/4BtmDecor/icons/24x24
+
+## Colorsets
+
+#   37 - Inactive Windows 
+#   38 - Active Window
+#   47 - Active Windows Borders
+#   51 - Inactive Windows Borders
+Colorset 37 fg #ffffff, bg #4b88a4, hi, sh, Plain, NoShape
+Colorset 38 fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape
+Colorset 47 fg #2b4e5e, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e
+Colorset 51 fg #4b88a4, bg #4b88a4, hi #4b88a4, sh #4b88a4
+
+## Binding:
+
+# Window Button Locations [1 Title 8 6 4 2]
+Mouse 1 2 A Close
+Mouse 1 4 A Maximize
+Mouse 1 6 A Thumbnail # Iconify
+Mouse 1 8 A TileW # Tiling, check file .fvwm/config
+Mouse 1 1 A Menu MenuWindowOps
+
+## Decor:
+
+AddToDecor 4BTMDecor
++ ButtonStyle All -- UseTitleStyle
++ BorderStyle Simple -- HiddenHandles !NoInset Raised
++ TitleStyle LeftJustified -- Flat
++ ButtonStyle All -- Flat
++ AddButtonStyle 1 \
+        ActiveUp   (Pixmap $[Icons]/options-active.png   -- flat) \
+        Inactive   (Pixmap $[Icons]/options-inactive.png   -- flat)
++ AddButtonStyle 2 \
+        ActiveUp   (Pixmap $[Icons]/close-active.png   -- flat) \
+        Inactive   (Pixmap $[Icons]/close-inactive.png   -- flat)
++ AddButtonStyle 4 \
+        ActiveUp   (Pixmap $[Icons]/maximize-active.png   -- flat) \
+        Inactive   (Pixmap $[Icons]/maximize-inactive.png   -- flat)
++ AddButtonStyle 6 \
+        ActiveUp   (Pixmap $[Icons]/iconify-active.png   -- flat) \
+        Inactive   (Pixmap $[Icons]/iconify-inactive.png   -- flat)
++ AddButtonStyle 8 \
+        ActiveUp   (Pixmap $[Icons]/tile-active.png   -- flat) \
+        Inactive   (Pixmap $[Icons]/tile-inactive.png   -- flat)
++ ButtonStyle All - Clear
++ TitleStyle Centered Height 26
+
+## Style setting
+
+#   1 - Inactive Windows
+#   2 - Active Window
+#   3 - Inactive Windows Borders
+#   4 - Active Windows Borders
+# Style (Example) Colorset 1, HilightColorset 2, \
+        BorderColorset 3, HilightBorderColorset 4
+
+Style * Colorset 37, HilightColorset 38, \
+        BorderColorset 51, HilightBorderColorset 47, \
+        BorderWidth 2, HandleWidth 2, \
+        FvwmBorder, FirmBorder, \
+        MWMButtons, UseDecor 4BTMDecor
+
+Style * Font "xft:Sans:size=12:minspace=False:antialias=True"
+

@@ -1,0 +1,11 @@
+README
+
+Here you can add your own configs without getting affected by version updates or other official changes.
+
+For example, copy one of the config from .fvwm/Extension or make your own, and add with Read+link in .fvwm/userEXT.sys.
+
+Replace $[EXT_DIR] with $[USER_DIR], example:
+
+Read $[EXT_DIR]/Menu.conf
+to
+Read $[USER_DIR]/Menu.conf

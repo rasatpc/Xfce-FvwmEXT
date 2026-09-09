@@ -1,0 +1,36 @@
+## Functions: deskPgNo.sys
+#
+## This horizontal Desk and page indicator shows the desk number
+## and indicates which page is currently being displayed.
+
+## Desk/Page number panel.
+
+DestroyModuleConfig PgNo:*
+*PgNo: Geometry 235x32+100+10
+*PgNo: Fore #ffffff
+*PgNo: Pixmap none
+*PgNo: Font "xft:Sans:size=11:antialias=True"
+*PgNo: Frame 0
+*PgNo: Rows 1
+*PgNo: (80x1, Back #2b4e5e, Title "DESK NO:", \
+	Font "xft:Sans:Bold:size=10:antialias=True")
+*PgNo: (70x1, Colorset 22, Title "Desk: $[monitor.$[monitor.current].desk]", \
+Id D, Action (Mouse 1) Nop)
+*PgNo: (85x1, Colorset 22, Title (Left) "Page: $[monitor.$[monitor.current].pagex]  \
+$[monitor.$[monitor.current].pagey]", Left, Id P, Action (Mouse 1) Nop)
+
+Style PgNo !Title, !Borders, WindowListSkip, Sticky, NeverFocus
+
+KillModule FvwmButtons PgNo
+Module FvwmButtons PgNo
+
+DestroyModuleConfig FE-Label:*
+*FE-Label: Cmd
+*FE-Label: new_desk "SendToModule PgNo ChangeButton D \
+Title 'Desk: $$$$[monitor.$[monitor.current].desk]'"
+*FE-Label: new_page "SendToModule PgNo ChangeButton P \
+Title 'Page: $$$$[monitor.$[monitor.current].pagex]  \
+$$$$[monitor.$[monitor.current].pagey]'"
+
+KillModule FvwmEvent FE-Label
+Module FvwmEvent FE-Label

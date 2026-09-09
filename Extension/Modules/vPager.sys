@@ -1,0 +1,38 @@
+## Modules: vPager.sys
+#
+# WORK VERTICAL PAGER
+
+## Colorsets
+## Check .fvwm/Extension/Colorsets.sys
+
+## Vertical Pager (3 desk with 3 pages)
+
+DesktopName 0 Web
+DesktopName 1 Email
+DesktopName 2 Office
+DesktopName 3 Misc
+
+DesktopSize "1 1"  ## (columns - rows)
+
+Module FvwmPager VdeskPager 0 3  ## (desk number - number of desks)
+
+DestroyModuleConfig VdeskPager: *
+*VdeskPager: Geometry 120x320-0+10
+*VdeskPager: Rows 4  ## (page rows)
+*VdeskPager: Colorset * 22
+*VdeskPager: HilightColorset * 35  ## (active page background)
+*VdeskPager: BalloonColorset * 10  ## (font color)
+*VdeskPager: WindowColorsets 37 18  ## (inactive - active apps)
+*VdeskPager: Font "xft:Sans:size=12:antialias=True"
+*VdeskPager: WindowBorderWidth 1
+*VdeskPager: BalloonStringFormat %c
+*VdeskPager: BallonYOffset +2
+*VdeskPager: Window3dBorders
+*VdeskPager: UseSkipList # hides modules
+*VdeskPager: MiniIcons
+
+Style VdeskPager NoTitle, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
+
+## Change preloaded settings
+## Example
+# *ControlMP: Geometry 330x32-132+10

@@ -1,0 +1,14 @@
+## .fvwm/userEXT.sys
+
+## If not yet exist, copy/rename userEXTSAMPLE.sys to .fvwm/userEXT.sys, and Restart.
+
+## userEXT.sys is for you to edit/remove .fvwm/Extension configs.
+## Make your changes and add your own.
+
+SetEnv USER_DIR $[HOME]/.fvwm/User
+
+##################################
+## USER (user changes and addon).
+#################################
+
+Read $[USER_DIR]/autoMoveW.sys

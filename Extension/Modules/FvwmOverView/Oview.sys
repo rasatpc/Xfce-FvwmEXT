@@ -1,0 +1,15 @@
+## Extention: Oview.sys
+
+## Inspired by Gnome Activity overview and Taviso’s WindowList function – FvwmExpose
+## https://zensites.net/fvwm/guide/advanced_functions.html
+
+## Key binding
+## Use FvwmCoomand as a short delay so X11 handles the window
+## capture properly. Add FvwmMFL.
+
+DestroyFunc FoverView
+AddToFunc FoverView
++ I Read $[EXT_DIR]/Modules/FvwmOverView/OverView/WinListExpose.sys
+
+# (ctrl-w)
+Silent Key w A C PipeRead "FvwmCommand FoverView"
