@@ -7,5 +7,5 @@ cd $HOME/.fvwm
 # Check if file does not exist.
 FILE=userEXT.sys
 if [ ! -f "$FILE" ]; then
-    cp $HOME/.fvwm/setup/userEXTSAMPLE.sys userEXT.sys
+    cp $HOME/.fvwm/Setup/userEXTSAMPLE.sys userEXT.sys
 fi
