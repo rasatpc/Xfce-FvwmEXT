@@ -9,6 +9,9 @@ SetEnv USER_DIR $[HOME]/.fvwm/User
 
 ##################################
 ## USER (user changes and addon).
-#################################
 
-Read $[USER_DIR]/autoMoveW.sys
+# EXAMPLE:
+# Copy ~/.fvwm/Exention/Functions/autoMoveW.sys to ~/.fvwm/User/
+# Untag to activate and Restart.
+
+#Read $[USER_DIR]/autoMoveW.sys

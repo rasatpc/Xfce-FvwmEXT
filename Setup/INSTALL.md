@@ -1,4 +1,4 @@
-11 September 2026
+10 September 2026
 
 # HOW TO INSTALL AND RUN IN XFCE.
 
@@ -17,7 +17,7 @@ Alpine Linux:
 
 # FVWM EXTENSION DEPENDENCIES
 
-Required by search apps, thumbnails, and screen resolution:
+Required by thumbnails, screen resolution, and search app:
 * sudo apt install imagemagick-common x11-utils xfce4-appfinder
 * sudo pacman -Syu imagemagick xorg-xdpyinfo xfce4-appfinder
 * sudo dnf install ImageMagick xwd xdpyinfo xfce4-appfinder
@@ -25,21 +25,13 @@ Required by search apps, thumbnails, and screen resolution:
 # Download Xfce-FvwmEXT:
 * https://github.com/rasatpc/Xfce-FvwmEXT/archive/refs/heads/main.zip
 
-Extract and copy subfolders to ~/.fvwm
+Extract and copy the subfolders to ~/.fvwm
 
-# Load Fvwm at login
-* Automatically runs the line below, which copies the
-  Fvwm2-3.desktop file to .config/autostart. 
-  cp .fvwm/Setup/autostart/Fvwm2-3.desktop ~/.config/autostart
+# Load Fvwm at login, and logout.
+It automatically copies the Fvwm2-3.desktop file to .config/autostart/.
+OR
+Run an alternative in Xfce by typing the line below in a terminal, and logout.
+cp ~/.fvwm/Setup/autostart/Fvwm2-3.desktop ~/.config/autostart/
 
-Alternatively, create `Fvwm2-3.desktop` with the content provided below.
-
----
-[Desktop Entry]
-
-Exec=fvwm --replace
-Exec=fvwm3 --replace
----
-
-# Load Xfce at login
-  and it is ready to use.
+# Load Xfce at login.
+It is ready to use.
