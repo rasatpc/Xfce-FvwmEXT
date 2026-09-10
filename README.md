@@ -23,6 +23,9 @@ At first Fvwm startup, it adds Fvwm2-3.desktop with the command "fvwm --replace"
 Screenshot:
 https://rasatpc.net/Xfce-FvwmEXT/Xfce-FvwmEXT-3.0.1.png
 
+# Note
+* Extension Installer is removed; the included configs are few in number.
+
 # Where to download and how to install?
 It's easy. Download, extract, install three packages, start/log out of Fvwm, start the DE, and it's ready to use.
 
