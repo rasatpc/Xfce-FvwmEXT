@@ -76,11 +76,11 @@ DestroyModuleConfig DeskTitleIcon: *
 *DeskTitleIcon: Font "xft:Sans:size=12:antialias=True"
   
 *DeskTitleIcon: (84x1, Title Iconify, Action AIconic)
-*DeskTitleIcon: (10x1, Colorset 22
+*DeskTitleIcon: (10x1, Colorset 36
 *DeskTitleIcon: (84x1, Title Screen, Action ToggleMaximize)
-*DeskTitleIcon: (10x1, Colorset 22
+*DeskTitleIcon: (10x1, Colorset 36
 *DeskTitleIcon: (84x1, Title Tile, Action TileW)
-*DeskTitleIcon: (10x1, Colorset 22
+*DeskTitleIcon: (10x1, Colorset 36
 *DeskTitleIcon: (84x1, Title OverView, Action FoverView)
 
 # Module FvwmButtons DeskTitleIcon

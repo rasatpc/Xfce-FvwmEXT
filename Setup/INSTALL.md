@@ -1,4 +1,4 @@
-10 September 2026
+11 September 2026
 
 # HOW TO INSTALL AND RUN IN XFCE.
 

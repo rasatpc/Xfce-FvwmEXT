@@ -14,9 +14,9 @@ DestroyModuleConfig PgNo:*
 *PgNo: Rows 1
 *PgNo: (80x1, Back #2b4e5e, Title "DESK NO:", \
 	Font "xft:Sans:Bold:size=10:antialias=True")
-*PgNo: (70x1, Colorset 22, Title "Desk: $[monitor.$[monitor.current].desk]", \
+*PgNo: (70x1, Colorset 36, Title "Desk: $[monitor.$[monitor.current].desk]", \
 Id D, Action (Mouse 1) Nop)
-*PgNo: (85x1, Colorset 22, Title (Left) "Page: $[monitor.$[monitor.current].pagex]  \
+*PgNo: (85x1, Colorset 36, Title (Left) "Page: $[monitor.$[monitor.current].pagex]  \
 $[monitor.$[monitor.current].pagey]", Left, Id P, Action (Mouse 1) Nop)
 
 Style PgNo !Title, !Borders, WindowListSkip, Sticky, NeverFocus

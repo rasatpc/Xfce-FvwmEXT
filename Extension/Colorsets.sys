@@ -51,6 +51,8 @@ Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 Colorset 34 fg #ffffff, bg #3a697e, hi, sh, Plain, NoShape
 Colorset 33 bg #d9d9d9, NoShape
 Colorset 35 fg #ffffff, bg #18658d, hi, sh, Plain, NoShape
+Colorset 36 fg #ffffff, bg #1d2324, hi, sh, Plain, NoShape
+
 
 ## No borderline
 Colorset 19 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e
