@@ -7,8 +7,12 @@ FvwmEXT runs on DEs and WMs compliant with ICCCM 2.0. For example, DEs: GNOME, K
 For this model, FvwmEXT is minimized to include the most helpful configs for the Desktop Environment without interfering with the current system and setup.
 
 # Main features:
-* Iconified Thumbnails, Full-Screen Maximize, Fvwm OverView (overview of active windows), and Tiling (automatically snaps windows into non-overlapping grids).
+* Iconified Thumbnails.
+* Full-Screen Maximize.
+* Fvwm OverView (overview of active windows).
+* Tiling (automatically snaps windows into non-overlapping grids).
 
+# General features:
 * Pager 1x4 - miniature view of the desktops and pages.
 * 4-button Window Title Bar - Tile, Iconify, Min, and Max.
 * Page Indicator - shows the active desk and page number.
