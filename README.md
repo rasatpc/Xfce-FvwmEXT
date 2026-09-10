@@ -20,3 +20,6 @@ At first Fvwm startup, it adds Fvwm2-3.desktop with the command "fvwm --replace"
 It's easy. Download, extract, install three packages, start/log out of Fvwm, start the DE, and it's ready to use.
 
 * Read Setup/INSTALL.md
+
+Screenshot:
+https://rasatpc.net/Xfce-FvwmEXT/Xfce-FvwmEXT-3.0.1-1200x675.png
