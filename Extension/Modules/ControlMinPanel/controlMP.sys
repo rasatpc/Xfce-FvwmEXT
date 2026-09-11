@@ -7,7 +7,7 @@ AddToMenu MenuStart
 + "Info " $[infostore.EDT] $[SUP_DIR]/help/info.txt
 + "Bindings " $[infostore.EDT] $[EXT_DIR]/Binding.sys
 
-+ "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/Setup/help/DE-FvwmEXT-help.png
++ "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/Setup/help/Xfce-FvwmEXT-help.png
 
 ## Set small icons
 
