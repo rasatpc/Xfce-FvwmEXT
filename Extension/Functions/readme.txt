@@ -6,10 +6,10 @@ To install in .fvwm/local.config
 Read $[EXT_DIR]/Functions/autoMoveW.sys
 Read $[EXT_DIR]/Functions/deskIcons.sys
 Read $[EXT_DIR]/Functions/deskPgNo.sys
-Read $[EXT_DIR]/Functions/tile.sys
+Read $[EXT_DIR]/Functions/tile-edit.sys
 
 To edit
 
 ## Copy to .fvwm/User and add below line in .fvwm/userEXT.sys
-## Example
+## Example:
 Read $[USER_DIR]/autoMoveW.sys

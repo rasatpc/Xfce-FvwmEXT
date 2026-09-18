@@ -2,14 +2,14 @@
 ## Date and Time
 
 ## Time/Day panel color
-*FvwmScript: DefaultColorset 36
+*FvwmScript: DefaultColorset 15
 
 Module FvwmButtons TimeDayButton
 
 DestroyModuleConfig TimeDayButton:*
-*TimeDayButton: Geometry 120x60-0-10
+*TimeDayButton: Geometry 120x60-10-10
 *TimeDayButton: Columns 120
-*TimeDayButton: Colorset 36
+*TimeDayButton: Colorset 15
 *TimeDayButton: Font "xft:Sans:Bold:size=14:antialias=True"
 *TimeDayButton: (120x50, Swallow DateTime 'Module FvwmScript FvwmScript-DateTime', Frame 0)
 

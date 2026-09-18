@@ -1,4 +1,4 @@
-11 September 2026
+19 September 2026
 
 # HOW TO INSTALL AND RUN IN XFCE.
 
@@ -7,7 +7,7 @@ Debian based GNU/Linux:
 * sudo apt install fvwm3 (or fvwm)
 
 Arch Linux:
-* yay -S fvwm3 (or fvwm)
+* sudo pacman -Syu fvwm3 (or fvwm)
 
 Fedora/OpenSUSE/other RPM-based distros:
 * sudo dfn install fvwm3
@@ -29,7 +29,9 @@ Extract and copy the subfolders to ~/.fvwm
 
 # Load Fvwm at login, and logout.
 It automatically copies the Fvwm2-3.desktop file to .config/autostart/.
+
 OR
+
 Run an alternative in Xfce by typing the line below in a terminal, and logout.
 cp ~/.fvwm/Setup/autostart/Fvwm2-3.desktop ~/.config/autostart/
 

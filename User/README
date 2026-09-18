@@ -7,5 +7,6 @@ For example, copy one of the config from .fvwm/Extension or make your own, and a
 Replace $[EXT_DIR] with $[USER_DIR], example:
 
 Read $[EXT_DIR]/Menu.conf
-to
+
+change to:
 Read $[USER_DIR]/Menu.conf

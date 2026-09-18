@@ -4,7 +4,7 @@ Other great features include window resizing, moving, and iconifying. FvwmRearra
 
 FvwmEXT is a small set of configs added to the default FVWM. When running inside a full Desktop Environment, it replaces the window manager component. It swaps out only the window management layer; the rest of the DE, such as the panels, docks, desktop icons, and background wallpaper, will remain running.
 
-Xfce-FvwmEXT (Extensions) (ver. 3.0.1)
+Xfce-FvwmEXT (Extensions) (ver. 3.1.1)
 
 It is a collection of ready-made configurations, a model for you to use, modify, or create your own extensions. It includes three directories.
 

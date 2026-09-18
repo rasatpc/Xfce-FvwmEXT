@@ -30,4 +30,3 @@ https://rasatpc.net/Xfce-FvwmEXT/Xfce-FvwmEXT-3.0.1.png
 It's easy. Download, extract, install three packages, start/log out of Fvwm, start the DE, and it's ready to use.
 
 * Read Setup/INSTALL.md
-

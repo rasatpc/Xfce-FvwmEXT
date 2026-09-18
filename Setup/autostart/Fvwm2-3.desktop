@@ -1,5 +1,6 @@
 [Desktop Entry]
 Exec=sh -c "sleep 1 && fvwm --replace"
 Exec=sh -c "sleep 1 && fvwm3 --replace"
+
 #Exec=fvwm --replace
 #Exec=fvwm3 --replace
