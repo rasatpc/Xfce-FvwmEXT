@@ -27,7 +27,7 @@ AddToFunc StartFunction I Module FvwmEvent
 
 ## Iconfy (minimize) to Thumbnail Placeholder
 
-Style * IconBox 400x600-0+360, IconGrid 1 4, \
+Style * IconBox 400x600-0+360, IconGrid 2 4, \
 IconFill top right, !IconTitle, IconBackgroundRelief 0
 
 ## Mouse Binding

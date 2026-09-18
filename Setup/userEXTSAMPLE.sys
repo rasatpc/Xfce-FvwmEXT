@@ -14,4 +14,4 @@ SetEnv USER_DIR $[HOME]/.fvwm/User
 # Copy ~/.fvwm/Exention/Functions/autoMoveW.sys to ~/.fvwm/User/
 # Untag to activate and Restart.
 
-#Read $[USER_DIR]/autoMoveW.sys
+Read $[USER_DIR]/autoMoveW.sys

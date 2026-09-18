@@ -18,4 +18,4 @@ path="/home/$USER/.fvwm"
 
 set -- $(grep -Fm 1 "#: $res" "$0")
 
-sed -i "/366x32/c\*DeskTitleIcon: Geometry 366x32-$3+10" "$path/Extention/Functions/deskIcons.sys"
+sed -i "/366x32/c\*DeskTitleIcon: Geometry 366x32-$3+10" "$path/Extension/Functions/deskIcons.sys"

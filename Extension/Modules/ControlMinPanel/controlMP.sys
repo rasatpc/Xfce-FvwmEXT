@@ -32,7 +32,7 @@ DestroyModuleConfig ControlMP: *
 *ControlMP: (Title Help, Back #028383,  ActionOnPress, \
 Action(Mouse 1) Menu MenuStart Rectangle +$left+36 0 12m)
 
-*ControlMP: (Title Revert, Frame 1, Action "Exec exec sh $[SUP_DIR]/Revert.sh" )
+*ControlMP: (Title Revert, Frame 1, Action "Exec exec xfwm4 --replace &" )
 
 Module FvwmButtons ControlMP
 

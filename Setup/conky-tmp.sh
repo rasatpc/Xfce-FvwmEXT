@@ -1,9 +1,16 @@
 #!/bin/sh
 
-# Temporarily close conky depending on Conky sleep configuration.
-sleep 6 && killall conky
-sleep 11 && killall conky
-sleep 16 && killall conky
-sleep 21 && killall conky
-sleep 31 && killall conky
+# Temporarily close conky.
 
+echo "Monitoring started. Watching for Conky..."
+
+while true; do
+    # Check if conky is running
+    if pgrep -x "conky" > /dev/null; then
+        # Instantly kill it
+        killall -9 conky 2>/dev/null
+        echo "[$(date +%T)] Conky detected and killed!"
+    fi
+    # Sleep for half a second to prevent high CPU usage
+    sleep 0.5
+done

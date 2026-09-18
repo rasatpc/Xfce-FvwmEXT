@@ -5,8 +5,9 @@ https://www.fvwm.org/Wiki/Modules/
 
 To install in .fvwm/local.config
 
-## Add the below line.
+## Add the below lines.
 Read $[EXT_DIR]/Modules/vPager.sys
+Read $[EXT_DIR]/Modules/timeDay.sys
 
 To edit
 
