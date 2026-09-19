@@ -17,7 +17,7 @@ DesktopSize "1 1"  ## (columns - rows)
 Module FvwmPager VdeskPager 0 3  ## (desk number - number of desks)
 
 DestroyModuleConfig VdeskPager: *
-*VdeskPager: Geometry 120x320-10+10
+*VdeskPager: Geometry 120x320-0+10
 *VdeskPager: Rows 4  ## (page rows)
 *VdeskPager: Colorset * 36
 *VdeskPager: HilightColorset * 35  ## (active page background)

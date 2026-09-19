@@ -16,7 +16,7 @@ SetEnv smallIcons $[EXT_DIR]/Modules/ControlMinPanel/icons
 ## Panel
 
 DestroyModuleConfig ControlMP: *
-*ControlMP: Geometry 350x32-140+10
+*ControlMP: Geometry 350x32-130+10
 *ControlMP: Fore #ffffff
 *ControlMP: Back #2b4e5e
 *ControlMP: PressColorset 4
