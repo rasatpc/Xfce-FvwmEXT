@@ -23,6 +23,7 @@ Required by thumbnails, screen resolution, and search app:
 * sudo dnf install ImageMagick xwd xdpyinfo xfce4-appfinder
 
 # Download Xfce-FvwmEXT:
+* https://www.xfce-look.org/p/1774061
 * https://github.com/rasatpc/Xfce-FvwmEXT/archive/refs/heads/main.zip
 
 Extract and copy the subfolders to ~/.fvwm
