@@ -1,6 +1,6 @@
 # Xfce with FvwmEXT
 
-This model integrates Fvwm with Desktop Environments, enabling selected Fvwm configs to run on a DE and making it a perfect system. For example, Xfce is an excellent application manager, whereas Fvwm is one of the best window and virtual managers. This combination is lightweight yet offers unlimited functionality.
+This model integrates Fvwm with Desktop Environments, allowing selected Fvwm configs to run on a DE and making it a perfect system. For example, Xfce is an excellent application manager, whereas Fvwm is one of the best window and virtual managers. This combination is lightweight yet offers unlimited functionality.
 
 FvwmEXT runs on DEs and WMs compliant with ICCCM 2.0. For example, DEs: GNOME, KDE, XFCE, LXQt, MATE; WMs: Fluxbox, IceWM, Openbox.
 
@@ -24,7 +24,7 @@ Screenshot:
 https://rasatpc.net/Xfce-FvwmEXT/Xfce-FvwmEXT-3.0.1.png
 
 # Note
-* Extension Installer is removed; the included configs are few in number.
+* The Extension Installer is removed; the included configs are few in number.
 
 # Where to download and how to install?
 It's easy. Download, extract, install three packages, start/log out of Fvwm, start the DE, and it's ready to use.
