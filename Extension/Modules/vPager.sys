@@ -17,7 +17,7 @@ DesktopSize "1 1"  ## (columns - rows)
 Module FvwmPager VdeskPager 0 3  ## (desk number - number of desks)
 
 DestroyModuleConfig VdeskPager: *
-*VdeskPager: Geometry 120x320-0+10
+*VdeskPager: Geometry 90x280-0+11
 *VdeskPager: Rows 4  ## (page rows)
 *VdeskPager: Colorset * 36
 *VdeskPager: HilightColorset * 35  ## (active page background)
@@ -31,7 +31,7 @@ DestroyModuleConfig VdeskPager: *
 *VdeskPager: UseSkipList # hides modules
 *VdeskPager: MiniIcons
 
-Style VdeskPager NoTitle, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
+Style VdeskPager NoTitle, !Handles, BorderWidth 0, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
 
 ## Change preloaded settings
 ## Example
