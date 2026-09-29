@@ -1,4 +1,4 @@
-19 September 2026
+29 September 2026
 
 # HOW TO INSTALL AND RUN IN XFCE.
 
@@ -12,15 +12,16 @@ Arch Linux:
 Fedora/OpenSUSE/other RPM-based distros:
 * sudo dfn install fvwm3
 
-Alpine Linux:
-* apk add fvwm
+FreeBSD:
+* pkg install fvwm3 ImageMagick7 xprop xwininfo xdpyinfo
 
 # FVWM EXTENSION DEPENDENCIES
 
 Required by thumbnails, screen resolution, and search app:
-* sudo apt install imagemagick-common x11-utils xfce4-appfinder
-* sudo pacman -Syu imagemagick xorg-xdpyinfo xfce4-appfinder
-* sudo dnf install ImageMagick xwd xdpyinfo xfce4-appfinder
+* sudo apt install imagemagick-common x11-utils
+* sudo pacman -Syu imagemagick xorg-xdpyinfo
+* sudo dnf install ImageMagick xwd xdpyinfo
+* pkg install ImageMagick7 xprop xwininfo xdpyinfo
 
 # Download Xfce-FvwmEXT:
 * https://www.xfce-look.org/p/1774061

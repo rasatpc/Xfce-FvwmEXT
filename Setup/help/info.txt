@@ -1,26 +1,32 @@
-FVWM is a Virtual Window Manager. What sets it apart from other WMs is that it is also a virtual window manager; it allows you to place windows in an area much larger than the visible display.
+Combining Xfce with FVWM (fvwm2 or fvwm3) replaces Xfce's default window manager (xfwm4) with FVWM's ultra-lightweight, highly customizable virtual window manager.
 
+How the Combination Works
+- Xfce Components: Provides a robust session manager, application finder, panel utilities, and background settings or system daemons.
+- FVWM Components: Handles window decorations, virtual desktop grids (pages/desks), pagers, and keyboard/mouse bindings with minimal memory overhead.
+
+Resource Efficiency: The setup remains exceptionally fast and low-memory, appealing to users who want retro-modern workflow customization without heavy desktop bloat. ￼
+￼
+
+Advanced Virtual Desktops: FVWM splits work areas into grid-based viewports (pages) navigated seamlessly via the FvwmPager module or custom miniature views. 
 Other great features include window resizing, moving, and iconifying. FvwmRearrange is designed to clean up crowded layouts by automatically snapping windows into non-overlapping grids. Fvwm-OverView uses iconified, live thumbnails to help you visually pick a window out of a crowd.
 
 FvwmEXT is a small set of configs added to the default FVWM. When running inside a full Desktop Environment, it replaces the window manager component. It swaps out only the window management layer; the rest of the DE, such as the panels, docks, desktop icons, and background wallpaper, will remain running.
 
-Xfce-FvwmEXT (Extensions) (ver. 3.1.1)
+Xfce-FvwmEXT (Extensions) version 3.1.2
 
 It is a collection of ready-made configurations, a model for you to use, modify, or create your own extensions. It includes three directories.
 
-Extension: Functions, Decorators, Menus, and Modules
+Extension: Functions, Decors, Menus, and Modules
 Setup - Additional configurations and scripts that set up the system at first run.
 User - Reads user configurations and makes changes to the .fvwm/Extension configurations and settings.
 
-How to
-
+HOW TO
 The attached screenshot shows the main features (/fvwm/Setup/help/Xfce-FvwmEXT-help.png).
 
 NOTE
 FvwmEXT temporarily removes Conky when Fvwm replaces Xfce.
 
 READ
-
 Setup/INSTALL.md
 
 More information.
