@@ -1,8 +1,8 @@
 # Xfce with FvwmEXT
 
-This model integrates Fvwm with Desktop Environments, allowing selected Fvwm configs to run on a DE and making it a complete system. For example, Xfce is an excellent application manager, whereas Fvwm is one of the best window and virtual managers. This combination is lightweight yet offers unlimited functionality.
+This model integrates Fvwm with Desktop Environments, allowing selected Fvwm configs (extensions) to run on a DE and making it a complete system. For example, Xfce is an excellent application manager, whereas Fvwm is one of the best window and virtual managers. This combination is lightweight yet offers unlimited functionality.
 
-FvwmEXT runs on Desktop Environments and Window Managers compliant with ICCCM 2.0, such as Xfce.
+FvwmEXT runs on Desktop Environments and Window Managers compliant with EWMH, such as Xfce.
 
 For this model, FvwmEXT is minimized to include the most helpful configs for the Desktop Environment without interfering with the current system and setup.
 
@@ -18,15 +18,15 @@ For this model, FvwmEXT is minimized to include the most helpful configs for the
 * Page Indicator - shows the active desk and page number.
 * Auto Move Windows - automatically moves apps to a specific desk/page.
 
+# Optional
+* FvwmPanel - Fluxbox-style round-ended panel with additional Fvwm features: taskbar, zenity text entry, and menu (Restart, Identity and FvwmPrompt).
+
 At first Fvwm startup, it adds Fvwm2-3.desktop with the command "fvwm --replace" to .config/autostart/. It loads Fvwm when the DE starts.
 
 Screenshot:
 https://rasatpc.net/Xfce-FvwmEXT/Xfce-FvwmEXT-3.1.2.png
 
-# Note
-* The Extension Installer is removed; the included configs are few in number.
-
 # Where to download and how to install?
-It's easy. Download, extract, install three packages, start/log out of Fvwm, start the DE, and it's ready to use.
+It's easy... download, extract, install five packages, start/log out of Fvwm, start the DE, and it's ready to use.
 
 * Read Setup/INSTALL.md

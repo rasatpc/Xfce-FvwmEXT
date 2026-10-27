@@ -1,4 +1,4 @@
-29 September 2026
+27 October 2026
 
 # HOW TO INSTALL AND RUN IN XFCE.
 
@@ -13,15 +13,15 @@ Fedora/OpenSUSE/other RPM-based distros:
 * sudo dfn install fvwm3
 
 FreeBSD:
-* pkg install fvwm3 ImageMagick7 xprop xwininfo xdpyinfo
+* pkg install fvwm3
 
 # FVWM EXTENSION DEPENDENCIES
 
-Required by thumbnails, screen resolution, and search app:
-* sudo apt install imagemagick-common x11-utils
-* sudo pacman -Syu imagemagick xorg-xdpyinfo
-* sudo dnf install ImageMagick xwd xdpyinfo
-* pkg install ImageMagick7 xprop xwininfo xdpyinfo
+Required by quick note, thumbnails, screen resolution, and search app:
+* sudo apt install imagemagick-common x11-utils zenity
+* sudo pacman -Syu imagemagick xorg-xdpyinfo zenity
+* sudo dnf install ImageMagick xwd xdpyinfo zenity
+* pkg install ImageMagick7 xprop xwininfo xdpyinfo zenity
 
 # Download Xfce-FvwmEXT:
 * https://www.xfce-look.org/p/1774061
@@ -39,3 +39,10 @@ cp ~/.fvwm/Setup/autostart/Fvwm2-3.desktop ~/.config/autostart/
 
 # Load Xfce at login.
 It is ready to use.
+
+# Optional
+FvwmPanel is an optional extension that adds additional Fvwm features. It requires moving the Xfce panel to the left side, vertically. To install in .fvwm/userEXT.sys, add the below line:
+Read $[EXT_DIR]/Modules/FluxPanel/fluxbox-panel.sys
+
+# NOTE
+* For transparency, use the same wallpaper in both Fvwm and Xfce.

@@ -15,3 +15,9 @@ SetEnv USER_DIR $[HOME]/.fvwm/User
 # Untag to activate and Restart.
 
 Read $[USER_DIR]/autoMoveW.sys
+
+## Fluxbox-style round-ended panel.
+## Move Xfce panel to the left side, vertically.
+## Untag the below line and Restart.
+
+# Read $[EXT_DIR]/Modules/FluxPanel/fluxbox-panel.sys
