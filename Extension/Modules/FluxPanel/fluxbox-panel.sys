@@ -9,6 +9,7 @@ AddToMenu MenuStart
 + "Identify " Module FvwmIdent
 Test (x FvwmPrompt) + "FvwmPrompt " Exec exec xterm "FvwmPrompt"
 Test (!x FvwmPrompt) + "FvwmConsole " Module FvwmConsole -terminal
++ "Fvwm Wallpapers" Popup BGMenu
 
 ## Set icons
 
