@@ -25,9 +25,9 @@ DestroyModuleConfig ControlMP: *
 *ControlMP: Pixmap none
 *ControlMP: Font "xft:Sans:size=12:antialias=True"
   
-*ControlMP: (Icon $[smallIcons]/search-wb.png, Action(Mouse 1) "Exec exec xfce4-appfinder" )
-*ControlMP: (Icon $[smallIcons]/resize-wb.png, Action Resize )
-*ControlMP: (Icon $[smallIcons]/move-wb.png, Action Move  )
+*ControlMP: (Icon $[smallIcons]/search-wb.png, Action(Mouse 1) "Exec exec xfce4-appfinder", Padding 0 0 )
+*ControlMP: (Icon $[smallIcons]/resize-wb.png, Action Resize, Padding 0 0 )
+*ControlMP: (Icon $[smallIcons]/move-wb.png, Action Move, Padding 0 0  )
 
 *ControlMP: (Title Help, Back #028383, Frame 1, ActionOnPress, \
 Action(Mouse 1) Menu MenuStart Rectangle +$left+36 0 12m)
