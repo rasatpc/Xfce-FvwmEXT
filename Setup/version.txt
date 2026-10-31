@@ -1,2 +1,2 @@
-27 October 2026
-Xfce-FvwmEXT ver. 3.2.2
+31 October 2026
+Xfce-FvwmEXT ver. 3.2.5

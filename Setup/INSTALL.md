@@ -1,4 +1,4 @@
-27 October 2026
+31 October 2026
 
 # HOW TO INSTALL AND RUN IN XFCE.
 
@@ -18,10 +18,10 @@ FreeBSD:
 # FVWM EXTENSION DEPENDENCIES
 
 Required by quick note, thumbnails, screen resolution, and search app:
-* sudo apt install imagemagick-common x11-utils zenity
-* sudo pacman -Syu imagemagick xorg-xdpyinfo zenity
-* sudo dnf install ImageMagick xwd xdpyinfo zenity
-* pkg install ImageMagick7 xprop xwininfo xdpyinfo zenity
+* sudo apt install imagemagick-common x11-utils zenity xdotool
+* sudo pacman -Syu imagemagick xorg-xdpyinfo zenity xdotool
+* sudo dnf install ImageMagick xwd xdpyinfo zenity xdotool
+* pkg install ImageMagick7 xprop xwininfo xdpyinfo zenity xdotool
 
 # Download Xfce-FvwmEXT:
 * https://www.xfce-look.org/p/1774061

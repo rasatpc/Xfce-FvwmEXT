@@ -1,27 +1,27 @@
 ## Modules: fluxbox-panel.sys
 ## Fluxbox-style round-ended panel.
+## Module Actions
 
 ## Drop Menu
 
-DestroyMenu MenuStart
-AddToMenu MenuStart
+DestroyMenu MenuPanel
+AddToMenu MenuPanel
 + "Restart " Restart
 + "Identify " Module FvwmIdent
 Test (x FvwmPrompt) + "FvwmPrompt " Exec exec xterm "FvwmPrompt"
 Test (!x FvwmPrompt) + "FvwmConsole " Module FvwmConsole -terminal
-+ "Fvwm Wallpapers" Popup BGMenu
++ "Fvwm Wallpapers" Popup BGMenu item +0 -100m
 
-## Set icons
+## Icons
 
 SetEnv boxIcons $[EXT_DIR]/Modules/FluxPanel/panel
 
 ## Panel
 
 DestroyModuleConfig FvwmPanel: *
-*FvwmPanel: Geometry 812x30+554-8
+*FvwmPanel: Geometry 812x30+$[math./.$[math.-.$[monitor.$[monitor.primary].width],812],2]-8
 *FvwmPanel: Fore #ffffff
 *FvwmPanel: Back #181818
-#*FvwmPanel: Back #028383
 *FvwmPanel: PressColorset 4
 *FvwmPanel: Frame 0
 *FvwmPanel: Rows 1
@@ -30,14 +30,18 @@ DestroyModuleConfig FvwmPanel: *
 *FvwmPanel: (15x1, Icon $[boxIcons]/left-round.png, Padding 0 0 )
 
 # MenuStart button
-*FvwmPanel: (90x1, Icon $[boxIcons]/Fvwm-58x20.png, Colorset 40,  ActionOnPress, Action(Mouse 1) Menu MenuStart Rectangle -1350-34 0 -111m)
+*FvwmPanel: (90x1, Icon $[boxIcons]/Fvwm-58x20.png, Colorset 40, ActionOnPress, Action(Mouse 1) Menu MenuPanel Rectangle +$left-34 0 -111m)
 
 *FvwmPanel: (722x1, Swallow (UseOld) FvwmIconMan 'Module FvwmIconMan', Frame 0)
 *FvwmPanel: (2x1, Colorset 40, Padding 0 0)
 
-# Dialog box (300x150), adds latest text on the top of list.
+# Dialog box (300x150), adds text on the top of list.
+*FvwmPanel: (58x1, Title "Note", ActiveColorset 41, Action `Exec exec sh -c 'note=$(zenity --text-info --editable --title="" --text="" --width=300 --height=150) && [ -n "$note" ] && file="$HOME/Desktop/notes.txt" && tmp=$(mktemp) && printf "# %s\n%s\n\n" "$(date "+%d-%m-%Y")" "$note" > "$tmp" && [ -f "$file" ] && cat "$file" >> "$tmp"; mv "$tmp" "$file"'`)
 
-*FvwmPanel: (58x1, Title "Note", Action `Exec exec sh -c 'note=$(zenity --text-info --editable --title="" --text="" --width=300 --height=150) && [ -n "$note" ] && file="$HOME/Desktop/notes.txt" && tmp=$(mktemp) && printf "# %s\n%s\n\n" "$(date "+%d-%m-%Y")" "$note" > "$tmp" && [ -f "$file" ] && cat "$file" >> "$tmp"; mv "$tmp" "$file"'`)
+*FvwmPanel: (2x1, Colorset 40, Padding 0 0)
+
+# How-to-do, opens readme.txt
+*FvwmPanel: (20x1, Title "?", ActionOnPress, ActiveColorset 41, Action(Mouse 1) $[infostore.EDT] $[EXT_DIR]/Modules/FluxPanel/readme.txt)
 
 *FvwmPanel: (30x1, Colorset 40, Padding 0 0)
 *FvwmPanel: (15x1, Icon $[boxIcons]/right-round.png, Padding 0 0 )
@@ -46,19 +50,75 @@ Module FvwmButtons FvwmPanel
 
 ## Style Setting
 
-Style FvwmPanel !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus
+Style FvwmPanel !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, CirculateSkip, NeverFocus
+Style FvwmPanel StartsOnScreen $[monitor.primary]
 
 ## FvwmIconMan
+
+# Custom function to restore, raise, and warp the viewport.
+
+DestroyFunc IconManClick
+AddToFunc IconManClick
++ I Iconify off
++ I Raise
++ I Focus
+
+DestroyFunc IconManMinimize
+AddToFunc IconManMinimize
++ I Thumbnail ## Iconify on
+
+# Calls the menu to appear above the bottom screen edge.
+
+DestroyFunc TriggerIconManMenu
+AddToFunc TriggerIconManMenu
++ I Menu MenuIconManWindowOps Mouse +0-0 -111m
+
+# Define the context menu layout
+
+DestroyMenu MenuIconManWindowOps
+AddToMenu MenuIconManWindowOps "Win Options: " Title
++ "Maximize"  Maximize
++ "Iconify"   Thumbnail
++ "Close"     Close
++ ""          Nop
++ "Move to.."
++ "  Web Desk"     MoveToDesk 0 0
++ "  Email Desk"   MoveToDesk 0 1
++ "  Office Desk"  MoveToDesk 0 2
++ "  Misc Desk"    MoveToDesk 0 3
 
 DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: NumManagers 1
 *FvwmIconMan: 1 Resolution global
 *FvwmIconMan: 1 ButtonGeometry 120x30
 *FvwmIconMan: 1 ManagerGeometry 1x1
-*FvwmIconMan: 1 ReliefThickness 1
+*FvwmIconMan: 1 ReliefThickness 2
 *FvwmIconMan: DrawIcons always
 
+# Left click Window Activation / Window Selection Toggle.
+*FvwmIconMan: Action Mouse 1 N sendcommand IconManClick
+
+# Ctrl + Left Click minimize the window.
+*FvwmIconMan: Action Mouse 1 C sendcommand IconManMinimize
+
+# Auto-Paste macro:
+# Middle click Primary Selection Pipe-to-Clipboard & Paste Automation.
+
+*FvwmIconMan: Action Mouse 2 A sendcommand "Exec exec sh -c 'xclip -o -selection primary | xclip -i -selection clipboard; xdotool windowactivate --sync $[w.id] key Shift+Insert key Return'"
+
+# Taskbar Context Menu:
+# Right click Taskbar Context Menu.
+
+*FvwmIconMan: Action Mouse 3 A sendcommand Nop
+*FvwmIconMan: Action Mouse 3 A sendcommand TriggerIconManMenu
+
+# Scroll Up and Down: Move the window one Desk up and down
+
+*FvwmIconMan: Action Mouse 4 A sendcommand "MoveToDesk +1"
+*FvwmIconMan: Action Mouse 5 A sendcommand "MoveToDesk -1"
+
 ## Check .fvwm/Extension/Colorsets.sys
+
 *FvwmIconMan: 1 Colorset 36       # Default state (Inactive windows)
 *FvwmIconMan: 1 FocusColorset 41  # Active / Focused window 
 *FvwmIconMan: 1 SelectColorset 0  # When hovering/clicking the button

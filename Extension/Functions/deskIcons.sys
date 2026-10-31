@@ -66,7 +66,7 @@ Style FvwmButtons !Iconifiable
 ## Panel
 
 DestroyModuleConfig DeskTitleIcon: *
-*DeskTitleIcon: Geometry 366x28-777+10
+*DeskTitleIcon: Geometry 366x28+$[math./.$[math.-.$[monitor.$[monitor.primary].width],366],2]+10
 *DeskTitleIcon: Fore #ffffff
 *DeskTitleIcon: Back #2b4e5e
 *DeskTitleIcon: PressColorset 7
@@ -76,11 +76,11 @@ DestroyModuleConfig DeskTitleIcon: *
 *DeskTitleIcon: Font "xft:Sans:size=12:antialias=True"
   
 *DeskTitleIcon: (84x1, Title Iconify, Action AIconic)
-*DeskTitleIcon: (10x1, Colorset 50
+*DeskTitleIcon: (10x1, Colorset 15
 *DeskTitleIcon: (84x1, Title Screen, Action ToggleMaximize)
-*DeskTitleIcon: (10x1, Colorset 50
+*DeskTitleIcon: (10x1, Colorset 15
 *DeskTitleIcon: (84x1, Title Tile, Action TileW)
-*DeskTitleIcon: (10x1, Colorset 50
+*DeskTitleIcon: (10x1, Colorset 15
 *DeskTitleIcon: (84x1, Title OverView, Action FoverView)
 
 # Module FvwmButtons DeskTitleIcon
@@ -89,3 +89,4 @@ AddToFunc StartFunction I Module FvwmButtons DeskTitleIcon
 ## Style Setting
 
 Style DeskTitleIcon !Borders, !Title, WindowListSkip, StaysOnTop, Sticky, NeverFocus
+Style DeskTitleIcon StartsOnScreen $[monitor.primary]
