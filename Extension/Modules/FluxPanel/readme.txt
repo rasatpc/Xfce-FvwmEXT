@@ -12,6 +12,7 @@ This optional extension adds additional Fvwm features. It requires moving the Xf
 
 3) Taskbar Module Actions:
 * Left-click for Window Activation.
+* Ctrl+Left-click for Window Minimization (Thumbnail).
 
 * Middle-click for Primary Selection Pipe-to-Clipboard & Paste Automation (Auto-Paste Macro).
 - Example: Open a web browser on Desk1. Open an Office document on Desk2 and point to a text field. In the browser, highlight text. Middle-click the document window's taskbar button. This activates the document with the auto-pasted text.
