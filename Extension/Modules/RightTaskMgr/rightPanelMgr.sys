@@ -1,0 +1,133 @@
+Module: rightPanelMgr.sys
+
+#  USER APPLICATION SELECTION PROFILE
+
+Read $[EXT_DIR]/Modules/RightTaskMgr/manager-menu.conf
+# ====================================================
+
+KillModule FvwmButtons FvwmPanel
+
+## Time/Day panel color
+*FvwmScript: DefaultColorset 36
+Style FvwmScript !Borders, !Title
+
+# ---------------------------------------------------------
+# 1. FvwmIconMan: 4 Vertical Managers
+# ---------------------------------------------------------
+DestroyModuleConfig FvwmIconMan: *
+*FvwmIconMan: NumManagers     4
+*FvwmIconMan: Resolution      global
+*FvwmIconMan: Font            "xft:Sans:Bold:size=9:antialias=true"
+*FvwmIconMan: Format          "%c"
+
+*FvwmIconMan: ButtonGeometry  86x24
+*FvwmIconMan: 1 ManagerGeometry 1x12
+*FvwmIconMan: 2 ManagerGeometry 1x12
+*FvwmIconMan: 3 ManagerGeometry 1x8
+*FvwmIconMan: 4 ManagerGeometry 1x8
+*FvwmIconMan: MaxButtonHeight 26
+*FvwmIconMan: DrawIcons       always
+*FvwmIconMan: FollowFocus     true
+*FvwmIconMan: Sort            name
+*FvwmIconMan: Background flat
+
+# ~/Extention/Coloesets.sys
+# Theme Styling & Colors
+*FvwmIconMan: Colorset		  1		# Background
+*FvwmIconMan: PlainButton     flat
+*FvwmIconMan: PlainColorset   31 	# Window unfocus
+*FvwmIconMan: FocusButton     flat
+*FvwmIconMan: FocusColorset   35 	# Window focus
+*FvwmIconMan: IconButton      flat
+*FvwmIconMan: IconColorset    6		# Window minimized
+
+# Mouse Bindings
+# Left-click (1), Middle-click (2), and Right-click (3).
+*FvwmIconMan: Action Mouse 1 N sendcommand "Function FocusAndRaise"
+*FvwmIconMan: Action Mouse 2 N sendcommand "Thumbnail"
+*FvwmIconMan: Action Mouse 3 N sendcommand "Close"
+
+# Middle-scroll Move window one Desk up and down.
+*FvwmIconMan: Action Mouse 4 A sendcommand "MoveToDesk +1"
+*FvwmIconMan: Action Mouse 5 A sendcommand "MoveToDesk -1"
+
+# Ctrl + Middle click Highlight, paste automation.
+*FvwmIconMan: Action Mouse 2 C sendcommand "Exec exec sh -c 'xclip -o -selection primary | xclip -i -selection clipboard; ORIG_WIN=\$(xdotool getactivewindow); xdotool windowactivate --sync $[w.id] key --clearmodifiers Shift+Insert Return; xdotool windowactivate \$ORIG_WIN'"
+
+# Ctrl + Right-click Window Cloning
+*FvwmIconMan: Action Mouse 3 C sendcommand "Exec exec $[w.resource]"
+
+# --- Manager 1: Development & System Control ---
+*FvwmIconMan: 1 Title   "Dev-Sys"
+*FvwmIconMan: 1 Show     $[infostore.AppGroup_DevSys]
+
+# --- Manager 2: Web & Communication ---
+*FvwmIconMan: 2 Title    "Web-Com"
+*FvwmIconMan: 2 Show     $[infostore.AppGroup_WebCom]
+
+# --- Manager 3: Graphics & Media ---
+*FvwmIconMan: 3 Title    "Graph-Med"
+*FvwmIconMan: 3 Show     $[infostore.AppGroup_GraphMed]
+
+# --- Manager 4: Catch-All (Everything Else) ---
+*FvwmIconMan: 4 Title     "Misc-Apps"
+*FvwmIconMan: 4 DontShow  $[infostore.AppGroup_DevSys] \
+						  $[infostore.AppGroup_WebCom] \
+						  $[infostore.AppGroup_GraphMed]
+
+# ---------------------------------------------------------
+# 2. Multiple Manager Taskbar
+#    FvwmButtons: Resolution-Aware Right-Side Container
+# ---------------------------------------------------------
+SetEnv logo-icon $[EXT_DIR]/Modules/RightTaskMgr/icons
+
+DestroyModuleConfig MultiMgrTaskbar: *
+PipeRead 'echo "*MultiMgrTaskbar: Geometry 90x`expr $[vp.height] - 320`-0+320"'
+*MultiMgrTaskbar: Rows         52
+*MultiMgrTaskbar: Columns      1
+*MultiMgrTaskbar: BoxSize      dumb
+*MultiMgrTaskbar: Frame        0
+*MultiMgrTaskbar: Padding      2 2
+*MultiMgrTaskbar: Colorset     1
+
+*MultiMgrTaskbar: (1x1, Size 90 5, Colorset 50)
+
+*MultiMgrTaskbar: (1x3, Size 90 38, Icon $[logo-icon]/fvwm-logo-80x27.png, Colorset 51, Frame 1, ActionOnPress, Action(Mouse 1) Menu MenuPanel Rectangle $widthx$height+$left+$top -105m 0p)
+
+*MultiMgrTaskbar: (1x1, Title "Web & Comms", Colorset 36)
+*MultiMgrTaskbar: (1x12, Swallow (Close, UseOld) "Web-Com")
+*MultiMgrTaskbar: (1x1, Title "Dev & System", Colorset 36)
+*MultiMgrTaskbar: (1x12, Swallow (Close, UseOld) "Dev-Sys")
+*MultiMgrTaskbar: (1x1, Title "Art & Media", Colorset 36)
+*MultiMgrTaskbar: (1x8,  Swallow (Close, UseOld) "Graph-Med")
+*MultiMgrTaskbar: (1x1, Title "Misc & Apps", Colorset 36)
+*MultiMgrTaskbar: (1x8,  Swallow (Close, UseOld) "Misc-Apps")
+*MultiMgrTaskbar: (1x1, Size 90 5, Colorset 50)
+*MultiMgrTaskbar: (1x1, Swallow "DateTime" 'Module FvwmScript FvwmScript-DateTime', Colorset 36, Frame 0)
+*MultiMgrTaskbar: (1x1, Size 90 5, Colorset 36)
+*MultiMgrTaskbar: (1x1, Size 90 5, Colorset 50)
+
+# ---------------------------------------------------------
+# 3. Style, Function & Startup Execution
+# ---------------------------------------------------------
+
+# Stop the individual panels from rendering on screen prior to being swallowed.
+
+Style FvwmIconMan CirculateSkip, WindowListSkip, HandleWidth 0, !Borders, !Title, InitialMapInvisible
+
+# Hide FvwmIconMan when it starts.
+
+AddToFunc StartFunction
++ I Module FvwmIconMan
++ I Wait FvwmIconMan
++ I All (FvwmIconMan) MoveToDesk 0 1
+
+Style MultiMgrTaskbar NoTitle, NoHandles, Sticky, WindowListSkip, BorderWidth 0, NeverFocus
+
+Module FvwmButtons MultiMgrTaskbar
+
+DestroyFunc FocusAndRaise
+AddToFunc FocusAndRaise
++ I Iconify false
++ I Raise
++ I Focus

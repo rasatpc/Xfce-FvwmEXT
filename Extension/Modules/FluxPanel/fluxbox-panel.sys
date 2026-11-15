@@ -2,6 +2,8 @@
 ## Fluxbox-style round-ended panel.
 ## Module Actions
 
+KillModule FvwmButtons MultiMgrTaskbar
+
 ## Drop Menu
 
 DestroyMenu MenuPanel

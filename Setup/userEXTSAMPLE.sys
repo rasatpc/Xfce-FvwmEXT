@@ -21,3 +21,4 @@ Read $[USER_DIR]/autoMoveW.sys
 ## Untag the below line and Restart.
 
 # Read $[EXT_DIR]/Modules/FluxPanel/fluxbox-panel.sys
+# Read $[EXT_DIR]/Modules/RightTaskMgr/rightPanelMgr.sys

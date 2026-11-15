@@ -70,7 +70,7 @@ Colorset 47 fg #2b4e5e, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e
 
 ## Title inactive color (bg) and text (fg)
 Colorset 27 fg #000000, bg #028383, hi, sh, Plain, NoShape
-Colorset 31 fg #000000, bg #c5c5c5, hi, sh, Plain, NoShape
+Colorset 31 fg #000000, bg #bcbbbb, hi, sh, Plain, NoShape
 Colorset 37 fg #ffffff, bg #4b88a4, hi, sh, Plain, NoShape
 
 ## Inactive Windows Borders
