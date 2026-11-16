@@ -10,14 +10,14 @@
 DesktopName 0 Web
 DesktopName 1 Email
 DesktopName 2 Office
-DesktopName 3 Misc
+DesktopName 3 Media
 
 DesktopSize "1 1"  ## (columns - rows)
 
 Module FvwmPager VdeskPager 0 3  ## (desk number - number of desks)
 
 DestroyModuleConfig VdeskPager: *
-*VdeskPager: Geometry 90x280-0+11
+*VdeskPager: Geometry 90x260-0+11
 *VdeskPager: Rows 4  ## (page rows)
 *VdeskPager: Colorset * 36
 *VdeskPager: HilightColorset * 35  ## (active page background)

@@ -5,10 +5,10 @@ Module: rightPanelMgr.sys
 Read $[EXT_DIR]/Modules/RightTaskMgr/manager-menu.conf
 # ====================================================
 
+# Remove FvwmPanel
 KillModule FvwmButtons FvwmPanel
 
-## Time/Day panel color
-*FvwmScript: DefaultColorset 36
+## Time/Day panel
 Style FvwmScript !Borders, !Title
 
 # ---------------------------------------------------------
@@ -69,7 +69,7 @@ DestroyModuleConfig FvwmIconMan: *
 *FvwmIconMan: 3 Title    "Graph-Med"
 *FvwmIconMan: 3 Show     $[infostore.AppGroup_GraphMed]
 
-# --- Manager 4: Catch-All (Everything Else) ---
+# --- Manager 4: Other Applications ---
 *FvwmIconMan: 4 Title     "Misc-Apps"
 *FvwmIconMan: 4 DontShow  $[infostore.AppGroup_DevSys] \
 						  $[infostore.AppGroup_WebCom] \
@@ -83,7 +83,7 @@ SetEnv logo-icon $[EXT_DIR]/Modules/RightTaskMgr/icons
 
 DestroyModuleConfig MultiMgrTaskbar: *
 PipeRead 'echo "*MultiMgrTaskbar: Geometry 90x`expr $[vp.height] - 320`-0+320"'
-*MultiMgrTaskbar: Rows         52
+*MultiMgrTaskbar: Rows         53
 *MultiMgrTaskbar: Columns      1
 *MultiMgrTaskbar: BoxSize      dumb
 *MultiMgrTaskbar: Frame        0
@@ -100,12 +100,12 @@ PipeRead 'echo "*MultiMgrTaskbar: Geometry 90x`expr $[vp.height] - 320`-0+320"'
 *MultiMgrTaskbar: (1x12, Swallow (Close) "Dev-Sys")
 *MultiMgrTaskbar: (1x1, Title "Art & Media", Colorset 36)
 *MultiMgrTaskbar: (1x8,  Swallow (Close) "Graph-Med")
-*MultiMgrTaskbar: (1x1, Title "Misc & Apps", Colorset 36)
+*MultiMgrTaskbar: (1x1, Title "Other Apps", Colorset 36)
 *MultiMgrTaskbar: (1x8,  Swallow (Close) "Misc-Apps")
 *MultiMgrTaskbar: (1x1, Size 90 5, Colorset 50)
 *MultiMgrTaskbar: (1x1, Swallow "DateTime" 'Module FvwmScript FvwmScript-DateTime', Colorset 36, Frame 0)
+*MultiMgrTaskbar: (1x2, Size 90 5, Colorset 10)
 *MultiMgrTaskbar: (1x1, Size 90 5, Colorset 36)
-*MultiMgrTaskbar: (1x1, Size 90 5, Colorset 50)
 
 # ---------------------------------------------------------
 # 3. Style, Function & Startup Execution
