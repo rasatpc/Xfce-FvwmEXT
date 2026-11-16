@@ -1,9 +1,11 @@
 Module: rightPanelMgr.sys
 
 #  USER APPLICATION SELECTION PROFILE
-
 Read $[EXT_DIR]/Modules/RightTaskMgr/manager-menu.conf
 # ====================================================
+
+# Hide empty manager frame.
+Colorset 49  fg #88b2b1, bg #88b2b1, hi, sh, Plain, NoShape
 
 # Remove FvwmPanel
 KillModule FvwmButtons FvwmPanel
@@ -40,6 +42,9 @@ DestroyModuleConfig FvwmIconMan: *
 *FvwmIconMan: FocusColorset   35 	# Window focus
 *FvwmIconMan: IconButton      flat
 *FvwmIconMan: IconColorset    6		# Window minimized
+
+*FvwmIconMan: TitleButton     flat
+*FvwmIconMan: TitleColorset   49    # Match panel hide background
 
 # Mouse Bindings
 # Left-click (1), Middle-click (2), and Right-click (3).
@@ -87,7 +92,7 @@ PipeRead 'echo "*MultiMgrTaskbar: Geometry 90x`expr $[vp.height] - 320`-0+320"'
 *MultiMgrTaskbar: Columns      1
 *MultiMgrTaskbar: BoxSize      dumb
 *MultiMgrTaskbar: Frame        0
-*MultiMgrTaskbar: Padding      2 2
+*MultiMgrTaskbar: Padding      0 0
 *MultiMgrTaskbar: Colorset     1
 
 *MultiMgrTaskbar: (1x1, Size 90 5, Colorset 50)
