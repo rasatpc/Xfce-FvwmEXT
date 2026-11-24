@@ -48,7 +48,7 @@ Colorset 17 fg #ffffff, bg #028383, hi, sh, Plain, NoShape
 Colorset 18 fg #ffffff, bg #306ea2, hi #ffffff, sh #ffffff, Plain
 Colorset 34 fg #ffffff, bg #3a697e, hi, sh, Plain, NoShape
 Colorset 33 bg #d9d9d9, NoShape
-Colorset 35 fg #ffffff, bg #165c81, hi, sh, Plain, NoShape
+Colorset 35 fg #ffffff, bg #145475, hi #7ea4b7, sh #7ea4b7, Plain, NoShape
 Colorset 36 fg #ffffff, bg #29353b, hi, sh, Plain, NoShape
 
 ## No borderline
@@ -62,7 +62,6 @@ Colorset 22  fg #ffffff, bg #000000, hi, sh, Plain, NoShape
 ## Title active color
 Colorset 26 fg #ffffff, bg #2b4e5e, hi #2b4e5e, sh #2b4e5e, Plain, NoShape
 Colorset 32 fg black, bg #9c9c9c, hi #24424f, sh #111f26, Plain, NoShape
-Colorset 37 fg #ffffff, bg #4b88a4, hi, sh, Plain, NoShape
 Colorset 38 fg #ffffff, bg #2b4e5e, hi, sh, Plain, NoShape
 
 ## Active Windows Borders
