@@ -42,7 +42,7 @@ DestroyModuleConfig MgrMenuBar: *
 *MgrMenuBar: (1x25, Title "Menu", ActionOnPress, Action(Mouse 1) "Menu MenuPanel rectangle $widthx$height+$left+$top -105m 0")
 *MgrMenuBar: (1x1, Colorset 12, Frame 0)
 
-Style MgrMenuBar !Title, !Borders, Sticky, WindowListSkip, StaysOnBottom, EWMHIgnoreStrutHints
+Style MgrMenuBar !Title, !Borders, Sticky, WindowListSkip, StaysOnBottom, EWMHIgnoreStrutHints, NeverFocus
 
 # GLOBAL BUTTON PROPERTIES & COLORS
 # ====================================
@@ -119,4 +119,4 @@ Style FvwmIconMan !Button 0, !Button 1, !Button 2, !Button 3, !Button 4
 Style FvwmIconMan !Button 5, !Button 6, !Button 7, !Button 8, !Button 9
 
 # Text-only, flat appearance, remove frames, Titlebar Colorset 36.
-Style FvwmIconMan Font "xft:Sans:Bold:size=10:antialias=true", Title, TitleAtTop, MwmButtons, NoHandles, HandleWidth 0, BorderWidth 0, Sticky, WindowListSkip, EWMHIgnoreStrutHints, Colorset 36
+Style FvwmIconMan Font "xft:Sans:Bold:size=10:antialias=true", Title, TitleAtTop, MwmButtons, NoHandles, HandleWidth 0, BorderWidth 0, Sticky, WindowListSkip, EWMHIgnoreStrutHints, NeverFocus, Colorset 36

@@ -2,6 +2,9 @@
 ## Fluxbox-style round-ended panel.
 ## Module Actions
 
+KillModule FvwmButtons MgrMenuBar
+KillModule FvwmIconMan
+
 # WindowList of all open windows sorted by desk and page.
 
 DestroyFunc TriggerWindowLookUp
