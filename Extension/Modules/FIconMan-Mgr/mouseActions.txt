@@ -1,0 +1,14 @@
+# mouseActions.txt
+
+MANAGER WINDOW BUTTONS MOUSE ACTIONS:
+
+-Left-click -- Window focus and rise.
+
+-Middle-click -- Window minimize (thumnail).
+-Middle-scroll -- Move window one Desk up and down.
+-Ctrl + Middle click Highlight, paste automation.
+
+-Right-click -- Window close.
+-Ctrl + Right-click Window Cloning
+
+-Ctrl + R to reload configuration by restarting Fvwm3.

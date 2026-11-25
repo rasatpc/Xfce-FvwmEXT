@@ -1,8 +1,12 @@
 # Modules: IconMan-4mgr.sys
-# FvwmIconMan with 4 Managers + Menu Panel
+# FvwmIconMan with 4 Managers and FvwmButtons Menu Panel
 
-# Remove FvwmPanel
+#  USER APPLICATION SELECTION PROFILE
+Read $[EXT_DIR]/Modules/FIconMan-Mgr/manager-menu.conf
+
+# Remove existing modules on reload
 KillModule FvwmButtons FvwmPanel
+KillModule FvwmButtons MgrMenuBar
 KillModule FvwmIconMan
 
 ## Time/Day panel
@@ -22,23 +26,29 @@ AddToFunc FocusAndRaise
 + I Focus
 
 # MenuPanel
-DestroyMenu MenuPanel
-AddToMenu MenuPanel
-+ "Restart " Restart
-+ "Identify " NoWindow Module FvwmIdent
-Test (x FvwmPrompt) + "Fvwm Prompt " Exec exec xterm "FvwmPrompt"
-Test (!x FvwmPrompt) + "Fvwm Console " Module FvwmConsole -terminal
-+ "Window List " TriggerWindowLookUp
-+ "" Nop
-+ "Apps " $[infostore.EDT] $[EXT_DIR]/Modules/RightTaskMgr/manager-menu.conf
-+ "Bindings  " $[infostore.EDT] $[EXT_DIR]/Modules/RightTaskMgr/taskBarMouseB.txt
-+ "Fvwm Wallpapers" Popup BGMenu item -0 +17m
+# Check manager-menu.conf
+
+# MENU BUTTON (FvwmButtons: 90x25 button + 1px white line)
+# ========================================================
+DestroyModuleConfig MgrMenuBar: *
+*MgrMenuBar: Geometry 90x26-0+324
+*MgrMenuBar: Rows 26
+*MgrMenuBar: Columns 1
+*MgrMenuBar: Frame 0
+*MgrMenuBar: Padding 0 0
+*MgrMenuBar: Colorset 10
+*MgrMenuBar: Font "xft:Sans:Bold:size=10:antialias=true"
+
+*MgrMenuBar: (1x25, Title "Menu", ActionOnPress, Action(Mouse 1) "Menu MenuPanel rectangle $widthx$height+$left+$top -105m 0")
+*MgrMenuBar: (1x1, Colorset 12, Frame 0)
+
+Style MgrMenuBar !Title, !Borders, Sticky, WindowListSkip, StaysOnBottom, EWMHIgnoreStrutHints
 
 # GLOBAL BUTTON PROPERTIES & COLORS
 # ====================================
 
 DestroyModuleConfig FvwmIconMan:*
-*FvwmIconMan: NumManagers 5
+*FvwmIconMan: NumManagers 4
 
 *FvwmIconMan: * ButtonGeometry 90x25
 *FvwmIconMan: * Format "%c"
@@ -59,9 +69,6 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: * SelectButton	flat
 *FvwmIconMan: * IconButton		flat
 
-*FvwmIconMan: * TitleButton     flat
-*FvwmIconMan: * TitleColorset   9		# Match panel hide background
-
 ## Mouse Actions
 # ====================================
 # Left-click (1), Middle-click (2), and Right-click (3) inside Manager areas.
@@ -70,50 +77,41 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: * Action Mouse 3 N sendcommand "Close"
 
 # Middle-scroll - Move window one Desk up and down.
-*FvwmIconMan: Action Mouse 4 A sendcommand "MoveToDesk +1"
-*FvwmIconMan: Action Mouse 5 A sendcommand "MoveToDesk -1"
+*FvwmIconMan: * Action Mouse 4 A sendcommand "MoveToDesk +1"
+*FvwmIconMan: * Action Mouse 5 A sendcommand "MoveToDesk -1"
 
 # Ctrl + Right-click - Window Cloning
-*FvwmIconMan: Action Mouse 3 C sendcommand "Exec exec $[w.resource]"
+*FvwmIconMan: * Action Mouse 3 C sendcommand "Exec exec $[w.resource]"
 
-# Left-click "Menu" titlebar opens MenuPanel; normal windows click and move.
-Mouse 1 T A CheckMenuPanel
-DestroyFunc CheckMenuPanel
-AddToFunc CheckMenuPanel
-+ C ThisWindow ("Menu") Menu MenuPanel Rectangle $[w.width]x$[w.height]+$[w.x]+$[w.y] -105m 0
-+ C TestRc (NoMatch) Raise
-+ M Move
-
-# Ask AI to adjust the application groupings.
-
-# MANAGER 1-5 (Positioned vertically on right edge)
+# MANAGER 1-4 (Positioned vertically on right edge)
 # =================================================
-*FvwmIconMan: 5 Title "Menu"
-*FvwmIconMan: 5 ManagerGeometry 1x1-0+324
-*FvwmIconMan: 5 Show class=None
-*FvwmIconMan: 5 Colorset 12
 
+# 1. Web browsers, email, and chat clients
 *FvwmIconMan: 1 Title "Web & Com"
 *FvwmIconMan: 1 ManagerGeometry 1x4-0+351
-*FvwmIconMan: 1 Show class=Firefox class=firefox class=Chromium class=Google-chrome class=Brave-browser
+*FvwmIconMan: 1 Show $[infostore.AppGroup_WebCom]
 
+# 2. Graphics, media players, and LibreOffice suite
 *FvwmIconMan: 2 Title "Grap& Med"
 *FvwmIconMan: 2 ManagerGeometry 1x3-0+476
-*FvwmIconMan: 2 Show class=XTerm class=Alacritty class=Kitty class=Gnome-terminal
+*FvwmIconMan: 2 Show $[infostore.AppGroup_GraphMed]
 
+# 3. Terminals, IDEs/editors, file managers, and system tools
 *FvwmIconMan: 3 Title "Dev & Syst"
 *FvwmIconMan: 3 ManagerGeometry 1x3-0+576
-*FvwmIconMan: 3 Show class=Code class=Sublime_text class=Thunar class=Nautilus
+*FvwmIconMan: 3 Show $[infostore.AppGroup_DevSys]
 
+# 4. Everything else (catch-all via DontShow)
 *FvwmIconMan: 4 Title "Misc& App"
 *FvwmIconMan: 4 ManagerGeometry 1x5-0+676
-*FvwmIconMan: 4 DontShow class=Firefox class=firefox class=Chromium class=Google-chrome class=Brave-browser class=XTerm class=Alacritty class=Kitty class=Gnome-terminal class=Code class=Sublime_text class=Thunar class=Nautilus
-
-Style Menu StaysOnBottom, Colorset 10
+*FvwmIconMan: 4 DontShow  $[infostore.AppGroup_DevSys] \
+						  $[infostore.AppGroup_WebCom] \
+						  $[infostore.AppGroup_GraphMed]
 
 # STARTUP & STYLES
 
 AddToFunc StartFunction
++ I Module FvwmButtons MgrMenuBar
 + I Module FvwmIconMan
 
 # Disable all 10 titlebar layout buttons individually
@@ -121,4 +119,4 @@ Style FvwmIconMan !Button 0, !Button 1, !Button 2, !Button 3, !Button 4
 Style FvwmIconMan !Button 5, !Button 6, !Button 7, !Button 8, !Button 9
 
 # Text-only, flat appearance, remove frames, Titlebar Colorset 36.
-Style FvwmIconMan Font "xft:Sans:Bold:size=10:antialias=true", Title, TitleAtTop, MwmButtons, Flat, NoHandles, HandleWidth 0, BorderWidth 0, Sticky, WindowListSkip, EWMHIgnoreStrutHints, Colorset 36
+Style FvwmIconMan Font "xft:Sans:Bold:size=10:antialias=true", Title, TitleAtTop, MwmButtons, NoHandles, HandleWidth 0, BorderWidth 0, Sticky, WindowListSkip, EWMHIgnoreStrutHints, Colorset 36
