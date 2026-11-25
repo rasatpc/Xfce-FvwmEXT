@@ -2,17 +2,23 @@
 ## Fluxbox-style round-ended panel.
 ## Module Actions
 
-KillModule FvwmButtons MultiMgrTaskbar
+# WindowList of all open windows sorted by desk and page.
+
+DestroyFunc TriggerWindowLookUp
+AddToFunc TriggerWindowLookUp
++ I WindowList Root c c
 
 ## Drop Menu
 
 DestroyMenu MenuPanel
 AddToMenu MenuPanel
++ "Fvwm Wallpapers" Popup BGMenu item +80 -45m
++ "" Nop
 + "Restart " Restart
 + "Identify " Module FvwmIdent
-Test (x FvwmPrompt) + "FvwmPrompt " Exec exec xterm "FvwmPrompt"
-Test (!x FvwmPrompt) + "FvwmConsole " Module FvwmConsole -terminal
-+ "Fvwm Wallpapers" Popup BGMenu item +0 -100m
+Test (x FvwmPrompt) + "Fvwm Prompt " Exec exec xterm "FvwmPrompt"
+Test (!x FvwmPrompt) + "Fvwm Console " Module FvwmConsole -terminal
++ "Window List " TriggerWindowLookUp
 
 ## Icons
 
@@ -32,7 +38,7 @@ DestroyModuleConfig FvwmPanel: *
 *FvwmPanel: (15x1, Icon $[boxIcons]/left-round.png, Padding 0 0 )
 
 # MenuStart button
-*FvwmPanel: (90x1, Icon $[boxIcons]/Fvwm-58x20.png, Colorset 40, ActionOnPress, Action(Mouse 1) Menu MenuPanel Rectangle +$left-34 0 -111m)
+*FvwmPanel: (100x1, Icon $[boxIcons]/Fvwm-58x20.png, Colorset 40, ActionOnPress, Action(Mouse 1) Menu MenuPanel Rectangle +$left-34 0 -111m)
 
 *FvwmPanel: (722x1, Swallow (UseOld) FvwmIconMan 'Module FvwmIconMan', Frame 0)
 *FvwmPanel: (2x1, Colorset 40, Padding 0 0)
@@ -42,10 +48,10 @@ DestroyModuleConfig FvwmPanel: *
 
 *FvwmPanel: (2x1, Colorset 40, Padding 0 0)
 
-# How-to-do, opens readme.txt
+# How-to-do text description.
 *FvwmPanel: (20x1, Title "?", ActionOnPress, ActiveColorset 41, Action(Mouse 1) $[infostore.EDT] $[EXT_DIR]/Modules/FluxPanel/readme.txt)
 
-*FvwmPanel: (30x1, Colorset 40, Padding 0 0)
+*FvwmPanel: (20x1, Colorset 40, Padding 0 0)
 *FvwmPanel: (15x1, Icon $[boxIcons]/right-round.png, Padding 0 0 )
 
 Module FvwmButtons FvwmPanel
@@ -96,6 +102,7 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: 1 ManagerGeometry 1x1
 *FvwmIconMan: 1 ReliefThickness 2
 *FvwmIconMan: DrawIcons always
+*FvwmIconMan: Format "[%c] %t
 
 # Left click Window Activation / Window Selection Toggle.
 *FvwmIconMan: Action Mouse 1 N sendcommand IconManClick
@@ -104,20 +111,27 @@ DestroyModuleConfig FvwmIconMan:*
 *FvwmIconMan: Action Mouse 1 C sendcommand IconManMinimize
 
 # Auto-Paste macro:
-# Middle click Primary Selection Pipe-to-Clipboard & Paste Automation.
+# Primary-to-Clipboard, highlight and paste automation.
+# Middle click (Goes to pasted place).
+*FvwmIconMan: Action Mouse 2 N sendcommand "Exec exec sh -c 'xclip -o -selection primary | xclip -i -selection clipboard; xdotool windowactivate --sync $[w.id] key Shift+Insert key Return'"
 
-*FvwmIconMan: Action Mouse 2 A sendcommand "Exec exec sh -c 'xclip -o -selection primary | xclip -i -selection clipboard; xdotool windowactivate --sync $[w.id] key Shift+Insert key Return'"
+# Ctrl + Middle click (Return to highlight place)
+*FvwmIconMan: Action Mouse 2 C sendcommand "Exec exec sh -c 'xclip -o -selection primary | xclip -i -selection clipboard; ORIG_WIN=\$(xdotool getactivewindow); xdotool windowactivate --sync $[w.id] key --clearmodifiers Shift+Insert Return; xdotool windowactivate \$ORIG_WIN'"
 
 # Taskbar Context Menu:
-# Right click Taskbar Context Menu.
+# Right-click Taskbar Context Menu.
 
-*FvwmIconMan: Action Mouse 3 A sendcommand Nop
-*FvwmIconMan: Action Mouse 3 A sendcommand TriggerIconManMenu
+*FvwmIconMan: Action Mouse 3 N sendcommand Nop
+*FvwmIconMan: Action Mouse 3 N sendcommand TriggerIconManMenu
 
-# Scroll Up and Down: Move the window one Desk up and down
+# Middle-scroll Up and Down: Move window one Desk up and down.
 
 *FvwmIconMan: Action Mouse 4 A sendcommand "MoveToDesk +1"
 *FvwmIconMan: Action Mouse 5 A sendcommand "MoveToDesk -1"
+
+# Ctrl + Right-click Window Cloning
+# Launches an identical twin instance.
+*FvwmIconMan: Action Mouse 3 C sendcommand "Exec exec $[w.resource]"
 
 ## Check .fvwm/Extension/Colorsets.sys
 
