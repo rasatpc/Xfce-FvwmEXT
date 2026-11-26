@@ -3,33 +3,61 @@
 # VERTICAL PAGER
 
 ## Colorsets
-## Check .fvwm/Extension/Colorsets.sys
+## .fvwm/Extension/Colorsets.sys
 
-## Vertical Pager (4 desks with 1x1 page each)
+## Vertical Pager (4 desks with 1 page each)
+
 DesktopName 0 Web
 DesktopName 1 Email
 DesktopName 2 Office
 DesktopName 3 Media
 
-# (columns rows)
-DesktopSize 1x1
+DesktopSize "1 1"  ## (columns - rows)
 
+## 1. Standalone 28px #2b4e5e Desk Indicator Bar (FvwmButtons)
+DestroyModuleConfig VdeskBar: *
+*VdeskBar: Geometry 90x28-0+11
+*VdeskBar: Columns 1
+*VdeskBar: Rows 1
+*VdeskBar: Frame 0
+*VdeskBar: Padding 0 0
+*VdeskBar: Font "xft:Sans:size=11:antialias=True"
+*VdeskBar: Colorset 99
+*VdeskBar: (1x1, Id "desk_ind", Title "Desk: $[desk.n]", Colorset 10, Frame 0)
+
+## 2. Event Listener to Update Desk Number Immediately on Switch
+DestroyFunc UpdateDeskBar
+AddToFunc UpdateDeskBar
++ I SendToModule VdeskBar ChangeButton desk_ind Title "Desk $[desk.n]"
+
+DestroyModuleConfig VdeskEvent: *
+*VdeskEvent: Cmd Function
+*VdeskEvent: new_desk UpdateDeskBar
+
+## 3. Vertical Pager Positioned Directly Below
 DestroyModuleConfig VdeskPager: *
-*VdeskPager: Geometry 90x260-0+11
-*VdeskPager: Rows 4
+*VdeskPager: Geometry 90x260-0+40
+*VdeskPager: Rows 4  ## (page rows)
 *VdeskPager: Colorset * 36
-*VdeskPager: HilightColorset * 35
-*VdeskPager: BalloonColorset * 10
-*VdeskPager: WindowColorsets 37 18
+*VdeskPager: HilightColorset * 35  ## (active page background)
+*VdeskPager: BalloonColorset * 10  ## (font color)
+*VdeskPager: WindowColorsets 37 18  ## (inactive - active apps)
 *VdeskPager: Font "xft:Sans:size=11:antialias=True"
 *VdeskPager: WindowBorderWidth 1
 *VdeskPager: BalloonStringFormat %c
 *VdeskPager: BalloonYOffset +2
 *VdeskPager: Window3dBorders
-*VdeskPager: UseSkipList
+*VdeskPager: UseSkipList  ## hides modules
 *VdeskPager: MiniIcons
 
-Style VdeskPager !Title, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
+## Window Styles
+Style VdeskBar NoTitle, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
+Style VdeskPager NoTitle, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
 
-KillModule FvwmPager VdeskPager
+## Launch Modules
+Module FvwmButtons VdeskBar
+Module FvwmEvent VdeskEvent
 Module FvwmPager VdeskPager 0 3
+
+## Change preloaded settings
+# *ControlMP: Geometry 330x32-132+10

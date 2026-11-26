@@ -31,7 +31,7 @@ AddToFunc FocusAndRaise
 # MENU BUTTON (FvwmButtons: 90x25 button + 1px white line)
 # ========================================================
 DestroyModuleConfig MgrMenuBar: *
-*MgrMenuBar: Geometry 90x26-0+324
+*MgrMenuBar: Geometry 90x26-0+352
 *MgrMenuBar: Rows 26
 *MgrMenuBar: Columns 1
 *MgrMenuBar: Frame 0
@@ -88,22 +88,22 @@ DestroyModuleConfig FvwmIconMan:*
 
 # 1. Web browsers, email, and chat clients
 *FvwmIconMan: 1 Title "Web-Com"
-*FvwmIconMan: 1 ManagerGeometry 1x4-0+351
+*FvwmIconMan: 1 ManagerGeometry 1x4-0+379
 *FvwmIconMan: 1 Show $[infostore.AppGroup_WebCom]
 
 # 2. Graphics, media players, and LibreOffice suite
 *FvwmIconMan: 2 Title "Grap-Med"
-*FvwmIconMan: 2 ManagerGeometry 1x4-0+472
+*FvwmIconMan: 2 ManagerGeometry 1x4-0+500
 *FvwmIconMan: 2 Show $[infostore.AppGroup_GraphMed]
 
 # 3. Terminals, IDEs/editors, file managers, and system tools
 *FvwmIconMan: 3 Title "Dev-Syst"
-*FvwmIconMan: 3 ManagerGeometry 1x4-0+593
+*FvwmIconMan: 3 ManagerGeometry 1x4-0+621
 *FvwmIconMan: 3 Show $[infostore.AppGroup_DevSys]
 
 # 4. Everything else (catch-all via DontShow)
 *FvwmIconMan: 4 Title "Misc-App"
-*FvwmIconMan: 4 ManagerGeometry 1x4-0+714
+*FvwmIconMan: 4 ManagerGeometry 1x4-0+742
 *FvwmIconMan: 4 DontShow  $[infostore.AppGroup_DevSys] \
 						  $[infostore.AppGroup_WebCom] \
 						  $[infostore.AppGroup_GraphMed]
