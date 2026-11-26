@@ -1,6 +1,6 @@
 ## Modules: controlMP.sys
 
-## Help Drop Menu
+## Help Menu
 
 DestroyMenu MenuStart
 AddToMenu MenuStart
@@ -9,27 +9,27 @@ AddToMenu MenuStart
 
 + "How To " Exec exec display -size 960x540 $[HOME]/.fvwm/Setup/help/Xfce-FvwmEXT-help.png
 
-## Set small icons
+## Small icons
 
 SetEnv smallIcons $[EXT_DIR]/Modules/ControlMinPanel/icons
 
 ## Panel
 
 DestroyModuleConfig ControlMP: *
-*ControlMP: Geometry 350x28-100+10
+*ControlMP: Geometry 330x28-100+10
 *ControlMP: Fore #ffffff
 *ControlMP: Back #2b4e5e
 *ControlMP: PressColorset 4
 *ControlMP: Frame 0
 *ControlMP: Rows 1
 *ControlMP: Pixmap none
-*ControlMP: Font "xft:Sans:size=12:antialias=True"
+*ControlMP: Font "xft:Sans:size=11:antialias=True"
   
 *ControlMP: (Icon $[smallIcons]/search-wb.png, Action(Mouse 1) "Exec exec xfce4-appfinder", Padding 0 0 )
 *ControlMP: (Icon $[smallIcons]/resize-wb.png, Action Resize, Padding 0 0 )
 *ControlMP: (Icon $[smallIcons]/move-wb.png, Action Move, Padding 0 0  )
 
-*ControlMP: (Title Help, Back #028383, Frame 1, ActionOnPress, \
+*ControlMP: (Title Help, Frame 1, ActionOnPress, \
 Action(Mouse 1) Menu MenuStart Rectangle +$left+36 0 12m)
 
 *ControlMP: (Title Revert, Frame 1, Action "Exec exec xfwm4 --replace &" )

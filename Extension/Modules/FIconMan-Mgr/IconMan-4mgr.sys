@@ -119,4 +119,4 @@ Style FvwmIconMan !Button 0, !Button 1, !Button 2, !Button 3, !Button 4
 Style FvwmIconMan !Button 5, !Button 6, !Button 7, !Button 8, !Button 9
 
 # Text-only, flat appearance, remove frames, Titlebar Colorset 36.
-Style FvwmIconMan Font "xft:Sans:size=11:antialias=true", Title, TitleAtTop, MwmButtons, NoHandles, HandleWidth 0, BorderWidth 0, Sticky, WindowListSkip, EWMHIgnoreStrutHints, NeverFocus, Colorset 36
+Style FvwmIconMan Font "xft:Sans:size=11:antialias=true", Title, TitleAtTop, MwmButtons, NoHandles, HandleWidth 0, BorderWidth 0, Sticky, WindowListSkip, EWMHIgnoreStrutHints, NeverFocus, !Iconifiable, Colorset 36

@@ -5,34 +5,31 @@
 ## Colorsets
 ## Check .fvwm/Extension/Colorsets.sys
 
-## Vertical Pager (3 desk with 3 pages)
-
+## Vertical Pager (4 desks with 1x1 page each)
 DesktopName 0 Web
 DesktopName 1 Email
 DesktopName 2 Office
 DesktopName 3 Media
 
-DesktopSize "1 1"  ## (columns - rows)
-
-Module FvwmPager VdeskPager 0 3  ## (desk number - number of desks)
+# (columns rows)
+DesktopSize 1x1
 
 DestroyModuleConfig VdeskPager: *
 *VdeskPager: Geometry 90x260-0+11
-*VdeskPager: Rows 4  ## (page rows)
+*VdeskPager: Rows 4
 *VdeskPager: Colorset * 36
-*VdeskPager: HilightColorset * 35  ## (active page background)
-*VdeskPager: BalloonColorset * 10  ## (font color)
-*VdeskPager: WindowColorsets 37 18  ## (inactive - active apps)
-*VdeskPager: Font "xft:Sans:size=12:antialias=True"
+*VdeskPager: HilightColorset * 35
+*VdeskPager: BalloonColorset * 10
+*VdeskPager: WindowColorsets 37 18
+*VdeskPager: Font "xft:Sans:size=11:antialias=True"
 *VdeskPager: WindowBorderWidth 1
 *VdeskPager: BalloonStringFormat %c
-*VdeskPager: BallonYOffset +2
+*VdeskPager: BalloonYOffset +2
 *VdeskPager: Window3dBorders
-*VdeskPager: UseSkipList # hides modules
+*VdeskPager: UseSkipList
 *VdeskPager: MiniIcons
 
-Style VdeskPager NoTitle, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
+Style VdeskPager !Title, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
 
-## Change preloaded settings
-## Example
-# *ControlMP: Geometry 330x32-132+10
+KillModule FvwmPager VdeskPager
+Module FvwmPager VdeskPager 0 3

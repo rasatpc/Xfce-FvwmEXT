@@ -1,14 +1,13 @@
 ## Functions: deskIcons.sys
 #
-## Normally an icon represents a minimized application. If you want
-## to turn that around, and launch functions or modules by clicking
-## on icons. Here’s to do that using FvwmButtons.
+## Normally, an icon represents a minimized application. If you want
+## to turn that around and launch functions or modules by clicking
+## on icons. Here’s how to do that using FvwmButtons.
 ## https://www.fvwm.org/Wiki/Tips/IconsOnDesktop/
 ## https://www.fvwm.org/Wiki/CookBook/IconifyExcept/
 
-################
 # Iconify all except the focused window.
-######
+##########
 
 ## Iconify switch.
 InfoStoreAdd IconSwitch "ON"
@@ -25,41 +24,38 @@ AddToFunc IconOn
 
 DestroyFunc IconOff
 AddToFunc IconOff
-+ I All (Iconic) Iconify off
++ I All (CurrentPage, Iconic) Iconify off
 + I Current InfoStoreAdd WLIST $[w.id]
 + I WindowId $[infostore.WLIST] WarpToWindow 50 50
 + I Schedule 300 Next (CurrentDesk, AcceptsFocus) Focus
 + I InfoStoreAdd IconSwitch ON
 
-################
 # Full screen maximize.
-######
+##########
 
 DestroyFunc ToggleMaximize
 AddToFunc ToggleMaximize
 + I Current (Maximized) WindowStyle Title, Border
-+ I Current (!Maximized) WindowStyle !Title, Borders
++ I Current (!Maximized) WindowStyle !Title, !Borders
 + I UpdateStyles
 + I Current Maximize ewmhiwa
 + I Style (Resource ScreenDLaunch*) StaysOnTop, NeverFocus
 
-################
 # Vertical/horizontal tiling
-######
+##########
 
 # Function TileW, check file .fvwm/local.config
 
-################
 # OverView.
-######
+##########
 
 # Check Extension/Modules/FvwmOverView/
 
-################
-## DESK ICONS
-########
+##########
+# DESK ICONS
+##########
 
-## Disclude the possibility of FvwmButtons being iconified.
+## Disallow the possibility of FvwmButtons being iconified.
 
 Style FvwmButtons !Iconifiable
 
@@ -73,14 +69,14 @@ DestroyModuleConfig DeskTitleIcon: *
 *DeskTitleIcon: Frame 0
 *DeskTitleIcon: Rows 1
 *DeskTitleIcon: Pixmap none
-*DeskTitleIcon: Font "xft:Sans:size=12:antialias=True"
+*DeskTitleIcon: Font "xft:Sans:size=11:antialias=True"
   
 *DeskTitleIcon: (84x1, Title Iconify, Action AIconic)
-*DeskTitleIcon: (10x1, Colorset 50
+*DeskTitleIcon: (10x1, Colorset 50)
 *DeskTitleIcon: (84x1, Title Screen, Action ToggleMaximize)
-*DeskTitleIcon: (10x1, Colorset 50
+*DeskTitleIcon: (10x1, Colorset 50)
 *DeskTitleIcon: (84x1, Title Tile, Action TileW)
-*DeskTitleIcon: (10x1, Colorset 50
+*DeskTitleIcon: (10x1, Colorset 50)
 *DeskTitleIcon: (84x1, Title OverView, Action FoverView)
 
 # Module FvwmButtons DeskTitleIcon
