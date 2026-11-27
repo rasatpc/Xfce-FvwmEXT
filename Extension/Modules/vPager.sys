@@ -5,8 +5,6 @@
 ## Colorsets
 ## .fvwm/Extension/Colorsets.sys
 
-## Vertical Pager (4 desks with 1 page each)
-
 DesktopName 0 Web
 DesktopName 1 Email
 DesktopName 2 Office
@@ -14,18 +12,18 @@ DesktopName 3 Media
 
 DesktopSize "1 1"  ## (columns - rows)
 
-## 1. Desk Indicator Bar (90x28 total: 27px label + 1px white line)
+## 1. Desk Indicator Bar with 1px white line.
 DestroyModuleConfig VdeskBar: *
 *VdeskBar: Geometry 90x28-0+11
 *VdeskBar: Columns 1
 *VdeskBar: Rows 28
 *VdeskBar: Frame 0
 *VdeskBar: Padding 0 0
-*VdeskBar: Font "xft:Sans:size=11:antialias=True"
+*VdeskBar: Font "xft:Sans:size=10:antialias=True"
 *VdeskBar: (1x27, Id "desk_ind", Title "Desk $[desk.n]", Colorset 36)
 *VdeskBar: (1x1, Colorset 12)
 
-## 2. Event Listener to Update Desk Number Immediately on Switch
+## 2. Event Listener updating Desk number.
 DestroyFunc UpdateDeskBar
 AddToFunc UpdateDeskBar
 + I SendToModule VdeskBar ChangeButton desk_ind Title "Desk $[desk.n]"
@@ -34,7 +32,8 @@ DestroyModuleConfig VdeskEvent: *
 *VdeskEvent: Cmd Function
 *VdeskEvent: new_desk UpdateDeskBar
 
-## 3. Vertical Pager Directly Below (90x260 total, flush at Y=39)
+## 3. Vertical Pager (4 desks)
+
 DestroyModuleConfig VdeskPager: *
 *VdeskPager: Geometry 90x260-0+39
 *VdeskPager: Rows 4
