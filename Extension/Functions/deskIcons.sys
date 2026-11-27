@@ -1,6 +1,6 @@
 ## Functions: deskIcons.sys
 #
-## Normally, an icon represents a minimized application. If you want
+## An icon represents a minimized application. If you want
 ## to turn that around and launch functions or modules by clicking
 ## on icons. Here’s how to do that using FvwmButtons.
 ## https://www.fvwm.org/Wiki/Tips/IconsOnDesktop/
@@ -64,7 +64,7 @@ Style FvwmButtons !Iconifiable
 DestroyModuleConfig DeskTitleIcon: *
 *DeskTitleIcon: Geometry 366x28+$[math./.$[math.-.$[monitor.$[monitor.primary].width],366],2]+10
 *DeskTitleIcon: Fore #ffffff
-*DeskTitleIcon: Back #2b4e5e
+*DeskTitleIcon: Back #29353b
 *DeskTitleIcon: PressColorset 7
 *DeskTitleIcon: Frame 0
 *DeskTitleIcon: Rows 1

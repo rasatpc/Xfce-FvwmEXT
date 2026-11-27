@@ -1,5 +1,5 @@
 # Modules: IconMan-4mgr.sys
-# FvwmIconMan with 4 Managers and FvwmButtons Menu Panel
+# FvwmIconMan with Four Managers and FvwmButtons MenuPanel
 
 # USER APPLICATION SELECTION PROFILE
 Read $[EXT_DIR]/Modules/FIconMan-Mgr/manager-menu.conf
@@ -36,7 +36,7 @@ DestroyModuleConfig MgrMenuBar: *
 *MgrMenuBar: Columns 1
 *MgrMenuBar: Frame 0
 *MgrMenuBar: Padding 0 0
-*MgrMenuBar: Colorset 10
+*MgrMenuBar: Colorset 36
 *MgrMenuBar: Font "xft:Sans:size=10:antialias=true"
 
 *MgrMenuBar: (1x25, Title "Menu", ActionOnPress, Action(Mouse 1) "Menu MenuPanel rectangle $widthx$height+$left+$top -105m 0")

@@ -1,7 +1,7 @@
 ## Functions: deskPgNo.sys
 #
-## This horizontal Desk and page indicator shows the desk number
-## and indicates which page is currently being displayed.
+## Horizontal Desk and page indicator shows the desk number
+## and which page is currently being displayed.
 ## Desk/Page number panel.
 
 DestroyModuleConfig PgNo:*
@@ -11,7 +11,7 @@ DestroyModuleConfig PgNo:*
 *PgNo: Font "xft:Sans:size=11:antialias=True"
 *PgNo: Frame 0
 *PgNo: Rows 1
-*PgNo: (80x1, Back #2b4e5e, Title "DESK NO:")
+*PgNo: (80x1, Back #29353b, Title "DESK NO:")
 *PgNo: (70x1, Colorset 50, Title "Desk: $[monitor.$[monitor.current].desk]", \
 Id D, Action (Mouse 1) Nop)
 *PgNo: (85x1, Colorset 50, Title (Left) "Page: $[monitor.$[monitor.current].pagex]  \

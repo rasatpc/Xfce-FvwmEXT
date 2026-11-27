@@ -14,16 +14,16 @@ DesktopName 3 Media
 
 DesktopSize "1 1"  ## (columns - rows)
 
-## 1. Standalone 28px #2b4e5e Desk Indicator Bar (FvwmButtons)
+## 1. Desk Indicator Bar (90x28 total: 27px label + 1px white line)
 DestroyModuleConfig VdeskBar: *
 *VdeskBar: Geometry 90x28-0+11
 *VdeskBar: Columns 1
-*VdeskBar: Rows 1
+*VdeskBar: Rows 28
 *VdeskBar: Frame 0
 *VdeskBar: Padding 0 0
 *VdeskBar: Font "xft:Sans:size=11:antialias=True"
-*VdeskBar: Colorset 99
-*VdeskBar: (1x1, Id "desk_ind", Title "Desk: $[desk.n]", Colorset 10, Frame 0)
+*VdeskBar: (1x27, Id "desk_ind", Title "Desk $[desk.n]", Colorset 36)
+*VdeskBar: (1x1, Colorset 12)
 
 ## 2. Event Listener to Update Desk Number Immediately on Switch
 DestroyFunc UpdateDeskBar
@@ -34,25 +34,25 @@ DestroyModuleConfig VdeskEvent: *
 *VdeskEvent: Cmd Function
 *VdeskEvent: new_desk UpdateDeskBar
 
-## 3. Vertical Pager Positioned Directly Below
+## 3. Vertical Pager Directly Below (90x260 total, flush at Y=39)
 DestroyModuleConfig VdeskPager: *
-*VdeskPager: Geometry 90x260-0+40
-*VdeskPager: Rows 4  ## (page rows)
+*VdeskPager: Geometry 90x260-0+39
+*VdeskPager: Rows 4
 *VdeskPager: Colorset * 36
-*VdeskPager: HilightColorset * 35  ## (active page background)
-*VdeskPager: BalloonColorset * 10  ## (font color)
-*VdeskPager: WindowColorsets 37 18  ## (inactive - active apps)
+*VdeskPager: HilightColorset * 35
+*VdeskPager: BalloonColorset * 10
+*VdeskPager: WindowColorsets 37 18
 *VdeskPager: Font "xft:Sans:size=11:antialias=True"
 *VdeskPager: WindowBorderWidth 1
 *VdeskPager: BalloonStringFormat %c
 *VdeskPager: BalloonYOffset +2
 *VdeskPager: Window3dBorders
-*VdeskPager: UseSkipList  ## hides modules
+*VdeskPager: UseSkipList
 *VdeskPager: MiniIcons
 
 ## Window Styles
-Style VdeskBar NoTitle, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
-Style VdeskPager NoTitle, !Handles, BorderWidth 1, BorderColorset 13, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
+Style VdeskBar NoTitle, !Handles, BorderWidth 0, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
+Style VdeskPager NoTitle, !Handles, BorderWidth 0, Sticky, WindowListSkip, FixedSize, !Iconifiable, NeverFocus
 
 ## Launch Modules
 Module FvwmButtons VdeskBar
